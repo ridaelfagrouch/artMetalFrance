@@ -154,12 +154,12 @@ function NavListMenu({ navListData, navListItem }: NavListMenuProps) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
 
   const renderItems = (
-    <div className="flex flex-col lg:flex-row gap-4 lg:gap-8">
+    <div className="flex flex-col lg:flex-row gap-2 lg:gap-8 px-0">
       {navListData.map((category, categoryIndex) => (
         <div key={categoryIndex} className="flex flex-col gap-4">
           {category.map(({ id, category, description }) => (
             <a href="#" key={id} className="hover:bg-gray-100 rounded-lg transition-colors">
-              <MenuItem className="flex flex-col items-start p-2">
+              <MenuItem className="flex flex-col items-start">
                 <Typography variant="h6" color="blue-gray" className="mb-1">
                   {category}
                 </Typography>
@@ -179,11 +179,11 @@ function NavListMenu({ navListData, navListItem }: NavListMenuProps) {
       {/* Desktop version */}
       <Menu allowHover open={isMenuOpen} handler={setIsMenuOpen} className="hidden lg:block">
         <MenuHandler>
-          <Typography as="div" variant="small" className="font-normal">
-            <MenuItem className="hidden items-center gap-2 font-medium text-blue-gray-900 lg:flex lg:rounded-full">
+          <Typography as="div" variant="small" className="font-normal ">
+            <MenuItem className="hidden items-center gap-4 font-medium text-black lg:flex lg:rounded-full px-0">
               <a href={navListItem?.link} className="flex items-center gap-2">
-                {React.createElement(navListItem?.icon, { className: "h-[18px] w-[18px] text-blue-gray-500" })}
-                <span className="text-lg font-bold">{navListItem?.label}</span>
+                {React.createElement(navListItem?.icon, { className: "h-[18px] w-[18px] text-black" })}
+                <span className="text-lg font-medium">{navListItem?.label}</span>
               </a>
               <ChevronDownIcon
                 strokeWidth={2}
@@ -208,11 +208,11 @@ function NavListMenu({ navListData, navListItem }: NavListMenuProps) {
       {/* Mobile version */}
       <div className="lg:hidden h-full">
         <MenuItem
-          className="flex items-center justify-between font-medium text-blue-gray-900  h-[50px]"
+          className="flex items-center justify-between font-medium text-black  h-[50px]"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         >
           <a href={navListItem?.link} className="flex items-center gap-2">
-            {React.createElement(navListItem?.icon, { className: "h-[18px] w-[18px] text-blue-gray-500" })}
+            {React.createElement(navListItem?.icon, { className: "h-[18px] w-[18px] text-black" })}
             <span className="text-lg font-bold">{navListItem?.label}</span>
           </a>
           <ChevronDownIcon
@@ -232,7 +232,7 @@ function NavListMenu({ navListData, navListItem }: NavListMenuProps) {
 
 function NavList() {
   return (
-    <ul className=" flex flex-col  lg:mb-0 lg:mt-0 lg:flex-row lg:items-center ">
+    <ul className=" flex flex-col  lg:mb-0 lg:mt-0 lg:flex-row lg:items-center gap-5">
       <NavListMenu navListData={navProduitsListMenuItems} navListItem={{ label: "Produits", icon: CubeIcon, link: "/produits" }} />
       <NavListMenu navListData={navServicesListMenuItems} navListItem={{ label: "Services", icon: WrenchIcon, link: "/services" }} />
       {navListItems.map(({ label, icon, link }, key) => (
@@ -242,11 +242,11 @@ function NavList() {
           href={link}
           variant="small"
           color="gray"
-          className="font-bold text-lg text-blue-gray-500 "
+          className="font-medium text-lg text-black px-0"
         >
-          <MenuItem className="flex items-center gap-2 lg:rounded-full h-[50px]">
+          <MenuItem className="flex items-center gap-2 lg:rounded-full h-[50px px-0">
             {React.createElement(icon, { className: "h-[18px] w-[18px]" })}
-            <span className="text-gray-900">{label}</span>
+            <span className="text-gray-900 ">{label}</span>
           </MenuItem>
         </Typography>
       ))}
@@ -267,28 +267,32 @@ const ComplexNavbar = () => {
   }, []);
 
   return (
-    <Navbar className="mx-auto w-full max-w-7xl p-y-8 lg:rounded-full lg:pl-8">
-      <div className="relative mx-auto flex items-center w-full h-[70px] justify-between text-black">
-        <a href="#" className="flex items-center font-bold text-lg ">
-          ART METAL FRANCE
-        </a>
-        <div className="hidden lg:block">
-          <NavList />
+    <div className="flex w-full justify-center items-center ">
+      <Navbar className=" shadow-none px-0  rounded-none ">
+        <div className="w-full px-0 ">
+          <div className="relative flex items-center w-full h-[50px] justify-between text-black px-0">
+            <a href="#" className="flex items-center font-medium text-lg ">
+            ART METAL FRANCE
+          </a>
+          <div className="hidden lg:block ">
+            <NavList />
+          </div>
+          <IconButton
+            size="sm"
+            color="blue-gray"
+            variant="text"
+            onClick={toggleIsNavOpen}
+            className="ml-auto mr-2 lg:hidden"
+          >
+            <Bars2Icon className="h-6 w-6" />
+          </IconButton>
         </div>
-        <IconButton
-          size="sm"
-          color="blue-gray"
-          variant="text"
-          onClick={toggleIsNavOpen}
-          className="ml-auto mr-2 lg:hidden"
-        >
-          <Bars2Icon className="h-6 w-6" />
-        </IconButton>
       </div>
       <MobileNav open={isNavOpen} className="overflow-scroll">
         <NavList />
       </MobileNav>
     </Navbar>
+    </div>
   );
 }
 
