@@ -1,6 +1,14 @@
 // BlogSlider.tsx
 import React, { useState, useEffect } from 'react';
-import './style.css';
+import './BodyHeader.css';
+import {
+    BodyHeaderImage1,
+    BodyHeaderImage2,
+    BodyHeaderImage3,
+    BodyHeaderImage4,
+    BodyHeaderImage5,
+    BodyHeaderImage6,
+ } from '../../assets';
 
 interface BlogSlide {
     imgSrc: string;
@@ -11,22 +19,40 @@ interface BlogSlide {
 
 const blogSlides: BlogSlide[] = [
     {
-        imgSrc: "https://res.cloudinary.com/muhammederdem/image/upload/q_60/v1535759872/kuldar-kalvik-799168-unsplash.webp",
+        imgSrc: BodyHeaderImage1,
         code: "26 December 2019 1",
         title: "Lorem Ipsum Dolor 1",
         text: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae voluptate repellendus magni illo ea animi? 1",
     },
     {
-        imgSrc: "https://res.cloudinary.com/muhammederdem/image/upload/q_60/v1535759871/jason-leung-798979-unsplash.webp",
+        imgSrc: BodyHeaderImage2,
         code: "26 December 2019 2",
         title: "Lorem Ipsum Dolor 2",
         text: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae voluptate repellendus magni illo ea animi? 2",
     },
     {
-        imgSrc: "https://res.cloudinary.com/muhammederdem/image/upload/q_60/v1535759871/alessandro-capuzzi-799180-unsplash.webp",
+        imgSrc: BodyHeaderImage3,
         code: "26 December 2019 3",
         title: "Lorem Ipsum Dolor 3",
         text: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae voluptate repellendus magni illo ea animi? 3",
+    },
+    {
+        imgSrc: BodyHeaderImage4,
+        code: "26 December 2019 4",
+        title: "Lorem Ipsum Dolor 4",
+        text: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae voluptate repellendus magni illo ea animi? 4",
+    },
+    {
+        imgSrc: BodyHeaderImage5,
+        code: "26 December 2019 5",
+        title: "Lorem Ipsum Dolor 5",
+        text: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae voluptate repellendus magni illo ea animi? 5",
+    },
+    {
+        imgSrc: BodyHeaderImage6,
+        code: "26 December 2019 6",
+        title: "Lorem Ipsum Dolor 6",
+        text: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae voluptate repellendus magni illo ea animi? 6",
     },
 ];
 

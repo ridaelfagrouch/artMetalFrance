@@ -159,7 +159,7 @@ function NavListMenu({ navListData, navListItem }: NavListMenuProps) {
         <div key={categoryIndex} className="flex flex-col gap-4">
           {category.map(({ id, category, description }) => (
             <a href="#" key={id} className="hover:bg-gray-100 rounded-lg transition-colors">
-              <MenuItem className="flex flex-col items-start">
+              <MenuItem className="flex flex-col items-start ">
                 <Typography variant="h6" color="blue-gray" className="mb-1">
                   {category}
                 </Typography>
@@ -179,11 +179,11 @@ function NavListMenu({ navListData, navListItem }: NavListMenuProps) {
       {/* Desktop version */}
       <Menu allowHover open={isMenuOpen} handler={setIsMenuOpen} className="hidden lg:block">
         <MenuHandler>
-          <Typography as="div" variant="small" className="font-normal ">
-            <MenuItem className="hidden items-center gap-4 font-medium text-black lg:flex lg:rounded-full px-0">
+          <Typography as="div" variant="small" >
+            <MenuItem className="hidden items-center gap-2 text-black lg:flex lg:rounded-full px-2">
               <a href={navListItem?.link} className="flex items-center gap-2">
                 {React.createElement(navListItem?.icon, { className: "h-[18px] w-[18px] text-black" })}
-                <span className="text-lg font-medium">{navListItem?.label}</span>
+                <span className=" font-medium">{navListItem?.label}</span>
               </a>
               <ChevronDownIcon
                 strokeWidth={2}
@@ -213,7 +213,7 @@ function NavListMenu({ navListData, navListItem }: NavListMenuProps) {
         >
           <a href={navListItem?.link} className="flex items-center gap-2">
             {React.createElement(navListItem?.icon, { className: "h-[18px] w-[18px] text-black" })}
-            <span className="text-lg font-bold">{navListItem?.label}</span>
+            <span className="text-md font-bold">{navListItem?.label}</span>
           </a>
           <ChevronDownIcon
             strokeWidth={2}
@@ -241,12 +241,11 @@ function NavList() {
           as="a"
           href={link}
           variant="small"
-          color="gray"
-          className="font-medium text-lg text-black px-0"
+          className=" text-black "
         >
-          <MenuItem className="flex items-center gap-2 lg:rounded-full h-[50px px-0">
+          <MenuItem className="flex items-center gap-2 lg:rounded-full  px-2">
             {React.createElement(icon, { className: "h-[18px] w-[18px]" })}
-            <span className="text-gray-900 ">{label}</span>
+            <span className="text-black font-medium ">{label}</span>
           </MenuItem>
         </Typography>
       ))}
@@ -267,7 +266,7 @@ const ComplexNavbar = () => {
   }, []);
 
   return (
-    <div className="flex w-full justify-center items-center ">
+    <div className="flex w-full justify-center items-center fixed top-0 z-50 bg-white">
       <Navbar className=" shadow-none px-0  rounded-none ">
         <div className="w-full px-0 ">
           <div className="relative flex items-center w-full h-[50px] justify-between text-black px-0">
@@ -279,7 +278,7 @@ const ComplexNavbar = () => {
           </div>
           <IconButton
             size="sm"
-            color="blue-gray"
+            color="black"
             variant="text"
             onClick={toggleIsNavOpen}
             className="ml-auto mr-2 lg:hidden"
