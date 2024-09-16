@@ -1,4 +1,3 @@
-import React from 'react';
 import './Expertises.css';
 import ExpertisesCard from './ui/ExpertisesCard';
 

@@ -159,11 +159,27 @@ function NavListMenu({ navListData, navListItem }: NavListMenuProps) {
         <div key={categoryIndex} className="flex flex-col gap-4">
           {category.map(({ id, category, description }) => (
             <a href="#" key={id} className="hover:bg-gray-100 rounded-lg transition-colors">
-              <MenuItem className="flex flex-col items-start ">
-                <Typography variant="h6" color="blue-gray" className="mb-1">
+              <MenuItem
+                className="flex flex-col items-start"
+                placeholder=""
+                onPointerEnterCapture={() => {}}
+                onPointerLeaveCapture={() => {}}
+              >
+                <Typography
+                  variant="h6"
+                  color="blue-gray"
+                  className="mb-1"
+                  placeholder=""
+                  onPointerEnterCapture={() => {}}
+                  onPointerLeaveCapture={() => {}}
+                >
                   {category}
                 </Typography>
-                <Typography variant="small" color="gray" className="font-normal">
+                <Typography variant="small" color="gray" className="font-normal"
+                  placeholder=""
+                  onPointerEnterCapture={() => { }}
+                  onPointerLeaveCapture={() => { }}
+                >
                   {description}
                 </Typography>
               </MenuItem>
@@ -177,10 +193,19 @@ function NavListMenu({ navListData, navListItem }: NavListMenuProps) {
   return (
     <React.Fragment>
       {/* Desktop version */}
-      <Menu allowHover open={isMenuOpen} handler={setIsMenuOpen} className="hidden lg:block">
+      <Menu allowHover open={isMenuOpen} handler={setIsMenuOpen}>
         <MenuHandler>
-          <Typography as="div" variant="small" >
-            <MenuItem className="hidden items-center gap-2 text-black lg:flex lg:rounded-full px-2">
+          <Typography as="div" variant="small"
+            placeholder=""
+            onPointerEnterCapture={() => { }}
+            onPointerLeaveCapture={() => { }}
+          >
+            <MenuItem
+              className="hidden items-center gap-2 text-black lg:flex lg:rounded-full px-2"
+              placeholder=""
+              onPointerEnterCapture={() => {}}
+              onPointerLeaveCapture={() => {}}
+            >
               <a href={navListItem?.link} className="flex items-center gap-2">
                 {React.createElement(navListItem?.icon, { className: "h-[18px] w-[18px] text-black" })}
                 <span className=" font-medium">{navListItem?.label}</span>
@@ -192,12 +217,20 @@ function NavListMenu({ navListData, navListItem }: NavListMenuProps) {
             </MenuItem>
           </Typography>
         </MenuHandler>
-        <MenuList className="hidden w-[64rem] overflow-visible lg:block p-4">
+        <MenuList
+          className="hidden w-[64rem] overflow-visible lg:block p-4"
+          placeholder=""
+          onPointerEnterCapture={() => {}}
+          onPointerLeaveCapture={() => {}}
+        >
           <Card
             color="blue"
             shadow={false}
             variant="gradient"
             className="col-span-3 grid  h-60 w-full place-items-center rounded-lg"
+            placeholder=""
+            onPointerEnterCapture={() => {}}
+            onPointerLeaveCapture={() => {}}
           >
             <RocketLaunchIcon strokeWidth={1} className="h-28 w-28" />
           </Card>
@@ -210,6 +243,9 @@ function NavListMenu({ navListData, navListItem }: NavListMenuProps) {
         <MenuItem
           className="flex items-center justify-between font-medium text-black  h-[50px]"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          placeholder=""
+          onPointerEnterCapture={() => { }}
+          onPointerLeaveCapture={() => { }}
         >
           <a href={navListItem?.link} className="flex items-center gap-2">
             {React.createElement(navListItem?.icon, { className: "h-[18px] w-[18px] text-black" })}
@@ -235,15 +271,23 @@ function NavList() {
     <ul className=" flex flex-col  lg:mb-0 lg:mt-0 lg:flex-row lg:items-center gap-5">
       <NavListMenu navListData={navProduitsListMenuItems} navListItem={{ label: "Produits", icon: CubeIcon, link: "/produits" }} />
       <NavListMenu navListData={navServicesListMenuItems} navListItem={{ label: "Services", icon: WrenchIcon, link: "/services" }} />
-      {navListItems.map(({ label, icon, link }, key) => (
+      {navListItems.map(({ label, icon, link }) => (
         <Typography
           key={label}
           as="a"
           href={link}
           variant="small"
           className=" text-black "
+          placeholder=""
+          onPointerEnterCapture={() => {}}
+          onPointerLeaveCapture={() => {}}
         >
-          <MenuItem className="flex items-center gap-2 lg:rounded-full  px-2">
+          <MenuItem
+            className="flex items-center gap-2 lg:rounded-full  px-2"
+            placeholder=""
+            onPointerEnterCapture={() => {}}
+            onPointerLeaveCapture={() => {}}
+          >
             {React.createElement(icon, { className: "h-[18px] w-[18px]" })}
             <span className="text-black font-medium ">{label}</span>
           </MenuItem>
@@ -267,7 +311,12 @@ const ComplexNavbar = () => {
 
   return (
     <div className="flex w-full justify-center items-center fixed top-0 z-50 bg-white">
-      <Navbar className=" shadow-none px-0  rounded-none max-w-[1300px]">
+      <Navbar
+        className=" shadow-none px-0  rounded-none max-w-[1300px]"
+        placeholder=""
+        onPointerEnterCapture={() => {}}
+        onPointerLeaveCapture={() => {}}
+      >
         <div className="w-full px-0 ">
           <div className="relative flex items-center w-full h-[50px] justify-between text-black px-0">
             <a href="#" className="flex items-center font-medium text-lg ">
@@ -282,6 +331,9 @@ const ComplexNavbar = () => {
             variant="text"
             onClick={toggleIsNavOpen}
             className="ml-auto mr-2 lg:hidden"
+            placeholder=""
+            onPointerEnterCapture={() => {}}
+            onPointerLeaveCapture={() => {}}
           >
             <Bars2Icon className="h-6 w-6" />
           </IconButton>
