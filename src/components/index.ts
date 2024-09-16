@@ -1,6 +1,7 @@
 import ComplexNavbar from "./Navbar/ComplexNavbar";
 import BodyHeader from "./BodyHearder/BodyHeader";
-import Partners from "./Parteners/Partners";
+import Serviceslider from "./Serviceslider/Serviceslider";
 import About from "./About/About";
+import Expertises from "./Expertises/Expertises";
 
-export { ComplexNavbar, BodyHeader, Partners, About };
+export { ComplexNavbar, BodyHeader, Serviceslider, About, Expertises };

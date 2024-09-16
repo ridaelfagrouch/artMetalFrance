@@ -1,6 +1,6 @@
 import './App.css'
 import { BrowserRouter} from 'react-router-dom'
-import { ComplexNavbar, BodyHeader, Partners, About } from './components'
+import { ComplexNavbar, BodyHeader, Serviceslider, About, Expertises } from './components'
 
 
 function App() {
@@ -10,10 +10,11 @@ function App() {
       <ComplexNavbar />
       <main className="flex-grow mt-[120px]">
         <div className="w-full flex flex-col justify-center items-center">
-          <div className="w-full max-w-[1320px] flex flex-col gap-14">
+          <div className="w-full max-w-[1300px] flex flex-col gap-14">
             <BodyHeader />
-            <Partners />
+            <Serviceslider />
             <About />
+            <Expertises />
           </div>
         </div>
       </main>

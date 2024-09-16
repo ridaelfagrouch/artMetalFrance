@@ -267,7 +267,7 @@ const ComplexNavbar = () => {
 
   return (
     <div className="flex w-full justify-center items-center fixed top-0 z-50 bg-white">
-      <Navbar className=" shadow-none px-0  rounded-none ">
+      <Navbar className=" shadow-none px-0  rounded-none max-w-[1300px]">
         <div className="w-full px-0 ">
           <div className="relative flex items-center w-full h-[50px] justify-between text-black px-0">
             <a href="#" className="flex items-center font-medium text-lg ">
