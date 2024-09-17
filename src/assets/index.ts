@@ -18,6 +18,13 @@ import BodySlider5 from "./images/bodySlider/bodySlider5.jpg";
 import BodySlider6 from "./images/bodySlider/bodySlider6.jpg";
 import BodySlider7 from "./images/bodySlider/bodySlider7.jpg";
 import BodySlider8 from "./images/bodySlider/bodySlider8.jpg";
+import BodySlider9 from "./images/bodySlider/bodySlider9.jpg";
+import BodySlider10 from "./images/bodySlider/bodySlider10.jpg";
+
+import ExpertisesImage1 from "./images/expertises/expertisesImage1.jpg";
+import ExpertisesImage2 from "./images/expertises/expertisesImage2.jpg";
+import ExpertisesImage3 from "./images/expertises/expertisesImage3.jpg";
+import ExpertisesImage4 from "./images/expertises/expertisesImage4.jpg";
 
 export {
   Logo,
@@ -37,4 +44,10 @@ export {
   BodySlider6,
   BodySlider7,
   BodySlider8,
+  BodySlider9,
+  BodySlider10,
+  ExpertisesImage1,
+  ExpertisesImage2,
+  ExpertisesImage3,
+  ExpertisesImage4,
 };

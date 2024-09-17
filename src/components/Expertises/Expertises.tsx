@@ -1,10 +1,16 @@
 import './Expertises.css';
 import ExpertisesCard from './ui/ExpertisesCard';
+import {
+    ExpertisesImage1,
+    ExpertisesImage2,
+    ExpertisesImage3,
+    ExpertisesImage4,
+ } from '../../assets';
 
 const ExpertisesCardData = [
     {
         alt: false,
-        photo: "https://storage.googleapis.com/chydlx/codepen/blog-cards/image-1.jpg",
+        photo: ExpertisesImage1,
         author: "ART METAL FRANCE",
         features: ["Sécurité Expertisée", "Qualité Garantie", "Service Rapide"],
         phone: "01 34 12 34 56",
@@ -15,7 +21,7 @@ const ExpertisesCardData = [
     },
     {
         alt: true,
-        photo: "https://storage.googleapis.com/chydlx/codepen/blog-cards/image-2.jpg",
+        photo: ExpertisesImage2,
         author: "ART METAL FRANCE",
         features: ["Artisanat Durable", "Créations Uniques", "Service Rapide", "Élégance et Qualité"],
         phone: "01 34 12 34 56",
@@ -25,7 +31,7 @@ const ExpertisesCardData = [
     },
     {
         alt: false,
-        photo: "https://storage.googleapis.com/chydlx/codepen/blog-cards/image-1.jpg",
+        photo: ExpertisesImage3,
         author: "ART METAL FRANCE",
         features: ["Éco-Efficacité", "Économie d'énergie", "Qualité Certifiée", "Innovation Durable"],
         phone: "01 34 12 34 56",
@@ -36,7 +42,7 @@ const ExpertisesCardData = [
     },
     {
         alt: true,
-        photo: "https://storage.googleapis.com/chydlx/codepen/blog-cards/image-2.jpg",
+        photo: ExpertisesImage4,
         author: "ART METAL FRANCE",
         features: ["Technologie Avancée", "Sécurité Expertisée", "Service Rapide", "Installation Expert"],
         phone: "01 34 12 34 56",

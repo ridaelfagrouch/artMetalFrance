@@ -12,6 +12,8 @@ import {
   BodySlider6,
   BodySlider7,
   BodySlider8,
+  BodySlider9,
+  BodySlider10,
   
 } from "../../assets";
 
@@ -75,6 +77,12 @@ const Serviceslider = () => {
     {
       imgSrc: BodySlider8,
     },
+    {
+      imgSrc: BodySlider9,
+    },
+    {
+      imgSrc: BodySlider10,
+    }
   ];
 
   return (
