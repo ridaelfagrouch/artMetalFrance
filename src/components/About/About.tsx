@@ -73,7 +73,7 @@ const About = () => {
                             </div>
                             <div className="btn-box">
                                 <a href="#" className=" btn-style-one">
-                                    Nous Contacter
+                                    Contactez-nous
                                 </a>
                             </div>
                         </div>
