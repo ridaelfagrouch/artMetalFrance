@@ -15,7 +15,7 @@ const Contact = () => {
                     </p>
                     <div className=" btn-header btn-box">
                         <a href="#" className=" btn-style-one">
-                            Contact Us
+                            Nous Contacter
                         </a>
                     </div>
                 </div>

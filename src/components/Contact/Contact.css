@@ -1,20 +1,7 @@
-/* Header.css */
 
-body {
-  font-family: 'Raleway', sans-serif;
-}
-
-/* a {
-  text-decoration: none !important;
-  cursor: pointer !important;
-}
-
-a:focus {
-  outline: 0;
-} */
 
 p {
-  font-family: 'Raleway', sans-serif;
+  
   font-size: 16px;
   line-height: 28px;
   font-weight: 500;
@@ -22,7 +9,7 @@ p {
 }
 
 h1 {
-  font-family: 'Raleway', sans-serif;
+
   font-style: normal;
   font-size: 70px;
   line-height: 80px;
@@ -51,11 +38,11 @@ h1 {
 
 .header-body h1 {
   font-size: 40px;
-  line-height: 60px;
+  line-height: 55px;
   text-transform: uppercase;
   font-weight: normal;
   /* margin-bottom: 20px; */
-  margin-top: 30px;
+  margin-top: 35px;
 }
 
 .header-body h1 span {
@@ -70,7 +57,7 @@ h1 {
 }
 
 .header-body .btn-header {
-  margin-top: 20px;
+  margin-top: 5px;
 }
 
 .btn-style-one {

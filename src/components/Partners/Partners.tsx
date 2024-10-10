@@ -31,13 +31,13 @@ const Partners = () => {
             <div className='PartnersBody'> 
                 <div className='title-body'>
                     <div className='PartnersHeader'>
-                        <h3>TEAM.</h3>
-                        <h3>CUSTOMER.</h3>
-                        <h3>COMMUNITY</h3>
+                        <h3>ÉQUIPE.</h3>
+                        <h3>CLIENT.</h3>
+                        <h3>COMMUNAUTÉ.</h3>
                     </div>
                     <div className='title-subBody'>
-                        <h2>We Work With the Best Partners</h2>
-                        <p>While we are at the forefront of and specialize in design-build, we are very familiar with a number of delivery methods and are confident we can find the process that will best help you meet your goals.</p>
+                        <h2>Nous travaillons avec les meilleurs partenaires.</h2>
+                        <p>Bien que nous soyons à la pointe et spécialisés dans le design-build, nous connaissons bien plusieurs méthodes de livraison et sommes convaincus de pouvoir trouver le processus qui vous aidera le mieux à atteindre vos objectifs.</p>
                     </div>
                 </div>
                 <div className='PartnersLogos'>

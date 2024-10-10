@@ -5,5 +5,6 @@ import About from "./About/About";
 import Expertises from "./Expertises/Expertises";
 import Partners from "./Partners/Partners";
 import Contact from "./Contact/Contact";
+import Questions from "./Questions/Questions";
 
-export { ComplexNavbar, BodyHeader, Serviceslider, About, Expertises, Partners, Contact };
+export { ComplexNavbar, BodyHeader, Serviceslider, About, Expertises, Partners, Contact, Questions };
