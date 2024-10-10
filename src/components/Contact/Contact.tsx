@@ -6,8 +6,8 @@ const Contact = () => {
             <div className="container">
                 <div className="row header-body align-center section-separator">
                     <h1 className="wow fadeInUp">
-                        We are creator of <br />
-                        <span>Modern websites.</span>
+                        Experts en   <br />
+                        <span>Rénovation et Réhabilitation de Bâtiments.</span>
                     </h1>
                     <p className="wow fadeInUp" data-wow-delay="0.3s">
                         Lorem ipsum dolor sit amet velit consectetur adipiscing elit eleifend.<br />
