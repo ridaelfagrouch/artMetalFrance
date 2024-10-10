@@ -1,8 +1,8 @@
 .slide {
   margin: 0px 20px;
-  border-radius: 10px;
+  /* border-radius: 10px; */
   overflow: hidden;
-  border: 1px solid #644444;
+  /* border: 1px solid #644444; */
 
   position: relative;
   display: block;

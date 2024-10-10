@@ -8,7 +8,7 @@ import {
     BodyHeaderImage4,
     BodyHeaderImage5,
     BodyHeaderImage6,
- } from '../../assets';
+} from '../../assets';
 
 interface BlogSlide {
     imgSrc: string;
@@ -95,35 +95,35 @@ const BodyHeader = () => {
 
     return (
         <div className='blog-slider-container'>
-        <div className="blog-slider ">
-            <div className="swiper-wrapper">
-                {blogSlides.map((slide, index) => (
-                    <div
-                        key={index}
-                        className={`blog-slider__item ${index === currentSlide ? 'active' : ''} ${isTransitioning ? 'transitioning' : ''}`}
-                    >
-                        <div className="blog-slider__img">
-                            <img src={slide.imgSrc} alt="" />
+            <div className="blog-slider">
+                <div className="swiper-wrapper">
+                    {blogSlides.map((slide, index) => (
+                        <div
+                            key={index}
+                            className={`blog-slider__item ${index === currentSlide ? 'active' : ''} ${isTransitioning ? 'transitioning' : ''}`}
+                        >
+                            <div className="blog-slider__img">
+                                <img src={slide.imgSrc} alt="" />
+                            </div>
+                            <div className="blog-slider__content">
+                                <span className="blog-slider__code">{slide.code}</span>
+                                <div className="blog-slider__title">{slide.title}</div>
+                                <div className="blog-slider__text">{slide.text}</div>
+                                <a href="#" className="blog-slider__button">READ MORE</a>
+                            </div>
                         </div>
-                        <div className="blog-slider__content">
-                            <span className="blog-slider__code">{slide.code}</span>
-                            <div className="blog-slider__title">{slide.title}</div>
-                            <div className="blog-slider__text">{slide.text}</div>
-                            <a href="#" className="blog-slider__button">READ MORE</a>
-                        </div>
-                    </div>
-                ))}
+                    ))}
+                </div>
+                <div className="blog-slider__pagination">
+                    {blogSlides.map((_, index) => (
+                        <span
+                            key={index}
+                            className={`blog-slider__pagination-bullet ${index === currentSlide ? 'active' : ''}`}
+                            onClick={() => goToSlide(index)}
+                        ></span>
+                    ))}
+                </div>
             </div>
-            <div className="blog-slider__pagination">
-                {blogSlides.map((_, index) => (
-                    <span
-                        key={index}
-                        className={`blog-slider__pagination-bullet ${index === currentSlide ? 'active' : ''}`}
-                        onClick={() => goToSlide(index)}
-                    ></span>
-                ))}
-            </div>
-        </div>
         </div>
     );
 };
