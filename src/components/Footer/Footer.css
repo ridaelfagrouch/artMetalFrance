@@ -207,3 +207,14 @@ ul {
   font-size: 14px;
   color: #878787;
 }
+
+.dev-container p{
+  font-size: 14px;
+  color: #878787;
+}
+
+.dev-container p a{
+  color: #ff5e14;
+  cursor: pointer;
+  margin-left: 5px;
+}

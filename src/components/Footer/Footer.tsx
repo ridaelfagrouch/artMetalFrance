@@ -86,21 +86,28 @@ const Footer = () => {
             </div>
             <div className="copyright-area">
                 <div className="copyright-container">
-                        <div className="text-lg-left">
-                            <div className="copyright-text">
-                                <p>Copyright &copy; 2024, All Right Reserved</p>
-                            </div>
-                        </div>
-                        <div className="text-right">
-                            <div className="footer-menu">
-                                <ul>
-                                    {footerMenuItems.map((item, index) => (
-                                        <li key={index}><a href={item.link}>{item.name}</a></li>
-                                    ))}
-                                </ul>
-                            </div>
+                    <div className='dev-container'>
+                        <p>Développement
+                            <a href='https://www.linkedin.com/in/rida-el-fagrouch-13b566142/' target='_blank' >
+                                rel-fagr
+                            </a>
+                        </p>
+                    </div>
+                    <div className="text-lg-left">
+                        <div className="copyright-text">
+                            <p>Copyright &copy; 2024, All Right Reserved</p>
                         </div>
                     </div>
+                    <div className="text-right">
+                        <div className="footer-menu">
+                            <ul>
+                                {footerMenuItems.map((item, index) => (
+                                    <li key={index}><a href={item.link}>{item.name}</a></li>
+                                ))}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
         </footer>
     );
