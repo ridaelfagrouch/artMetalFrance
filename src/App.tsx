@@ -8,7 +8,9 @@ import {
   Expertises,
   Partners,
   Contact,
-  Questions
+  Questions,
+  Quote,
+  Footer
 } from './components';
 
 import { ReactNode } from 'react';
@@ -32,6 +34,8 @@ function App() {
     { id: 'partners', Component: Partners, className: classStyle },
     { id: 'contact', Component: Contact, className: '' },
     { id: 'questions', Component: Questions, className: classStyle },
+    { id: 'quote', Component: Quote, className: '' },
+    { id: 'footer', Component: Footer, className: classStyle }
   ];
 
   return (
