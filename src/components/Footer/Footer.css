@@ -218,6 +218,7 @@ ul {
 
 .dev-container {
   width: 200px;
+  text-align: start;
 }
 
 .dev-container p{
