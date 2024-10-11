@@ -54,33 +54,43 @@ const Serviceslider = () => {
 
   const slides = [
     {
+      id: 1,
       imgSrc: BodySlider1,
     },
     {
+      id: 2,
       imgSrc: BodySlider2,
     },
     {
+      id: 3,
       imgSrc: BodySlider3,
     },
     {
+      id: 4,
       imgSrc: BodySlider4,
     },
     {
+      id: 5,
       imgSrc: BodySlider5,
     },
     {
+      id: 6,
       imgSrc: BodySlider6,
     },
     {
+      id: 7,
       imgSrc: BodySlider7,
     },
     {
+      id: 8,
       imgSrc: BodySlider8,
     },
     {
+      id: 9,
       imgSrc: BodySlider9,
     },
     {
+      id: 10,
       imgSrc: BodySlider10,
     }
   ];
@@ -88,8 +98,8 @@ const Serviceslider = () => {
   return (
     <div className="container">
       <Slider {...settings} className="customer-logos">
-        {slides.map((slide, index) => (
-            <Slide key={index} imgSrc={slide.imgSrc}/>
+        {slides.map((slide) => (
+            <Slide key={slide.id} imgSrc={slide.imgSrc}/>
         ))}
       </Slider>
     </div>

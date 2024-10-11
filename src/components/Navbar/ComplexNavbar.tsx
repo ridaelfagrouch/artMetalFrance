@@ -7,18 +7,17 @@ import {
   MenuHandler,
   MenuList,
   MenuItem,
-  Card,
   IconButton,
   Collapse
 } from "@material-tailwind/react";
 import {
   CubeIcon,
   WrenchIcon,
-  BuildingStorefrontIcon,
+  UserGroupIcon,
   EnvelopeIcon,
   ChevronDownIcon,
-  RocketLaunchIcon,
   Bars2Icon,
+  PhotoIcon
 } from "@heroicons/react/24/solid";
 
 // nav list menu
@@ -85,49 +84,6 @@ const navProduitsListMenuItems = [
   ]
 ];
 
-const navServicesListMenuItems = [
-  [
-    {
-      id: 1,
-      category: "Famille : Portes métalliques",
-      description:
-        "Learn how to use @material-tailwind/html, packed with rich components and widgets.",
-    },
-    {
-      id: 2,
-      category: "⁠Famille : Garde-corps",
-      description:
-        "Learn how to use @material-tailwind/react, packed with rich components for React.",
-    },
-    {
-      id: 3,
-      category: "⁠Famille : Mains courantes",
-      description:
-        "A complete set of UI Elements for building faster websites in less time.",
-    },
-  ],
-  [
-    {
-      id: 4,
-      category: "⁠Famille : Clôtures et portails métalliques",
-      description:
-        "A complete set of UI Elements for building faster websites in less time.",
-    },
-    {
-      id: 5,
-      category: "⁠Famille : Escaliers métalliques",
-      description:
-        "A complete set of UI Elements for building faster websites in less time.",
-    },
-    {
-      id: 6,
-      category: "Famille : Accessoires de fixation et quincaillerie",
-      description:
-        "A complete set of UI Elements for building faster websites in less time.",
-    },
-  ],
-];
-
 interface NavListMenuProps {
   navListData: Array<{ id: number; category: string; description: string }[]>;
   navListItem?: { label: string; icon: React.ElementType; link: string }
@@ -136,15 +92,30 @@ interface NavListMenuProps {
 // nav list component
 const navListItems = [
   {
-    label: "Marchés",
-    icon: BuildingStorefrontIcon,
-    link: "/marches"
+    label: "qui sommes-nous",
+    icon: UserGroupIcon,
+    link: "#about"
+  },
+  {
+    label: "Expertise",
+    icon: WrenchIcon,
+    link: "#expertises"
+  },
+  {
+    label: "Produits",
+    icon: CubeIcon,
+    link: "#produits"
+  },
+  {
+    label: "Réalisations",
+    icon: PhotoIcon,
+    link: "#realisations"
   },
   {
     label: "Contact",
     icon: EnvelopeIcon,
-    link: "/contact"
-  },
+    link: "#contact"
+  }
 ];
 
 function NavListMenu({ navListData, navListItem }: NavListMenuProps) {
@@ -154,9 +125,9 @@ function NavListMenu({ navListData, navListItem }: NavListMenuProps) {
   const renderItems = (
     <div className="flex flex-col lg:flex-row gap-2 lg:gap-8 px-0">
       {navListData.map((category, categoryIndex) => (
-        <div key={categoryIndex} className="flex flex-col gap-4">
+        <div key={categoryIndex} className="flex flex-col gap-4 justify-between">
           {category.map(({ id, category, description }) => (
-            <a href="#" key={id} className="hover:bg-gray-100 rounded-lg transition-colors duration-300">
+            <a href="#" key={id} className="hover:bg-gray-100 rounded-lg h-full transition-colors duration-300">
               <MenuItem className="flex flex-col items-start" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                 <Typography variant="h6" color="blue-gray" className="mb-1" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                   {category}
@@ -191,9 +162,9 @@ function NavListMenu({ navListData, navListItem }: NavListMenuProps) {
           </Typography>
         </MenuHandler>
         <MenuList className="hidden w-[64rem] overflow-visible lg:block p-4" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
-          <Card color="blue" shadow={false} variant="gradient" className="col-span-3 grid h-60 w-full place-items-center rounded-lg" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
+          {/* <Card color="blue" shadow={false} variant="gradient" className="col-span-3 grid h-60 w-full place-items-center rounded-lg" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
             <RocketLaunchIcon strokeWidth={1} className="h-28 w-28" />
-          </Card>
+          </Card> */}
           {renderItems}
         </MenuList>
       </Menu>
@@ -225,15 +196,17 @@ function NavListMenu({ navListData, navListItem }: NavListMenuProps) {
 function NavList() {
   return (
     <ul className="flex flex-col lg:mb-0 lg:mt-0 lg:flex-row lg:items-center gap-5 px-0">
-      <NavListMenu navListData={navProduitsListMenuItems} navListItem={{ label: "Produits", icon: CubeIcon, link: "/produits" }} />
-      <NavListMenu navListData={navServicesListMenuItems} navListItem={{ label: "Services", icon: WrenchIcon, link: "/services" }} />
       {navListItems.map(({ label, icon, link }) => (
-        <Typography key={label} as="a" href={link} variant="small" className="text-black"  placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
-          <MenuItem className="flex items-center gap-2 lg:rounded-full px-2" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
-            {React.createElement(icon, { className: "h-[18px] w-[18px]" })}
-            <span className="text-black font-medium">{label}</span>
-          </MenuItem>
-        </Typography>
+        label === "Produits" ? (
+          <NavListMenu key={label} navListData={navProduitsListMenuItems} navListItem={{ label, icon, link }} />
+        ) : (
+          <Typography key={label} as="a" href={link} variant="small" className="text-black" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
+            <MenuItem className="flex items-center gap-2 lg:rounded-full px-2" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
+              {React.createElement(icon, { className: "h-[18px] w-[18px]" })}
+              <span className="text-black font-medium">{label}</span>
+            </MenuItem>
+          </Typography>
+        )
       ))}
     </ul>
   );
@@ -255,7 +228,7 @@ const ComplexNavbar = () => {
     <div className="flex w-full justify-center items-center fixed top-0 z-50 bg-white px-3">
       <Navbar className="shadow-none px-0 rounded-none max-w-[1300px]" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
         <div className="w-full px-0">
-          <div className="relative flex items-center w-full h-[50px] justify-between text-black px-0">
+          <div className="relative flex items-center w-full h-[40px] justify-between text-black px-0">
             <a href="#" className="flex items-center font-medium text-lg pl-2">
               ART METAL FRANCE
             </a>

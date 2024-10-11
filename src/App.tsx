@@ -1,44 +1,53 @@
-import './App.css'
-import { BrowserRouter} from 'react-router-dom'
-import { ComplexNavbar, BodyHeader, Serviceslider, About, Expertises, Partners, Contact, Questions } from './components'
+import './App.css';
+import { BrowserRouter } from 'react-router-dom';
+import {
+  ComplexNavbar,
+  BodyHeader,
+  Serviceslider,
+  About,
+  Expertises,
+  Partners,
+  Contact,
+  Questions
+} from './components';
 
+import { ReactNode } from 'react';
+
+const Section = ({ children, className = '' }: { children: ReactNode, className?: string }) => (
+  <div className={`w-full flex justify-center items-center ${className}`}>
+    <div className="w-full h-full max-w-[1300px] flex flex-col">
+      {children}
+    </div>
+  </div>
+);
 
 function App() {
+  const classStyle = "bg-gray-100";
+
+  const sections = [
+    { id: 'body-header', Component: BodyHeader, className: '' },
+    { id: 'service-slider', Component: Serviceslider, className: '' },
+    { id: 'about', Component: About, className: classStyle },
+    { id: 'expertises', Component: Expertises, className: '' },
+    { id: 'partners', Component: Partners, className: classStyle },
+    { id: 'contact', Component: Contact, className: '' },
+    { id: 'questions', Component: Questions, className: classStyle },
+  ];
 
   return (
     <BrowserRouter>
       <ComplexNavbar />
       <main className="flex-grow mt-[120px]">
         <div className="w-full flex flex-col justify-center items-center gap-14">
-          <div className="w-full max-w-[1300px] flex flex-col gap-14">
-            <BodyHeader />
-            <Serviceslider />
-          </div>
-          <div className='w-full flex justify-center items-center bg-gray-100'>
-            <div className="w-full h-full max-w-[1300px] flex flex-col ">
-              <About />
-            </div>
-          </div>
-          <div className="w-full max-w-[1300px] flex flex-col gap-14">
-            <Expertises />
-          </div>
-          <div className='w-full min-h-[500px] flex justify-center items-center bg-gray-100 py-[10px]'>
-            <div className="w-full h-full max-w-[1300px] flex flex-col  ">
-              <Partners />
-            </div>
-          </div>
-          <div className="w-full max-w-[1300px] flex flex-col gap-14">
-            <Contact />
-          </div>
-          <div className='w-full min-h-[500px] flex justify-center items-center bg-gray-100 py-[10px]'>
-            <div className="w-full h-full max-w-[1300px] flex flex-col  ">
-              <Questions />
-            </div>
-          </div>
+          {sections.map(({ id, Component, className }) => (
+            <Section key={id} className={className}>
+              <Component />
+            </Section>
+          ))}
         </div>
       </main>
     </BrowserRouter>
-  )
+  );
 }
 
-export default App
+export default App;

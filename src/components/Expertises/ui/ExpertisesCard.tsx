@@ -32,7 +32,7 @@ const ExpertisesCard: React.FC<ExpertisesCardProps> = ({
                 <div className="photo" style={{ backgroundImage: `url(${photo})` }}></div>
                 <ul className="details">
                     <li className="author">{author}</li>
-                    <a href="#" className="blog-slider__button"><FontAwesomeIcon icon={faPhone} />  {phone}</a>
+                    <button className="blog-slider__button" onClick={() => window.location.href = `tel:${phone}`}><FontAwesomeIcon icon={faPhone} />  {phone}</button>
                 </ul>
             </div>
             <div className="description">

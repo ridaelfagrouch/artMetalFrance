@@ -34,7 +34,7 @@ const AboutSpecialist = [
 
 const About = () => {
     return (
-        <section className="about-section">
+        <section className="about-section" id="about">
             <div className="containe h-full">
                 <div className="flex w-full h-full  ">
                     <div className="content-column  order-2 w-1/2 h-full">
@@ -62,8 +62,8 @@ const About = () => {
                                 <li>Sed do eiusmod tempor incididunt</li>
                             </ul>
                             <div className="specialist-box">
-                                {AboutSpecialist.map(({ title, icon }, key) => (
-                                    <div key={key} className="single-specialist-container ">
+                                {AboutSpecialist.map(({ title, icon }) => (
+                                    <div key={title} className="single-specialist-container ">
                                         <div className="single-specialist">{icon}</div>
                                         <div>
                                             <h3>{title}</h3>
@@ -72,9 +72,9 @@ const About = () => {
                                 ))}
                             </div>
                             <div className="btn-box">
-                                <a href="#" className=" btn-style-one">
+                                <button className="btn-style-one" onClick={() => window.location.href = 'mailto:contact@example.com'}>
                                     Contactez-nous
-                                </a>
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -82,14 +82,14 @@ const About = () => {
                     <div className="image-column w-1/2 h-full">
                         <div className="inner-column wow fadeInLeft ">
                             <figure className="image-1">
-                                <a href="#" className="lightbox-image" data-fancybox="images">
+                                <div className="lightbox-image" data-fancybox="images">
                                     <img src={AboutImage1} alt="" />
-                                </a>
+                                </div>
                             </figure>
                             <figure className="image-2 ">
-                                <a href="#" className="lightbox-image" data-fancybox="images">
+                                <div className="lightbox-image" data-fancybox="images">
                                     <img src={AboutImage2} alt="" />
-                                </a>
+                                </div>
                             </figure>
                         </div>
                     </div>

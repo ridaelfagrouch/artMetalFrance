@@ -1,9 +1,6 @@
 .slide {
   margin: 0px 20px;
-  /* border-radius: 10px; */
   overflow: hidden;
-  /* border: 1px solid #644444; */
-
   position: relative;
   display: block;
   box-sizing: border-box;
@@ -16,6 +13,7 @@
   -ms-touch-action: pan-y;
   touch-action: pan-y;
   -webkit-tap-highlight-color: transparent;
+  border-radius: 5px;
 
 }
 

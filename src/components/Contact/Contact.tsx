@@ -2,7 +2,7 @@ import './Contact.css';
 
 const Contact = () => {
     return (
-        <header className="header" id="header">
+        <section className="header" id="contact">
             <div className="container">
                 <div className="row header-body align-center section-separator">
                     <h1 className="wow fadeInUp">
@@ -14,13 +14,13 @@ const Contact = () => {
                         Mauris a eros ultrices nibh posuere velit.
                     </p>
                     <div className=" btn-header btn-box">
-                        <a href="#" className=" btn-style-one">
+                        <button className="btn-style-one" onClick={() => window.location.href = 'mailto:contact@example.com'}>
                             Contactez-nous
-                        </a>
+                        </button>
                     </div>
                 </div>
             </div>
-        </header>
+        </section>
     );
 };
 

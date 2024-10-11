@@ -54,15 +54,15 @@ const ExpertisesCardData = [
 
 const Expertises = () => {
     return (
-        <section className="expertises-section">
+        <section className="expertises-section" id="expertises">
             <div className='container-Title'>
                 <h2>Expertises</h2>
                 <div className='enderline'/>
             </div>
             <div className='ExpertisesBody'>
-                {ExpertisesCardData.map((card, index) => (
+                {ExpertisesCardData.map((card) => (
                     <ExpertisesCard
-                        key={index}
+                        key={card.title}
                         alt={card.alt}
                         photo={card.photo}
                         author={card.author}
