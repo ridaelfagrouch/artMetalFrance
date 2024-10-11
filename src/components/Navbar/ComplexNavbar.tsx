@@ -127,8 +127,8 @@ function NavListMenu({ navListData, navListItem }: NavListMenuProps) {
       {navListData.map((category, categoryIndex) => (
         <div key={categoryIndex} className="flex flex-col gap-4 justify-between">
           {category.map(({ id, category, description }) => (
-            <a href="#" key={id} className="hover:bg-gray-100 rounded-lg h-full transition-colors duration-300">
-              <MenuItem className="flex flex-col items-start" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
+            <a href="#" key={id} className="bg-gray-100 hover:bg-white  rounded-lg h-full transition-colors duration-300 ">
+              <MenuItem className="flex flex-col h-full items-start" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                 <Typography variant="h6" color="blue-gray" className="mb-1" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                   {category}
                 </Typography>
