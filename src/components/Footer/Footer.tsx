@@ -93,11 +93,6 @@ const Footer = () => {
                             </a>
                         </p>
                     </div>
-                    <div className="text-lg-left">
-                        <div className="copyright-text">
-                            <p>Copyright &copy; 2024, All Right Reserved</p>
-                        </div>
-                    </div>
                     <div className="text-right">
                         <div className="footer-menu">
                             <ul>
@@ -107,6 +102,11 @@ const Footer = () => {
                             </ul>
                         </div>
                     </div>
+                </div>
+            </div>
+            <div className="copyright-text-container">
+                <div className="copyright-text">
+                    <p>Copyright &copy; 2024, All Right Reserved</p>
                 </div>
             </div>
         </footer>
