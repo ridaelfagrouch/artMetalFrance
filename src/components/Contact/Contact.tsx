@@ -1,8 +1,9 @@
 import './Contact.css';
+import { ContactImage } from '../../assets';
 
 const Contact = () => {
     return (
-        <section className="header" id="contact">
+        <section className="header" id="contact" style={{ backgroundImage: `url(${ContactImage})` }}>
             <div className="container">
                 <div className="row header-body align-center section-separator">
                     <h1 className="wow fadeInUp">

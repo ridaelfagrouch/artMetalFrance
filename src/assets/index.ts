@@ -26,6 +26,8 @@ import ExpertisesImage2 from "./images/expertises/expertisesImage2.jpg";
 import ExpertisesImage3 from "./images/expertises/expertisesImage3.jpg";
 import ExpertisesImage4 from "./images/expertises/expertisesImage4.jpg";
 
+import ContactImage from "./images/contact/contactImage.jpg";
+
 export {
   Logo,
   BodyHeaderImage1,
@@ -50,4 +52,5 @@ export {
   ExpertisesImage2,
   ExpertisesImage3,
   ExpertisesImage4,
+  ContactImage, 
 };
