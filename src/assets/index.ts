@@ -52,5 +52,5 @@ export {
   ExpertisesImage2,
   ExpertisesImage3,
   ExpertisesImage4,
-  ContactImage, 
+  ContactImage,
 };

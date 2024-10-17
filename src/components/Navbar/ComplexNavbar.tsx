@@ -1,14 +1,13 @@
 import React from "react";
 import {
   Navbar,
-  MobileNav,
   Typography,
   Menu,
   MenuHandler,
   MenuList,
   MenuItem,
   IconButton,
-  Collapse
+  Collapse,
 } from "@material-tailwind/react";
 import {
   CubeIcon,
@@ -17,7 +16,7 @@ import {
   EnvelopeIcon,
   ChevronDownIcon,
   Bars2Icon,
-  PhotoIcon
+  PhotoIcon,
 } from "@heroicons/react/24/solid";
 
 // nav list menu
@@ -81,12 +80,12 @@ const navProduitsListMenuItems = [
       description:
         "A complete set of UI Elements for building faster websites in less time.",
     },
-  ]
+  ],
 ];
 
 interface NavListMenuProps {
   navListData: Array<{ id: number; category: string; description: string }[]>;
-  navListItem?: { label: string; icon: React.ElementType; link: string }
+  navListItem?: { label: string; icon: React.ElementType; link: string };
 }
 
 // nav list component
@@ -94,49 +93,74 @@ const navListItems = [
   {
     label: "qui sommes-nous",
     icon: UserGroupIcon,
-    link: "#about"
+    link: "#about",
   },
   {
     label: "Expertise",
     icon: WrenchIcon,
-    link: "#expertises"
+    link: "#expertises",
   },
   {
     label: "Produits",
     icon: CubeIcon,
-    link: "#produits"
+    link: "#produits",
   },
   {
     label: "Réalisations",
     icon: PhotoIcon,
-    link: "#realisations"
+    link: "#realisations",
   },
   {
     label: "Contact",
     icon: EnvelopeIcon,
-    link: "#contact"
-  }
+    link: "#contact",
+  },
 ];
 
-function NavListMenu({ navListData, navListItem }: NavListMenuProps) {
+function NavListMenu({ navListData, navListItem }: Readonly<NavListMenuProps>) {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
 
   const renderItems = (
     <div className="flex flex-col lg:flex-row gap-2 lg:gap-8 px-0">
-      {navListData.map((category, categoryIndex) => (
-        <div key={categoryIndex} className="flex flex-col gap-4 justify-between">
+      {navListData.map((category) => (
+        <div
+          key={`category-${category[0].id}`}
+          className="flex flex-col gap-4 justify-between"
+        >
           {category.map(({ id, category, description }) => (
-            <a href="#" key={id} className="bg-gray-100 hover:bg-white  rounded-lg h-full transition-colors duration-300 ">
-              <MenuItem className="flex flex-col h-full items-start" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
-                <Typography variant="h6" color="blue-gray" className="mb-1" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
+            <button
+              key={id}
+              className="bg-gray-100 hover:bg-white rounded-lg h-full transition-colors duration-300 text-left"
+            >
+              <MenuItem
+                className="flex flex-col h-full items-start"
+                placeholder={undefined}
+                onPointerEnterCapture={undefined}
+                onPointerLeaveCapture={undefined}
+              >
+                <Typography
+                  variant="h6"
+                  color="blue-gray"
+                  className="mb-1"
+                  placeholder={undefined}
+                  onPointerEnterCapture={undefined}
+                  onPointerLeaveCapture={undefined}
+                >
                   {category}
                 </Typography>
-                <Typography variant="small" color="gray" className="font-normal" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
+                <Typography
+                  variant="small"
+                  color="gray"
+                  className="font-normal"
+                  placeholder={undefined}
+                  onPointerEnterCapture={undefined}
+                  onPointerLeaveCapture={undefined}
+                >
                   {description}
                 </Typography>
               </MenuItem>
-            </a>
+            </button>
           ))}
         </div>
       ))}
@@ -148,43 +172,77 @@ function NavListMenu({ navListData, navListItem }: NavListMenuProps) {
       {/* Desktop version */}
       <Menu allowHover open={isMenuOpen} handler={setIsMenuOpen}>
         <MenuHandler>
-          <Typography as="div" variant="small" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
-            <MenuItem className="hidden items-center gap-2 text-black lg:flex lg:rounded-full px-2" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
-              <a href={navListItem?.link} className="flex items-center gap-2">
-                {navListItem?.icon && React.createElement(navListItem.icon, { className: "h-[18px] w-[18px] text-black" })}
-                <span className="font-medium">{navListItem?.label}</span>
+          <Typography
+            as="div"
+            variant="small"
+            className="font-medium"
+            placeholder={undefined}
+            onPointerEnterCapture={undefined}
+            onPointerLeaveCapture={undefined}
+          >
+            <MenuItem
+              className="hidden items-center gap-2 text-black lg:flex lg:rounded-full py-2 px-3"
+              placeholder={undefined}
+              onPointerEnterCapture={undefined}
+              onPointerLeaveCapture={undefined}
+            >
+              <a href={navListItem?.link} className="flex items-center gap-2 w-full">
+                {navListItem?.icon &&
+                  React.createElement(navListItem.icon, {
+                    className: "h-[18px] w-[18px]",
+                  })}
+                <span>{navListItem?.label}</span>
+                <ChevronDownIcon
+                  strokeWidth={2}
+                  className={`h-3 w-3 transition-transform ${isMenuOpen ? "rotate-180" : ""
+                    }`}
+                />
               </a>
-              <ChevronDownIcon
-                strokeWidth={2}
-                className={`h-3 w-3 transition-transform ${isMenuOpen ? "rotate-180" : ""}`}
-              />
             </MenuItem>
           </Typography>
         </MenuHandler>
-        <MenuList className="hidden w-[64rem] overflow-visible lg:block p-4" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
-          {/* <Card color="blue" shadow={false} variant="gradient" className="col-span-3 grid h-60 w-full place-items-center rounded-lg" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
-            <RocketLaunchIcon strokeWidth={1} className="h-28 w-28" />
-          </Card> */}
+        <MenuList
+          className="hidden w-[64rem] overflow-visible lg:block p-4"
+          placeholder={undefined}
+          onPointerEnterCapture={undefined}
+          onPointerLeaveCapture={undefined}
+        >
           {renderItems}
         </MenuList>
       </Menu>
 
       {/* Mobile version */}
-      <div className="lg:hidden h-full">
-        <MenuItem
-          className="flex items-center justify-between font-medium text-black h-[50px]"
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}        >
-          <a href={navListItem?.link} className="flex items-center gap-2">
-            {navListItem?.icon && React.createElement(navListItem.icon, { className: "h-[18px] w-[18px] text-black" })}
-            <span className="text-md font-bold">{navListItem?.label}</span>
-          </a>
-          <ChevronDownIcon
-            strokeWidth={2}
-            className={`h-3 w-3 transition-transform ${isMobileMenuOpen ? "rotate-180" : ""}`}
-          />
-        </MenuItem>
+      <div className="lg:hidden w-full">
+        <Typography
+          as="div"
+          variant="small"
+          className="font-medium w-full"
+          placeholder={undefined}
+          onPointerEnterCapture={undefined}
+          onPointerLeaveCapture={undefined}
+        >
+          <MenuItem
+            className="flex items-center justify-between text-black py-2 px-3 w-full"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            placeholder={undefined}
+            onPointerEnterCapture={undefined}
+            onPointerLeaveCapture={undefined}
+          >
+            <a href={navListItem?.link} className="flex items-center gap-2 w-full">
+              {navListItem?.icon &&
+                React.createElement(navListItem.icon, {
+                  className: "h-[18px] w-[18px] flex-shrink-0",
+                })}
+              <span className="truncate">{navListItem?.label}</span>
+            </a>
+            <ChevronDownIcon
+              strokeWidth={2}
+              className={`h-3 w-3 transition-transform ${isMobileMenuOpen ? "rotate-180" : ""}`}
+            />
+          </MenuItem>
+        </Typography>
         <Collapse open={isMobileMenuOpen}>
-          <div className="ml-6 flex w-full flex-col gap-1">
+          <div className="ml-6 flex w-full flex-col gap-1 max-h-[50vh] overflow-y-auto">
             {renderItems}
           </div>
         </Collapse>
@@ -195,19 +253,40 @@ function NavListMenu({ navListData, navListItem }: NavListMenuProps) {
 
 function NavList() {
   return (
-    <ul className="flex flex-col lg:mb-0 lg:mt-0 lg:flex-row lg:items-center gap-5 px-0">
-      {navListItems.map(({ label, icon, link }) => (
+    <ul className="flex flex-col lg:flex-row lg:items-center gap-0 px-0 w-full h-full">
+      {navListItems.map(({ label, icon, link }, index) =>
         label === "Produits" ? (
-          <NavListMenu key={label} navListData={navProduitsListMenuItems} navListItem={{ label, icon, link }} />
+          <li key={label} className="w-full lg:flex-1 flex-grow">
+            <NavListMenu
+              navListData={navProduitsListMenuItems}
+              navListItem={{ label, icon, link }}
+            />
+          </li>
         ) : (
-          <Typography key={label} as="a" href={link} variant="small" className="text-black" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
-            <MenuItem className="flex items-center gap-2 lg:rounded-full px-2" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
-              {React.createElement(icon, { className: "h-[18px] w-[18px]" })}
-              <span className="text-black font-medium">{label}</span>
-            </MenuItem>
-          </Typography>
+          <li key={label} className={`w-full lg:flex-1 ${index >= navListItems.length - 2 ? 'mt-auto' : ''}`}>
+            <Typography
+              as="div"
+              variant="small"
+              className="font-medium w-full"
+              placeholder={undefined}
+              onPointerEnterCapture={undefined}
+              onPointerLeaveCapture={undefined}
+            >
+              <MenuItem
+                className="flex items-center gap-2 py-2 px-3 w-full"
+                placeholder={undefined}
+                onPointerEnterCapture={undefined}
+                onPointerLeaveCapture={undefined}
+              >
+                <a href={link} className="flex items-center gap-2 text-black w-full">
+                  {React.createElement(icon, { className: "h-[18px] w-[18px] flex-shrink-0" })}
+                  <span className="truncate">{label}</span>
+                </a>
+              </MenuItem>
+            </Typography>
+          </li>
         )
-      ))}
+      )}
     </ul>
   );
 }
@@ -220,18 +299,23 @@ const ComplexNavbar = () => {
   React.useEffect(() => {
     window.addEventListener(
       "resize",
-      () => window.innerWidth >= 960 && setIsNavOpen(false),
+      () => window.innerWidth >= 960 && setIsNavOpen(false)
     );
   }, []);
 
   return (
     <div className="flex w-full justify-center items-center fixed top-0 z-50 bg-white px-3">
-      <Navbar className="shadow-none px-0 rounded-none max-w-[1300px]" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
+      <Navbar
+        className="shadow-none px-0 rounded-none max-w-[1300px] w-full"
+        placeholder={undefined}
+        onPointerEnterCapture={undefined}
+        onPointerLeaveCapture={undefined}
+      >
         <div className="w-full px-0">
           <div className="relative flex items-center w-full h-[40px] justify-between text-black px-0">
-            <a href="#" className="flex items-center font-medium text-lg pl-2">
+            <button className="flex items-center font-medium text-lg pl-2 bg-transparent border-none cursor-pointer">
               ART METAL FRANCE
-            </a>
+            </button>
             <div className="hidden lg:block">
               <NavList />
             </div>
@@ -240,14 +324,18 @@ const ComplexNavbar = () => {
               color="black"
               variant="text"
               onClick={toggleIsNavOpen}
-              className="ml-auto mr-2 lg:hidden" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}            >
+              className="ml-auto mr-2 lg:hidden"
+              placeholder={undefined}
+              onPointerEnterCapture={undefined}
+              onPointerLeaveCapture={undefined}
+            >
               <Bars2Icon className="h-6 w-6" />
             </IconButton>
           </div>
         </div>
-        <MobileNav open={isNavOpen} className="overflow-scroll">
+        <Collapse open={isNavOpen} className="fixed  h-screen">
           <NavList />
-        </MobileNav>
+        </Collapse>
       </Navbar>
     </div>
   );

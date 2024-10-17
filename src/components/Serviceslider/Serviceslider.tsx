@@ -1,4 +1,3 @@
-
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -14,7 +13,6 @@ import {
   BodySlider8,
   BodySlider9,
   BodySlider10,
-  
 } from "../../assets";
 
 interface SlideProps {
@@ -92,14 +90,14 @@ const Serviceslider = () => {
     {
       id: 10,
       imgSrc: BodySlider10,
-    }
+    },
   ];
 
   return (
     <div className="container">
       <Slider {...settings} className="customer-logos">
         {slides.map((slide) => (
-            <Slide key={slide.id} imgSrc={slide.imgSrc}/>
+          <Slide key={slide.id} imgSrc={slide.imgSrc} />
         ))}
       </Slider>
     </div>

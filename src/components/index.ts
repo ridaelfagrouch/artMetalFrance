@@ -10,4 +10,16 @@ import Quote from "./Quote/Quote";
 import Footer from "./Footer/Footer";
 import Realisations from "./Realisations/Realisations";
 
-export { ComplexNavbar, BodyHeader, Serviceslider, About, Expertises, Partners, Contact, Questions, Quote, Footer, Realisations };
+export {
+  ComplexNavbar,
+  BodyHeader,
+  Serviceslider,
+  About,
+  Expertises,
+  Partners,
+  Contact,
+  Questions,
+  Quote,
+  Footer,
+  Realisations,
+};

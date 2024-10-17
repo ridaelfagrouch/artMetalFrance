@@ -1,7 +1,4 @@
-
-
 p {
-  
   font-size: 16px;
   line-height: 28px;
   font-weight: 500;
@@ -9,7 +6,6 @@ p {
 }
 
 h1 {
-
   font-style: normal;
   font-size: 70px;
   line-height: 80px;
@@ -60,5 +56,5 @@ h1 {
 }
 
 .btn-style-one {
-    padding: 15px 50px;
+  padding: 15px 50px;
 }
