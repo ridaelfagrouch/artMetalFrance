@@ -36,19 +36,32 @@ const Serviceslider = () => {
     pauseOnHover: false,
     responsive: [
       {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 4, // Show 4 slides at this width
+        },
+      },
+      {
         breakpoint: 768,
         settings: {
-          slidesToShow: 4,
+          slidesToShow: 3, // Show 3 slides at this width
         },
       },
       {
         breakpoint: 520,
         settings: {
-          slidesToShow: 3,
+          slidesToShow: 2, // Show 2 slides at this width
+        },
+      },
+      {
+        breakpoint: 375,
+        settings: {
+          slidesToShow: 1, // Show only 1 slide on smaller screens
         },
       },
     ],
   };
+
 
   const slides = [
     {
@@ -94,7 +107,7 @@ const Serviceslider = () => {
   ];
 
   return (
-    <div className="container">
+    <div className="slide-container">
       <Slider {...settings} className="customer-logos">
         {slides.map((slide) => (
           <Slide key={slide.id} imgSrc={slide.imgSrc} />

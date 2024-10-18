@@ -17,6 +17,7 @@ import {
   ChevronDownIcon,
   Bars2Icon,
   PhotoIcon,
+  XMarkIcon,
 } from "@heroicons/react/24/solid";
 
 // nav list menu
@@ -126,7 +127,7 @@ function NavListMenu({ navListData, navListItem }: Readonly<NavListMenuProps>) {
       {navListData.map((category) => (
         <div
           key={`category-${category[0].id}`}
-          className="flex flex-col gap-4 justify-between"
+          className="flex flex-col gap-4 justify-between mb-2"
         >
           {category.map(({ id, category, description }) => (
             <button
@@ -134,7 +135,7 @@ function NavListMenu({ navListData, navListItem }: Readonly<NavListMenuProps>) {
               className="bg-gray-100 hover:bg-white rounded-lg h-full transition-colors duration-300 text-left"
             >
               <MenuItem
-                className="flex flex-col h-full items-start"
+                className="flex flex-col h-full items-start "
                 placeholder={undefined}
                 onPointerEnterCapture={undefined}
                 onPointerLeaveCapture={undefined}
@@ -142,7 +143,7 @@ function NavListMenu({ navListData, navListItem }: Readonly<NavListMenuProps>) {
                 <Typography
                   variant="h6"
                   color="blue-gray"
-                  className="mb-1"
+                  className="mb-2"
                   placeholder={undefined}
                   onPointerEnterCapture={undefined}
                   onPointerLeaveCapture={undefined}
@@ -222,7 +223,7 @@ function NavListMenu({ navListData, navListItem }: Readonly<NavListMenuProps>) {
           onPointerLeaveCapture={undefined}
         >
           <MenuItem
-            className="flex items-center justify-between text-black py-2 px-3 w-full"
+            className="flex items-center justify-between text-black py-4 px-3 w-full"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             placeholder={undefined}
             onPointerEnterCapture={undefined}
@@ -242,7 +243,7 @@ function NavListMenu({ navListData, navListItem }: Readonly<NavListMenuProps>) {
           </MenuItem>
         </Typography>
         <Collapse open={isMobileMenuOpen}>
-          <div className="ml-6 flex w-full flex-col gap-1 max-h-[50vh] overflow-y-auto">
+          <div className="py-4 px-7 flex w-full flex-col gap-1 max-h-[50vh] overflow-y-auto ">
             {renderItems}
           </div>
         </Collapse>
@@ -254,31 +255,31 @@ function NavListMenu({ navListData, navListItem }: Readonly<NavListMenuProps>) {
 function NavList() {
   return (
     <ul className="flex flex-col lg:flex-row lg:items-center gap-0 px-0 w-full h-full">
-      {navListItems.map(({ label, icon, link }, index) =>
+      {navListItems.map(({ label, icon, link }) =>
         label === "Produits" ? (
-          <li key={label} className="w-full lg:flex-1 flex-grow">
+          <li key={label} className="w-full">
             <NavListMenu
               navListData={navProduitsListMenuItems}
               navListItem={{ label, icon, link }}
             />
           </li>
         ) : (
-          <li key={label} className={`w-full lg:flex-1 ${index >= navListItems.length - 2 ? 'mt-auto' : ''}`}>
-            <Typography
-              as="div"
-              variant="small"
-              className="font-medium w-full"
-              placeholder={undefined}
-              onPointerEnterCapture={undefined}
+          <li key={label} className="w-full">
+            <Typography 
+              as="div" 
+              variant="small" 
+              className="font-medium w-full" 
+              placeholder={undefined} 
+              onPointerEnterCapture={undefined} 
               onPointerLeaveCapture={undefined}
             >
               <MenuItem
-                className="flex items-center gap-2 py-2 px-3 w-full"
+                className="flex items-center gap-2 py-4 px-3 w-full"
                 placeholder={undefined}
                 onPointerEnterCapture={undefined}
                 onPointerLeaveCapture={undefined}
               >
-                <a href={link} className="flex items-center gap-2 text-black w-full">
+                <a href={link} className="flex items-center gap-2 text-black w-full ">
                   {React.createElement(icon, { className: "h-[18px] w-[18px] flex-shrink-0" })}
                   <span className="truncate">{label}</span>
                 </a>
@@ -290,11 +291,13 @@ function NavList() {
     </ul>
   );
 }
-
 const ComplexNavbar = () => {
   const [isNavOpen, setIsNavOpen] = React.useState(false);
 
-  const toggleIsNavOpen = () => setIsNavOpen((cur) => !cur);
+  const toggleIsNavOpen = () => {
+    console.log("Toggle function called, current state:", isNavOpen);
+    setIsNavOpen((prev) => !prev);
+  };
 
   React.useEffect(() => {
     window.addEventListener(
@@ -304,16 +307,16 @@ const ComplexNavbar = () => {
   }, []);
 
   return (
-    <div className="flex w-full justify-center items-center fixed top-0 z-50 bg-white px-3">
-      <Navbar
-        className="shadow-none px-0 rounded-none max-w-[1300px] w-full"
-        placeholder={undefined}
-        onPointerEnterCapture={undefined}
-        onPointerLeaveCapture={undefined}
-      >
-        <div className="w-full px-0">
-          <div className="relative flex items-center w-full h-[40px] justify-between text-black px-0">
-            <button className="flex items-center font-medium text-lg pl-2 bg-transparent border-none cursor-pointer">
+    <div className="fixed top-0 z-50 w-full bg-red-200 flex flex-col min-h-4">
+      <div className="bg-white shadow-lg">
+        <Navbar 
+          className="max-w-[1300px] w-full mx-auto px-0 shadow-none " 
+          placeholder={undefined} 
+          onPointerEnterCapture={undefined} 
+          onPointerLeaveCapture={undefined}
+        >
+          <div className="relative flex items-center w-full h-[40px] justify-between text-black">
+            <button className="flex items-center font-medium text-lg bg-transparent border-none cursor-pointer pl-3">
               ART METAL FRANCE
             </button>
             <div className="hidden lg:block">
@@ -324,19 +327,25 @@ const ComplexNavbar = () => {
               color="black"
               variant="text"
               onClick={toggleIsNavOpen}
-              className="ml-auto mr-2 lg:hidden"
+              className="ml-auto lg:hidden"
               placeholder={undefined}
               onPointerEnterCapture={undefined}
               onPointerLeaveCapture={undefined}
             >
-              <Bars2Icon className="h-6 w-6" />
+              {isNavOpen ? (
+                <XMarkIcon className="h-6 w-6 mr-3" />
+              ) : (
+                <Bars2Icon className="h-6 w-6 mr-3" />
+              )}
             </IconButton>
           </div>
-        </div>
-        <Collapse open={isNavOpen} className="fixed  h-screen">
+        </Navbar>
+      </div>
+      {isNavOpen && (
+        <div className="lg:hidden overflow-y-auto flex-grow bg-white z-50">
           <NavList />
-        </Collapse>
-      </Navbar>
+        </div>
+      )}
     </div>
   );
 };
