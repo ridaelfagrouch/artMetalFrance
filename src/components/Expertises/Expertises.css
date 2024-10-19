@@ -6,6 +6,7 @@
   justify-content: center;
   align-items: center;
   gap: 30px;
+  padding: 0 15px;
 }
 
 .container-Title {
@@ -57,18 +58,12 @@
   color: inherit;
 }
 
-.expertises-card a:hover {
-  color: #5ad67d;
-}
 
-.expertises-card:hover .photo {
-  transform: scale(1.3) rotate(3deg);
-}
 
 .expertises-card .meta {
   position: relative;
   z-index: 0;
-  width: 50%;
+  width: 100%;
   min-height: 400px;
 }
 
@@ -119,11 +114,11 @@
 }
 
 .expertises-card .description {
-  padding: 1rem;
+  padding: 1.5rem 1rem;
   background: #fff;
   position: relative;
   z-index: 1;
-  width: 50%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -151,7 +146,7 @@
 .expertises-card .description h1 {
   line-height: 1;
   margin: 0;
-  font-size: 1.7rem;
+  font-size: 1.5rem;
 }
 
 .expertises-card .description h2 {
@@ -186,11 +181,6 @@
   font-size: 1.5rem;
 }
 
-.expertises-card .description .read-more button:hover:after {
-  margin-left: 5px;
-  opacity: 1;
-}
-
 .expertises-card p {
   position: relative;
   margin: 1rem 0 0;
@@ -210,10 +200,6 @@
   border-radius: 3px;
 }
 
-.expertises-card:hover .details {
-  left: 0%;
-}
-
 .blog-slider__button {
   display: flex;
   flex-direction: row;
@@ -222,7 +208,63 @@
   align-items: center;
 }
 
-@media (min-width: 640px) {
+@media (max-width: 768px) {
+
+  .expertises-card .details {
+  left: 0%;
+}
+
+  .expertises-card .description .read-more button:after {
+  margin-left: 5px;
+  opacity: 1;
+}
+
+  .expertises-card a {
+  color: #5ad67d;
+}
+
+.expertises-card .photo {
+  transform: scale(1.3) rotate(3deg);
+}
+
+}
+
+@media (max-width: 425px) {
+  .expertises-card .meta {
+    min-height: 250px;
+  }
+
+  .expertises-card .description {
+    gap: 10px;
+  }
+
+  .container-Title h2 {
+    font-size: 20px !important;
+  }
+}
+
+
+
+@media (min-width: 768px) {
+  
+
+  .expertises-card:hover .details {
+  left: 0%;
+}
+
+  .expertises-card .description .read-more button:hover:after {
+  margin-left: 5px;
+  opacity: 1;
+}
+
+  .expertises-card a:hover {
+  color: #5ad67d;
+}
+
+.expertises-card:hover .photo {
+  transform: scale(1.3) rotate(3deg);
+}
+
   .expertises-card {
     flex-direction: row;
   }
