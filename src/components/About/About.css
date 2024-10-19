@@ -270,9 +270,17 @@
 }
 
 .btn-style-one {
-  padding: 10px 25px;
+  padding: 10px 25px !important;
     font-size: 14px;
     margin-top: 30px;
+}
+
+.about-section .image-column {
+  padding: 15px;
+}
+
+.about-section .image-column .image-1, .about-section .image-column .image-2 {
+  border-radius: 10px;
 }
 
 }
