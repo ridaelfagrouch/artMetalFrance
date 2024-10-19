@@ -1,8 +1,15 @@
 .about-section {
   position: relative;
   overflow: hidden;
-  height: 1000px;
+  min-height: 1000px;
+  height: 100%;
   background-color: transparent;
+}
+
+.about-container {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
 }
 
 .about-section .sec-title {
@@ -13,11 +20,8 @@
   position: relative;
   height: 100% !important;
   padding: 50px;
-}
-
-.about-section .content-column .inner-column {
-  position: relative;
-  height: 100% !important;
+  width: 50%;
+  order: 1;
 }
 
 .about-section .text {
@@ -45,25 +49,19 @@
 
 .about-section .image-column {
   position: relative;
-  height: 100%;
+  height: 100% !important;
+  width: 50%;
 }
 
 .about-section .image-column .inner-column {
   position: relative;
+  min-height: 1000px;
   height: 100%;
   padding-left: 120px;
   padding-bottom: 125px;
+  /* background-color: red; */
 }
 
-.about-section .image-column .inner-column:before {
-  position: absolute;
-  left: -75px;
-  top: 40%;
-  height: 520px;
-  width: 100%;
-  content: "";
-  border-radius: 50%;
-}
 
 .about-section .image-column .image-1 {
   position: relative;
@@ -196,4 +194,85 @@
 .single-specialist img {
   scale: 1.1;
   transition: 0.3s;
+}
+
+
+@media screen and (max-width: 768px) {
+
+.about-container {
+  flex-direction: column;
+}
+
+.about-section .image-column {
+  width: 100%;
+}
+
+.about-section .content-column {
+  width: 100%;
+}
+
+.about-section .image-column .inner-column  {
+  min-height: 400px;
+}
+
+.about-section .image-column .image-1 {
+  border-radius: 0;
+}
+
+.about-section .image-column .image-1 img {
+  width: 100%;
+  height: 300px;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.about-section .image-column .image-2 img {
+  width: 230px;
+  height: 200px;
+}
+
+.sec-title h2 {
+  font-size: 25px;
+}
+
+}
+
+@media screen and (max-width: 425px) {
+
+  .about-section .image-column .inner-column {
+    min-height: 300px;
+  }
+
+  .about-section .image-column .image-1 img {
+    height: 200px;
+  }
+
+  .about-section .image-column .image-2 img {
+  height: 150px;
+}
+
+.specialist-box {
+  justify-content: start;
+}
+
+.single-specialist-container {
+  width: 90px;
+  height: 90px;
+}
+
+.single-specialist {
+  width: 40px;
+  height: 40px;
+}
+
+.single-specialist-container h3 {
+  font-size: 12px;
+}
+
+.btn-style-one {
+  padding: 10px 25px;
+    font-size: 14px;
+    margin-top: 30px;
+}
+
 }

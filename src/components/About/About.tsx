@@ -35,9 +35,8 @@ const AboutSpecialist = [
 const About = () => {
   return (
     <section className="about-section" id="about">
-      <div className="containe h-full">
-        <div className="flex w-full h-full  ">
-          <div className="content-column  order-2 w-1/2 h-full">
+      <div className="about-container">
+          <div className="content-column">
             <div className="inner-column">
               <div className="sec-title">
                 <h2>
@@ -84,8 +83,8 @@ const About = () => {
             </div>
           </div>
 
-          <div className="image-column w-1/2 h-full">
-            <div className="inner-column wow fadeInLeft ">
+          <div className="image-column">
+            <div className="inner-column ">
               <figure className="image-1">
                 <div className="lightbox-image" data-fancybox="images">
                   <img src={AboutImage1} alt="" />
@@ -98,7 +97,6 @@ const About = () => {
               </figure>
             </div>
           </div>
-        </div>
       </div>
     </section>
   );
