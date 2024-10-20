@@ -7,7 +7,7 @@
   justify-content: center;
   align-items: center;
   gap: 30px;
-  padding: 50px 0;
+  padding: 50px 15px;
 }
 
 .Partners-wrapper {
@@ -122,4 +122,20 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+@media screen and (max-width: 768px) {
+
+  .PartnersBody {
+    flex-direction: column;
+  }
+  
+  .title-body {
+    width: 100%;
+  }
+
+  .PartnersLogos {
+    width: 100%;
+    justify-content: center;
+  }
 }
