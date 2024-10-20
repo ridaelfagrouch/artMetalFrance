@@ -257,7 +257,7 @@ function NavList() {
     <ul className="flex flex-col lg:flex-row lg:items-center gap-0 px-0 w-full h-full">
       {navListItems.map(({ label, icon, link }) =>
         label === "Produits" ? (
-          <li key={label} className="w-full">
+          <li key={label} className="w-ful">
             <NavListMenu
               navListData={navProduitsListMenuItems}
               navListItem={{ label, icon, link }}
@@ -307,7 +307,7 @@ const ComplexNavbar = () => {
   }, []);
 
   return (
-    <div className="fixed top-0 z-50 w-full bg-red-200 flex flex-col min-h-4">
+    <div className="fixed top-0 z-50 w-full flex flex-col min-h-4">
       <div className="bg-white shadow-lg">
         <Navbar 
           className="max-w-[1300px] w-full mx-auto px-0 shadow-none " 
@@ -342,7 +342,7 @@ const ComplexNavbar = () => {
         </Navbar>
       </div>
       {isNavOpen && (
-        <div className="lg:hidden overflow-y-auto flex-grow bg-white z-50">
+        <div className="lg:hidden overflow-y-auto flex-grow z-50 bg-gray-200 px-1">
           <NavList />
         </div>
       )}
