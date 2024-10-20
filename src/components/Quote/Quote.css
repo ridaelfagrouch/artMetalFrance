@@ -46,12 +46,6 @@
   z-index: 2;
 }
 
-@media all and (min-width: 600px) {
-  .blockquote h1 {
-    font-size: 3rem;
-    line-height: 1.2;
-  }
-}
 
 .blockquote h4 {
   position: relative;
@@ -72,4 +66,39 @@
 
 .white-text {
   color: black;
+}
+
+@media all and (min-width: 600px) {
+  .blockquote h1 {
+    font-size: 3rem;
+    line-height: 1.2;
+  }
+}
+
+@media all and (max-width: 768px) {
+  .blockquote-wrapper {
+    padding: 0 15px;
+  }
+
+  .blockquote h1 {
+    font-size: 2rem;
+    padding: 20px;
+  }
+
+  .blockquote h4 {
+    font-size: 1rem;
+    padding-top: 10px;
+  }
+}
+
+@media all and (max-width: 425px) {
+  .blockquote h1 {
+    font-size: 1.2rem;
+    padding: 15px;
+  }
+
+  .blockquote h4 {
+    font-size: 0.6rem;
+    padding-top: 5px;
+  }
 }

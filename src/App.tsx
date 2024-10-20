@@ -40,7 +40,7 @@ function App() {
     { id: "realisations", Component: Realisations, className: "" },
     { id: "questions", Component: Questions, className: classStyle },
     { id: "contact", Component: Contact, className: "" },
-    // { id: "quote", Component: Quote, className: "" },
+    { id: "quote", Component: Quote, className: "" },
     // { id: "footer", Component: Footer, className: classStyle },
   ];
 
