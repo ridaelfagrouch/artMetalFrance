@@ -64,3 +64,19 @@
 .RealisationsCard img.fade-exit-active {
   opacity: 0;
 }
+
+
+@media screen and (max-width: 768px) {
+  .realisations-section {
+    padding: 0 15px;
+  }
+
+  .RealisationsBody {
+    gap : 15px;
+    border-radius: 0;
+  }
+  
+  .RealisationsCard {
+    width: 48% !important;
+  }
+}
