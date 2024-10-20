@@ -220,11 +220,12 @@
 
 .about-section .image-column {
   width: 100%;
+  padding-top: 40px !important;
 }
 
 .about-section .content-column {
   width: 100%;
-  padding: 15px;
+  padding: 40px 15px;
 }
 
 .about-section .image-column .inner-column  {

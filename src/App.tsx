@@ -38,7 +38,7 @@ function App() {
     { id: "expertises", Component: Expertises, className: "" },
     { id: "partners", Component: Partners, className: classStyle },
     { id: "realisations", Component: Realisations, className: "" },
-    // { id: "questions", Component: Questions, className: classStyle },
+    { id: "questions", Component: Questions, className: classStyle },
     // { id: "contact", Component: Contact, className: "" },
     // { id: "quote", Component: Quote, className: "" },
     // { id: "footer", Component: Footer, className: classStyle },

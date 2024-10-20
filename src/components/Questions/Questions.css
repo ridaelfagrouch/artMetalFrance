@@ -94,3 +94,18 @@
   margin: 0;
   text-align: start;
 }
+
+
+@media screen and (max-width: 768px) {
+  .questions-section {
+    padding: 40px 15px;
+  }
+
+  .accordion-title {
+    font-size: 16px;
+  }
+
+  .accordion-button {
+    gap: 10px;
+  }
+}
