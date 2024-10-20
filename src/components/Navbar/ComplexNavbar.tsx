@@ -19,6 +19,7 @@ import {
   PhotoIcon,
   XMarkIcon,
 } from "@heroicons/react/24/solid";
+import { socialLinks } from "../../utils/constants"
 
 // nav list menu
 const navProduitsListMenuItems = [
@@ -342,8 +343,23 @@ const ComplexNavbar = () => {
         </Navbar>
       </div>
       {isNavOpen && (
-        <div className="lg:hidden overflow-y-auto flex-grow z-50 bg-gray-200 py-10 px-3">
+        <div className="lg:hidden overflow-y-auto flex flex-col gap-8 h-screen z-50 bg-gray-200 py-10 px-3 overflow-auto">
           <NavList />
+          <div className="footer-social-icon">
+            <span>Follow us</span>
+
+            <div className="social-icons-container mb-10">
+              {socialLinks.map((social) => (
+                <a
+                  key={social.link}
+                  href={social.link}
+                  className={social.className}
+                >
+                  <social.icon />
+                </a>
+              ))}
+            </div>
+          </div>
         </div>
       )}
     </div>
