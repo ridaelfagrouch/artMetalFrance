@@ -254,10 +254,10 @@ function NavListMenu({ navListData, navListItem }: Readonly<NavListMenuProps>) {
 
 function NavList() {
   return (
-    <ul className="flex flex-col lg:flex-row lg:items-center gap-0 px-0 w-full h-full">
+    <ul className="flex flex-col lg:flex-row lg:items-center lg:gap-0 px-0 w-full h-full gap-2">
       {navListItems.map(({ label, icon, link }) =>
         label === "Produits" ? (
-          <li key={label} className="w-ful">
+          <li key={label} className="w-ful bg-white lg:border-none border-[1px] border-black rounded-md">
             <NavListMenu
               navListData={navProduitsListMenuItems}
               navListItem={{ label, icon, link }}
@@ -274,7 +274,7 @@ function NavList() {
               onPointerLeaveCapture={undefined}
             >
               <MenuItem
-                className="flex items-center gap-2 py-4 px-3 w-full"
+                  className="flex items-center gap-2 py-4 px-3 w-full bg-white lg:border-none border-[1px] border-black rounded-md"
                 placeholder={undefined}
                 onPointerEnterCapture={undefined}
                 onPointerLeaveCapture={undefined}
@@ -342,7 +342,7 @@ const ComplexNavbar = () => {
         </Navbar>
       </div>
       {isNavOpen && (
-        <div className="lg:hidden overflow-y-auto flex-grow z-50 bg-gray-200 px-1">
+        <div className="lg:hidden overflow-y-auto flex-grow z-50 bg-gray-200 py-10 px-3">
           <NavList />
         </div>
       )}
