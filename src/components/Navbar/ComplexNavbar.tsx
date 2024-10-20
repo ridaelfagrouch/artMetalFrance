@@ -88,6 +88,7 @@ const navProduitsListMenuItems = [
 interface NavListMenuProps {
   navListData: Array<{ id: number; category: string; description: string }[]>;
   navListItem?: { label: string; icon: React.ElementType; link: string };
+  setIsNavOpen?: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 // nav list component
@@ -119,21 +120,28 @@ const navListItems = [
   },
 ];
 
-function NavListMenu({ navListData, navListItem }: Readonly<NavListMenuProps>) {
+function NavListMenu({ navListData, navListItem, setIsNavOpen }: Readonly<NavListMenuProps>) {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
+
+  const handleItemClick = () => {
+    if (setIsNavOpen) {
+      setIsNavOpen(false);
+    }
+  };
 
   const renderItems = (
     <div className="flex flex-col lg:flex-row gap-2 lg:gap-8 px-0">
       {navListData.map((category) => (
         <div
           key={`category-${category[0].id}`}
-          className="flex flex-col gap-4 justify-between mb-2"
+          className="flex flex-col gap-4 justify-between mb-2 "
         >
           {category.map(({ id, category, description }) => (
             <button
               key={id}
               className="bg-gray-100 hover:bg-white rounded-lg h-full transition-colors duration-300 text-left"
+              onClick={handleItemClick}
             >
               <MenuItem
                 className="flex flex-col h-full items-start "
@@ -183,7 +191,7 @@ function NavListMenu({ navListData, navListItem }: Readonly<NavListMenuProps>) {
             onPointerLeaveCapture={undefined}
           >
             <MenuItem
-              className="hidden items-center gap-2 text-black lg:flex lg:rounded-full py-2 px-3"
+              className="hidden items-center gap-2 text-black lg:flex lg:rounded-md py-4 px-3"
               placeholder={undefined}
               onPointerEnterCapture={undefined}
               onPointerLeaveCapture={undefined}
@@ -253,7 +261,13 @@ function NavListMenu({ navListData, navListItem }: Readonly<NavListMenuProps>) {
   );
 }
 
-function NavList() {
+function NavList({ setIsNavOpen }: { setIsNavOpen?: React.Dispatch<React.SetStateAction<boolean>> }) {
+  const handleItemClick = () => {
+    if (setIsNavOpen) {
+      setIsNavOpen(false);
+    }
+  };
+
   return (
     <ul className="flex flex-col lg:flex-row lg:items-center lg:gap-0 px-0 w-full gap-2 ">
       {navListItems.map(({ label, icon, link }) =>
@@ -262,23 +276,25 @@ function NavList() {
             <NavListMenu
               navListData={navProduitsListMenuItems}
               navListItem={{ label, icon, link }}
+              setIsNavOpen={setIsNavOpen}
             />
           </li>
         ) : (
           <li key={label} className="w-full">
-            <Typography 
-              as="div" 
-              variant="small" 
-              className="font-medium w-full" 
-              placeholder={undefined} 
-              onPointerEnterCapture={undefined} 
+            <Typography
+              as="div"
+              variant="small"
+              className="font-medium w-full"
+              placeholder={undefined}
+              onPointerEnterCapture={undefined}
               onPointerLeaveCapture={undefined}
             >
               <MenuItem
-                  className="flex items-center gap-2 py-4 px-3 w-full bg-white lg:border-none border-[1px] border-black rounded-md"
+                className="flex items-center gap-2 py-4 px-3 w-full bg-white lg:border-none border-[1px] border-black rounded-md"
                 placeholder={undefined}
                 onPointerEnterCapture={undefined}
                 onPointerLeaveCapture={undefined}
+                onClick={handleItemClick}
               >
                 <a href={link} className="flex items-center gap-2 text-black w-full ">
                   {React.createElement(icon, { className: "h-[18px] w-[18px] flex-shrink-0" })}
@@ -292,6 +308,7 @@ function NavList() {
     </ul>
   );
 }
+
 const ComplexNavbar = () => {
   const [isNavOpen, setIsNavOpen] = React.useState(false);
 
@@ -310,10 +327,10 @@ const ComplexNavbar = () => {
   return (
     <div className="fixed top-0 z-50 w-full flex flex-col min-h-4">
       <div className="bg-white shadow-lg">
-        <Navbar 
-          className="max-w-[1300px] w-full mx-auto px-0 shadow-none " 
-          placeholder={undefined} 
-          onPointerEnterCapture={undefined} 
+        <Navbar
+          className="max-w-[1300px] w-full mx-auto px-0 shadow-none "
+          placeholder={undefined}
+          onPointerEnterCapture={undefined}
           onPointerLeaveCapture={undefined}
         >
           <div className="relative flex items-center w-full h-[40px] justify-between text-black">
@@ -344,7 +361,7 @@ const ComplexNavbar = () => {
       </div>
       {isNavOpen && (
         <div className="lg:hidden flex flex-col gap-8 h-screen z-50 bg-gray-200 py-10 px-3 overflow-auto">
-          <NavList />
+          <NavList setIsNavOpen={setIsNavOpen} />
           <div className="footer-social-icon">
             <span>Follow us</span>
 
@@ -358,11 +375,12 @@ const ComplexNavbar = () => {
                   <social.icon />
                 </a>
               ))}
-            </div>
           </div>
         </div>
-      )}
-    </div>
+        </div>
+  )
+}
+    </div >
   );
 };
 
