@@ -41,7 +41,7 @@ function App() {
     { id: "questions", Component: Questions, className: classStyle },
     { id: "contact", Component: Contact, className: "" },
     { id: "quote", Component: Quote, className: "" },
-    // { id: "footer", Component: Footer, className: classStyle },
+    { id: "footer", Component: Footer, className: classStyle },
   ];
 
   return (

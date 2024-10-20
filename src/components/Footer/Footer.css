@@ -5,7 +5,7 @@ ul {
 }
 .footer-section {
   position: relative;
-  padding: 40px 0;
+  padding: 40px 15px;
 }
 
 .single-cta {
@@ -222,7 +222,7 @@ ul {
 
 .dev-container p {
   font-size: 14px;
-  color: #878787;
+  color: black;
 }
 
 .dev-container p a {
@@ -238,4 +238,60 @@ ul {
   align-items: center;
   border-top: 1px solid #373636;
   padding-top: 20px;
+}
+
+@media screen and (max-width: 768px) {
+
+  .footer-header {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .footer-header div {
+    width: 100%;
+  }
+
+  .cta-text {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .footer-logo {
+    font-size: 30px;
+  }
+
+  .footer-text p {
+    width: 100%;
+  }
+
+  .footer-cta {
+    padding: 0 0 20px 0 !important;
+  }
+
+  .copyright-container {
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .copyright-container p {
+    text-align: center;
+  }
+
+  .copyright-container ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+  .copyright-container ul li {
+    padding: 0;
+    margin: 0;
+  }
+  .copyright-container ul li a {
+    font-size: 12px !important;
+  }
 }

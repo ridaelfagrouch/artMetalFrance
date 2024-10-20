@@ -88,7 +88,6 @@ const footerMenuItems: FooterMenuItem[] = [
 const Footer = () => {
   return (
     <footer className="footer-section">
-      <div className="container">
         <div className="footer-cta pt-5 pb-5">
           <div className="footer-header">
             {contactInfo.map((info) => (
@@ -137,7 +136,6 @@ const Footer = () => {
             </div>
           </div>
         </div>
-      </div>
       <div className="copyright-area">
         <div className="copyright-container">
           <div className="dev-container">
