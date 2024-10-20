@@ -257,6 +257,10 @@ ul {
     gap: 10px;
   }
 
+  .cta-text h4 {
+    font-size: 16px;
+  }
+
   .footer-logo {
     font-size: 30px;
   }
@@ -293,5 +297,28 @@ ul {
   }
   .copyright-container ul li a {
     font-size: 12px !important;
+  }
+
+  .footer-content {
+    padding-bottom: 0 !important;
+  }
+}
+
+@media screen and (max-width: 425px) {
+
+   .cta-text h4 {
+    font-size: 14px;
+  }
+
+  .cta-text span {
+    font-size: 12px;
+  }
+
+  .copyright-container ul li a {
+    font-size: 9px !important;
+  }
+
+  .copyright-container ul li {
+    text-align: start;
   }
 }

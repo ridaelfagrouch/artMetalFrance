@@ -88,7 +88,7 @@ h1 {
   }
 
   .header-body {
-    padding-top: 130px;
+    padding-top: 0;
     background-color: rgba(0, 0, 0, 0.8);
   }
   
