@@ -47,18 +47,20 @@ const AllImages = [
 ];
 
 const RealisationsData = [
-  { id: 1, Width: "32%", Height: "450px" },
-  { id: 2, Width: "32%", Height: "300px" },
-  { id: 3, Width: "32%", Height: "250px" },
-  { id: 4, Width: "32%", Height: "260px" },
+  { id: 1, Width: "32%", Height: "300px" },
+  { id: 2, Width: "32%", Height: "350px" },
+  { id: 3, Width: "32%", Height: "300px" },
+  { id: 4, Width: "32%", Height: "310px" },
+  
   { id: 5, Width: "32%", Height: "250px" },
-  { id: 6, Width: "32%", Height: "400px" },
-  { id: 7, Width: "32%", Height: "300px" },
-  { id: 8, Width: "32%", Height: "310px" },
+  { id: 6, Width: "32%", Height: "350px" },
+  { id: 8, Width: "32%", Height: "320px" },
+  { id: 7, Width: "32%", Height: "340px" },
+
   { id: 9, Width: "32%", Height: "350px" },
-  { id: 10, Width: "32%", Height: "220px" },
-  { id: 11, Width: "32%", Height: "450px" },
-  { id: 12, Width: "32%", Height: "240px" },
+  { id: 10, Width: "32%", Height: "270px" },
+  { id: 11, Width: "32%", Height: "350px" },
+  { id: 12, Width: "32%", Height: "290px" },
 ];
 
 type RealisationsCardProps = {
