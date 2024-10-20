@@ -112,6 +112,10 @@ h1 {
 }
 
 @media screen and (max-width: 425px) {
+  .header {
+    height: 500px;
+  }
+  
   .header-body h1 {
     font-size: 20px;
     line-height: 30px;
