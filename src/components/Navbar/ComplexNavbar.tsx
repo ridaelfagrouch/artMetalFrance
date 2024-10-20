@@ -327,15 +327,15 @@ const ComplexNavbar = () => {
               color="black"
               variant="text"
               onClick={toggleIsNavOpen}
-              className="ml-auto lg:hidden"
+              className="lg:hidden mr-3"
               placeholder={undefined}
               onPointerEnterCapture={undefined}
               onPointerLeaveCapture={undefined}
             >
               {isNavOpen ? (
-                <XMarkIcon className="h-6 w-6 mr-3" />
+                <XMarkIcon className="h-6 w-6" />
               ) : (
-                <Bars2Icon className="h-6 w-6 mr-3" />
+                <Bars2Icon className="h-6 w-6 " />
               )}
             </IconButton>
           </div>
