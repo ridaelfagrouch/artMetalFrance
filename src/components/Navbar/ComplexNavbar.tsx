@@ -255,7 +255,7 @@ function NavListMenu({ navListData, navListItem }: Readonly<NavListMenuProps>) {
 
 function NavList() {
   return (
-    <ul className="flex flex-col lg:flex-row lg:items-center lg:gap-0 px-0 w-full h-full gap-2">
+    <ul className="flex flex-col lg:flex-row lg:items-center lg:gap-0 px-0 w-full gap-2 ">
       {navListItems.map(({ label, icon, link }) =>
         label === "Produits" ? (
           <li key={label} className="w-ful bg-white lg:border-none border-[1px] border-black rounded-md">
@@ -343,7 +343,7 @@ const ComplexNavbar = () => {
         </Navbar>
       </div>
       {isNavOpen && (
-        <div className="lg:hidden overflow-y-auto flex flex-col gap-8 h-screen z-50 bg-gray-200 py-10 px-3 overflow-auto">
+        <div className="lg:hidden flex flex-col gap-8 h-screen z-50 bg-gray-200 py-10 px-3 overflow-auto">
           <NavList />
           <div className="footer-social-icon">
             <span>Follow us</span>
