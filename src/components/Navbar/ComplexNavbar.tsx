@@ -272,7 +272,7 @@ function NavList({ setIsNavOpen }: { setIsNavOpen?: React.Dispatch<React.SetStat
     <ul className="flex flex-col lg:flex-row lg:items-center lg:gap-0 px-0 w-full gap-2 ">
       {navListItems.map(({ label, icon, link }) =>
         label === "Produits" ? (
-          <li key={label} className="w-ful bg-white lg:border-none border-[1px] border-black rounded-md">
+          <li key={label} className="w-ful bg-white lg:shadow-none shadow-lg rounded-md">
             <NavListMenu
               navListData={navProduitsListMenuItems}
               navListItem={{ label, icon, link }}
@@ -290,7 +290,7 @@ function NavList({ setIsNavOpen }: { setIsNavOpen?: React.Dispatch<React.SetStat
               onPointerLeaveCapture={undefined}
             >
               <MenuItem
-                className="flex items-center gap-2 py-4 px-3 w-full bg-white lg:border-none border-[1px] border-black rounded-md"
+                  className="flex items-center gap-2 py-4 px-3 w-full bg-white lg:shadow-none shadow-lg rounded-md"
                 placeholder={undefined}
                 onPointerEnterCapture={undefined}
                 onPointerLeaveCapture={undefined}
