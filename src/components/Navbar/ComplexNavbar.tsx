@@ -73,19 +73,19 @@ function NavListMenu({ navListData, navListItem, setIsNavOpen }: Readonly<NavLis
 
   const renderItems = (
     <div className="flex flex-col lg:flex-row gap-2 lg:gap-8 px-0">
-      {navListData.map((category) => (
+      {navListData.map((category, index) => (
         <div
-          key={`category-${category[0].id}`}
-          className="flex flex-col gap-4 justify-between mb-2 "
+          key={`category-${index}`}
+          className="flex flex-col gap-4 justify-between mb-2"
         >
           {category.map(({ id, category, description }) => (
             <button
-              key={id}
+              key={`product-${id}`}
               className="bg-gray-100 hover:bg-white rounded-lg h-full transition-colors duration-300 text-left"
               onClick={() => handleItemClick(`#product-${id}`)}
             >
               <MenuItem
-                className="flex flex-col h-full items-start "
+                className="flex flex-col h-full items-start"
                 placeholder={undefined}
                 onPointerEnterCapture={undefined}
                 onPointerLeaveCapture={undefined}
@@ -270,6 +270,11 @@ const ComplexNavbar = () => {
     );
   }, []);
 
+  const LogoButton = () => {
+    window.location.href = "/";
+  };
+
+
   return (
     <div className="fixed top-0 z-50 w-full flex flex-col min-h-4">
       <div className="bg-white shadow-lg">
@@ -280,7 +285,7 @@ const ComplexNavbar = () => {
           onPointerLeaveCapture={undefined}
         >
           <div className="relative flex items-center w-full h-[40px] justify-between text-black">
-            <button className="flex items-center font-medium text-lg bg-transparent border-none cursor-pointer pl-3">
+            <button className="flex items-center font-medium text-lg bg-transparent border-none cursor-pointer pl-3" onClick={LogoButton}>
               ART METAL FRANCE
             </button>
             <div className="hidden lg:block">
@@ -321,11 +326,11 @@ const ComplexNavbar = () => {
                   <social.icon />
                 </a>
               ))}
+            </div>
           </div>
         </div>
-        </div>
-  )
-}
+      )
+      }
     </div >
   );
 };
