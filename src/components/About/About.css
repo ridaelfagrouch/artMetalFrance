@@ -94,7 +94,6 @@
 
 .about-section .image-column .image-1 img,
 .about-section .image-column .image-2 img {
-  width: 100%;
   height: auto;
   object-fit: cover;
   
@@ -102,13 +101,12 @@
 
 .about-section .image-column .image-1 img {
   height: 650px;
+  width: 100%;
 }
 
 .about-section .image-column .image-2 img {
   height: 410px;
 }
-
-
 
 .sec-title .title {
   position: relative;
