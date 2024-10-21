@@ -27,7 +27,7 @@ const ProductCard = ({ item }: { item: ProductItem }) => {
     };
 
     return (
-        <div className="ProductsCard">
+        <div className="ProductsCard" id={`product-${item.id}`}>
             <div className="ProductsCardImageContainer">
                 <img src={item.image[currentImageIndex]} alt="Product" />
                 <button className="prevButton" onClick={prevImage}>&lt;</button>

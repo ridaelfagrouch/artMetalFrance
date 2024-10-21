@@ -20,7 +20,6 @@ import {
   XMarkIcon,
 } from "@heroicons/react/24/solid";
 import { socialLinks } from "../../utils/constants"
-
 import { navProduitsListMenuItems } from "../../utils/constants"
 
 interface NavListMenuProps {
@@ -61,9 +60,14 @@ function NavListMenu({ navListData, navListItem, setIsNavOpen }: Readonly<NavLis
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
 
-  const handleItemClick = () => {
+  const handleItemClick = (link: string) => {
     if (setIsNavOpen) {
       setIsNavOpen(false);
+    }
+
+    const targetElement = document.querySelector(link);
+    if (targetElement) {
+      targetElement.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
@@ -78,7 +82,7 @@ function NavListMenu({ navListData, navListItem, setIsNavOpen }: Readonly<NavLis
             <button
               key={id}
               className="bg-gray-100 hover:bg-white rounded-lg h-full transition-colors duration-300 text-left"
-              onClick={handleItemClick}
+              onClick={() => handleItemClick(`#product-${id}`)}
             >
               <MenuItem
                 className="flex flex-col h-full items-start "
@@ -199,9 +203,14 @@ function NavListMenu({ navListData, navListItem, setIsNavOpen }: Readonly<NavLis
 }
 
 function NavList({ setIsNavOpen }: { setIsNavOpen?: React.Dispatch<React.SetStateAction<boolean>> }) {
-  const handleItemClick = () => {
+  const handleItemClick = (link: string) => {
     if (setIsNavOpen) {
       setIsNavOpen(false);
+    }
+
+    const targetElement = document.querySelector(link);
+    if (targetElement) {
+      targetElement.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
@@ -227,11 +236,11 @@ function NavList({ setIsNavOpen }: { setIsNavOpen?: React.Dispatch<React.SetStat
               onPointerLeaveCapture={undefined}
             >
               <MenuItem
-                  className="flex items-center gap-2 py-4 px-3 w-full bg-white lg:shadow-none shadow-lg rounded-md"
+                className="flex items-center gap-2 py-4 px-3 w-full bg-white lg:shadow-none shadow-lg rounded-md"
                 placeholder={undefined}
                 onPointerEnterCapture={undefined}
                 onPointerLeaveCapture={undefined}
-                onClick={handleItemClick}
+                onClick={() => handleItemClick(link)}
               >
                 <a href={link} className="flex items-center gap-2 text-black w-full ">
                   {React.createElement(icon, { className: "h-[18px] w-[18px] flex-shrink-0" })}
