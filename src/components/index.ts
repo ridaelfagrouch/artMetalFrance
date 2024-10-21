@@ -9,6 +9,7 @@ import Questions from "./Questions/Questions";
 import Quote from "./Quote/Quote";
 import Footer from "./Footer/Footer";
 import Realisations from "./Realisations/Realisations";
+import Products from "./Products/Products";
 
 export {
   ComplexNavbar,
@@ -22,4 +23,5 @@ export {
   Quote,
   Footer,
   Realisations,
+  Products
 };

@@ -21,69 +21,7 @@ import {
 } from "@heroicons/react/24/solid";
 import { socialLinks } from "../../utils/constants"
 
-// nav list menu
-const navProduitsListMenuItems = [
-  [
-    {
-      id: 1,
-      category: "Famille : Portes métalliques",
-      description:
-        "Learn how to use @material-tailwind/html, packed with rich components and widgets.",
-    },
-    {
-      id: 2,
-      category: "⁠Famille : Garde-corps",
-      description:
-        "Learn how to use @material-tailwind/react, packed with rich components for React.",
-    },
-    {
-      id: 3,
-      category: "⁠Famille : Mains courantes",
-      description:
-        "A complete set of UI Elements for building faster websites in less time.",
-    },
-  ],
-  [
-    {
-      id: 4,
-      category: "⁠Famille : Clôtures et portails métalliques",
-      description:
-        "A complete set of UI Elements for building faster websites in less time.",
-    },
-    {
-      id: 5,
-      category: "⁠Famille : Escaliers métalliques",
-      description:
-        "A complete set of UI Elements for building faster websites in less time.",
-    },
-    {
-      id: 6,
-      category: "Famille : Accessoires de fixation et quincaillerie",
-      description:
-        "A complete set of UI Elements for building faster websites in less time.",
-    },
-  ],
-  [
-    {
-      id: 7,
-      category: "⁠Famille : Menuiserie métallique sur mesure",
-      description:
-        "A complete set of UI Elements for building faster websites in less time.",
-    },
-    {
-      id: 8,
-      category: "⁠Famille : Chasse-roues et dispositifs de sécurité routière",
-      description:
-        "A complete set of UI Elements for building faster websites in less time.",
-    },
-    {
-      id: 9,
-      category: "⁠Famille : Structures métalliques pour espaces publics",
-      description:
-        "A complete set of UI Elements for building faster websites in less time.",
-    },
-  ],
-];
+import { navProduitsListMenuItems } from "../../utils/constants"
 
 interface NavListMenuProps {
   navListData: Array<{ id: number; category: string; description: string }[]>;
@@ -91,7 +29,6 @@ interface NavListMenuProps {
   setIsNavOpen?: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-// nav list component
 const navListItems = [
   {
     label: "qui sommes-nous",

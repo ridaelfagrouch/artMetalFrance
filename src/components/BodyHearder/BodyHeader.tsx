@@ -112,12 +112,12 @@ const BodyHeader = () => {
                 <span className="blog-slider__code">{slide.code}</span>
                 <div className="blog-slider__title">{slide.title}</div>
                 <div className="blog-slider__text">{slide.text}</div>
-                <button
+                {/* <button
                   className="blog-slider__button"
                   onClick={() => alert("Read more clicked")}
                 >
                   READ MORE
-                </button>
+                </button> */}
               </div>
             </div>
           ))}

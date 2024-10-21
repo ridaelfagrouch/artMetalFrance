@@ -28,6 +28,16 @@ import ExpertisesImage4 from "./images/expertises/expertisesImage4.jpg";
 
 import ContactImage from "./images/contact/contactImage.jpg";
 
+import ProductImage1 from "./images/products/Portes-métalliques.jpg";
+import ProductImage2 from "./images/products/Garde-corps.jpg";
+import ProductImage3 from "./images/products/Mains-courantes.jpg";
+import ProductImage4 from "./images/products/Clôtures-portails-métalliques.jpg";
+import ProductImage5 from "./images/products/Escaliers-métalliques.jpg";
+import ProductImage6 from "./images/products/Accessoires-fixation-quincaillerie.jpg";
+import ProductImage7 from "./images/products/Menuiserie-métallique-sur-mesure.jpg";
+import ProductImage8 from "./images/products/Chasse-roues.jpeg";
+import ProductImage9 from "./images/products/Structures-métalliques-pour-espaces-publics.jpg";
+
 export {
   Logo,
   BodyHeaderImage1,
@@ -53,4 +63,13 @@ export {
   ExpertisesImage3,
   ExpertisesImage4,
   ContactImage,
+  ProductImage1,
+  ProductImage2,
+  ProductImage3,
+  ProductImage4,
+  ProductImage5,
+  ProductImage6,
+  ProductImage7,
+  ProductImage8,
+  ProductImage9,
 };

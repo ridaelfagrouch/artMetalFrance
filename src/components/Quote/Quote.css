@@ -1,5 +1,6 @@
 .blockquote-wrapper {
   display: flex;
+  padding: 0 15px;
 }
 
 .blockquote {
@@ -76,9 +77,6 @@
 }
 
 @media all and (max-width: 768px) {
-  .blockquote-wrapper {
-    padding: 0 15px;
-  }
 
   .blockquote h1 {
     font-size: 2rem;

@@ -1,4 +1,15 @@
-
+import {
+  ProductImage1,
+  ProductImage2,
+  ProductImage3,
+  ProductImage4,
+  ProductImage5,
+  ProductImage6,
+  ProductImage7,
+  ProductImage8,
+  ProductImage9,
+  
+ }  from "../assets";
 interface SocialLink {
   icon: React.ElementType;
   link: string;
@@ -54,4 +65,76 @@ const socialLinks: SocialLink[] = [
   },
 ];
 
-export { socialLinks };
+const navProduitsListMenuItems = [
+  [
+    {
+      id: 1,
+      image: [ProductImage1, ProductImage2, ProductImage3],
+      category: "Famille : Portes métalliques",
+      description:
+        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae voluptate repellendus magni illo ea animi?",
+    },
+    {
+      id: 2,
+      image: [ProductImage2, ProductImage3, ProductImage1],
+      category: "⁠Famille : Garde-corps",
+      description:
+        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae voluptate repellendus magni illo ea animi?",
+    },
+    {
+      id: 3,
+      image: [ProductImage3, ProductImage1, ProductImage2],
+      category: "⁠Famille : Mains courantes",
+      description:
+        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae voluptate repellendus magni illo ea animi?",
+    },
+  ],
+  [
+    {
+      id: 4,
+      image: [ProductImage4, ProductImage5, ProductImage6],
+      category: "⁠Famille : Clôtures et portails métalliques",
+      description:
+        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae voluptate repellendus magni illo ea animi?",
+    },
+    {
+      id: 5,
+      image: [ProductImage5, ProductImage6, ProductImage4],
+      category: "⁠Famille : Escaliers métalliques",
+      description:
+        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae voluptate repellendus magni illo ea animi?",
+    },
+    {
+      id: 6,
+      image: [ProductImage6, ProductImage4, ProductImage5],
+      category: "Famille : Accessoires de fixation et quincaillerie",
+      description:
+        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae voluptate repellendus magni illo ea animi?",
+    },
+  ],
+  [
+    {
+      id: 7,
+      image: [ProductImage7, ProductImage8, ProductImage9],
+      category: "⁠Famille : Menuiserie métallique sur mesure",
+      description:
+        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae voluptate repellendus magni illo ea animi?",
+    },
+    {
+      id: 8,
+      image: [ProductImage8, ProductImage9, ProductImage7],
+      category: "⁠Famille : Chasse-roues et dispositifs de sécurité routière",
+      description:
+        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae voluptate repellendus magni illo ea animi?",
+    },
+    {
+      id: 9,
+      image: [ProductImage9, ProductImage7, ProductImage8],
+      category: "⁠Famille : Structures métalliques pour espaces publics",
+      description:
+        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae voluptate repellendus magni illo ea animi?",
+    },
+  ],
+];
+
+export { socialLinks, navProduitsListMenuItems };
