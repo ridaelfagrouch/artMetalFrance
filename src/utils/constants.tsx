@@ -122,14 +122,14 @@ const navProduitsListMenuItems = [
     },
     {
       id: 8,
-      image: [ProductImage8, ProductImage9, ProductImage7],
+      image: [ProductImage8, ProductImage9, ProductImage1],
       category: "⁠Famille : Chasse-roues et dispositifs de sécurité routière",
       description:
         "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae voluptate repellendus magni illo ea animi?",
     },
     {
       id: 9,
-      image: [ProductImage9, ProductImage7, ProductImage8],
+      image: [ProductImage9, ProductImage1, ProductImage2],
       category: "⁠Famille : Structures métalliques pour espaces publics",
       description:
         "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae voluptate repellendus magni illo ea animi?",

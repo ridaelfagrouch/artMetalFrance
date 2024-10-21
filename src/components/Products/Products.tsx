@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import "./Products.css";
 import { navProduitsListMenuItems } from "../../utils/constants";
 
@@ -46,10 +46,26 @@ const ProductCard = ({ item }: { item: ProductItem }) => {
 
 const Products = () => {
     const scrollContainerRef = useRef<HTMLDivElement>(null);
+    const [showLeftScroll, setShowLeftScroll] = useState(false);
+    const [showRightScroll, setShowRightScroll] = useState(true);
+
+    const checkScroll = () => {
+        if (scrollContainerRef.current) {
+            const { scrollLeft, scrollWidth, clientWidth } = scrollContainerRef.current;
+            setShowLeftScroll(scrollLeft > 0);
+            setShowRightScroll(scrollLeft < scrollWidth - clientWidth - 1);
+        }
+    };
+
+    useEffect(() => {
+        checkScroll();
+        window.addEventListener('resize', checkScroll);
+        return () => window.removeEventListener('resize', checkScroll);
+    }, []);
 
     const handleScroll = (direction: 'left' | 'right') => {
         if (scrollContainerRef.current) {
-            const scrollAmount = 300; // Adjust this value as needed
+            const scrollAmount = 260;
             const currentScroll = scrollContainerRef.current.scrollLeft;
             scrollContainerRef.current.scrollTo({
                 left: direction === 'left' ? currentScroll - scrollAmount : currentScroll + scrollAmount,
@@ -66,13 +82,21 @@ const Products = () => {
                     <div className="enderline" />
                 </div>
                 <div className="ProductsBodyWrapper">
-                    <button className="scrollButton leftScroll" onClick={() => handleScroll('left')}>&lt;</button>
-                    <div className="ProductsBody" ref={scrollContainerRef}>
+                    {showLeftScroll && (
+                        <button className="scrollButton leftScroll" onClick={() => handleScroll('left')}>&lt;</button>
+                    )}
+                    <div
+                        className="ProductsBody"
+                        ref={scrollContainerRef}
+                        onScroll={checkScroll}
+                    >
                         {flattenedNavProduitsListMenuItems.map((item) => (
                             <ProductCard key={item.id} item={item} />
                         ))}
                     </div>
-                    <button className="scrollButton rightScroll" onClick={() => handleScroll('right')}>&gt;</button>
+                    {showRightScroll && (
+                        <button className="scrollButton rightScroll" onClick={() => handleScroll('right')}>&gt;</button>
+                    )}
                 </div>
             </div>
         </section>

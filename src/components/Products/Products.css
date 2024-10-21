@@ -7,7 +7,7 @@
   justify-content: center;
   align-items: center;
   gap: 30px;
-  padding: 50px 15px;
+  padding: 50px 15px 0 15px;
 }
 
 .Products-wrapper {
@@ -53,7 +53,7 @@
     gap: 25px;
     border-radius: 10px;
     overflow: hidden;
-    padding: 15px;
+    padding: 15px 15px 50px 15px;
 }
 
 .scrollButton {
@@ -69,7 +69,15 @@
     font-size: 24px;
     cursor: pointer;
     z-index: 10;
+    transition: opacity 0.3s ease;
+    opacity: 1;
 }
+
+.scrollButton.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
 
 .ProductsCard {
   position: relative;
@@ -205,7 +213,6 @@
   color: #fd3838;
 }
 
-
 @media screen and (max-width: 1024px) {
     .ProductsBody {
         flex-wrap: nowrap;
@@ -231,9 +238,9 @@
         height: 200px;
     }
 
-    .ProductsCardText {
-        height: 170px;
-    }
+    /* .ProductsCardText {
+        height: 190px;
+    } */
 
     .scrollButton {
         display: block;
@@ -266,7 +273,7 @@
 
 @media screen and (max-width: 768px) {
   .Products-section{
-    padding: 40px 15px;
+    padding: 40px 15px 0 15px;
   }
   
     .ProductsCard {
@@ -274,12 +281,16 @@
         height: 380px;
     }
 
+    .ProductsBody {
+      padding: 15px 15px 40px 15px;
+    }
+
     .ProductsCardImageContainer {
         height: 180px;
     }
 
     .ProductsCardText {
-        height: 160px;
+        /* height: 160px; */
         padding: 10px;
     }
 
