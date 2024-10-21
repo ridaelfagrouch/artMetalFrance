@@ -70,21 +70,24 @@ const navProduitsListMenuItems = [
     {
       id: 1,
       image: [ProductImage1, ProductImage2, ProductImage3],
-      category: "Famille : Portes métalliques",
+      type: "Famille",
+      category: "Portes métalliques",
       description:
         "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae voluptate repellendus magni illo ea animi?",
     },
     {
       id: 2,
       image: [ProductImage2, ProductImage3, ProductImage1],
-      category: "⁠Famille : Garde-corps",
+      type: "Famille",
+      category: "⁠Garde-corps",
       description:
         "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae voluptate repellendus magni illo ea animi?",
     },
     {
       id: 3,
       image: [ProductImage3, ProductImage1, ProductImage2],
-      category: "⁠Famille : Mains courantes",
+      type: "Famille",
+      category: "⁠Mains courantes",
       description:
         "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae voluptate repellendus magni illo ea animi?",
     },
@@ -93,21 +96,24 @@ const navProduitsListMenuItems = [
     {
       id: 4,
       image: [ProductImage4, ProductImage5, ProductImage6],
-      category: "⁠Famille : Clôtures et portails métalliques",
+      type: "Famille",
+      category: "⁠Clôtures et portails métalliques",
       description:
         "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae voluptate repellendus magni illo ea animi?",
     },
     {
       id: 5,
       image: [ProductImage5, ProductImage6, ProductImage4],
-      category: "⁠Famille : Escaliers métalliques",
+      type: "Famille",
+      category: "⁠Escaliers métalliques",
       description:
         "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae voluptate repellendus magni illo ea animi?",
     },
     {
       id: 6,
       image: [ProductImage6, ProductImage4, ProductImage5],
-      category: "Famille : Accessoires de fixation et quincaillerie",
+      type: "Famille",
+      category: "Accessoires de fixation et quincaillerie",
       description:
         "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae voluptate repellendus magni illo ea animi?",
     },
@@ -116,21 +122,24 @@ const navProduitsListMenuItems = [
     {
       id: 7,
       image: [ProductImage7, ProductImage8, ProductImage9],
-      category: "⁠Famille : Menuiserie métallique sur mesure",
+      type: "Famille",
+      category: "⁠Menuiserie métallique sur mesure",
       description:
         "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae voluptate repellendus magni illo ea animi?",
     },
     {
       id: 8,
       image: [ProductImage8, ProductImage9, ProductImage1],
-      category: "⁠Famille : Chasse-roues et dispositifs de sécurité routière",
+      type: "Famille",
+      category: "⁠Chasse-roues et dispositifs de sécurité routière",
       description:
         "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae voluptate repellendus magni illo ea animi?",
     },
     {
       id: 9,
       image: [ProductImage9, ProductImage1, ProductImage2],
-      category: "⁠Famille : Structures métalliques pour espaces publics",
+      type: "Famille",
+      category: "⁠Structures métalliques pour espaces publics",
       description:
         "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae voluptate repellendus magni illo ea animi?",
     },

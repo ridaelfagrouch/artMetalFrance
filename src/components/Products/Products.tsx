@@ -6,6 +6,7 @@ const flattenedNavProduitsListMenuItems = navProduitsListMenuItems.flat();
 
 interface ProductItem {
     id: number;
+    type: string;
     category: string;
     description: string;
     image: string[];
@@ -38,7 +39,7 @@ const ProductCard = ({ item }: { item: ProductItem }) => {
                 <p>{item.description}</p>
             </div>
             <div className="ProductsCardIndex">
-                <h3>{item.id}</h3>
+                <h3>{item.id} - {item.type}</h3>
             </div>
         </div>
     );
