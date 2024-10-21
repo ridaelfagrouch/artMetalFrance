@@ -38,25 +38,25 @@ const Serviceslider = () => {
       {
         breakpoint: 1024,
         settings: {
-          slidesToShow: 4, // Show 4 slides at this width
+          slidesToShow: 4,
         },
       },
       {
         breakpoint: 768,
         settings: {
-          slidesToShow: 3, // Show 3 slides at this width
+          slidesToShow: 3,
         },
       },
       {
         breakpoint: 520,
         settings: {
-          slidesToShow: 2, // Show 2 slides at this width
+          slidesToShow: 2,
         },
       },
       {
         breakpoint: 375,
         settings: {
-          slidesToShow: 1, // Show only 1 slide on smaller screens
+          slidesToShow: 1,
         },
       },
     ],
