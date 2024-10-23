@@ -1,4 +1,5 @@
-import Slider from "react-slick";
+import { FC, memo } from "react";
+import Slider, { Settings } from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./Serviceslider.css";
@@ -15,18 +16,72 @@ import {
   BodySlider10,
 } from "../../assets";
 
+interface Slide {
+  readonly id: number;
+  readonly imgSrc: string;
+}
+
 interface SlideProps {
   imgSrc: string;
 }
 
-const Slide = ({ imgSrc }: SlideProps) => (
-  <div className="slide">
-    <img src={imgSrc} alt="Partner logo" />
-  </div>
-);
+const slides: readonly Slide[] = [
+  {
+    id: 1,
+    imgSrc: BodySlider1,
+  },
+  {
+    id: 2,
+    imgSrc: BodySlider2,
+  },
+  {
+    id: 3,
+    imgSrc: BodySlider3,
+  },
+  {
+    id: 4,
+    imgSrc: BodySlider4,
+  },
+  {
+    id: 5,
+    imgSrc: BodySlider5,
+  },
+  {
+    id: 6,
+    imgSrc: BodySlider6,
+  },
+  {
+    id: 7,
+    imgSrc: BodySlider7,
+  },
+  {
+    id: 8,
+    imgSrc: BodySlider8,
+  },
+  {
+    id: 9,
+    imgSrc: BodySlider9,
+  },
+  {
+    id: 10,
+    imgSrc: BodySlider10,
+  },
+] as const;
 
-const Serviceslider = () => {
-  const settings = {
+const Slide: FC<SlideProps> = memo(({ imgSrc }) => (
+  <div className="slide">
+    <img
+      src={imgSrc}
+      alt="Partner logo"
+      loading="lazy"
+    />
+  </div>
+));
+
+Slide.displayName = "Slide";
+
+const ServiceSlider: FC = () => {
+  const settings: Settings = {
     slidesToShow: 6,
     slidesToScroll: 1,
     autoplay: true,
@@ -62,59 +117,18 @@ const Serviceslider = () => {
     ],
   };
 
-
-  const slides = [
-    {
-      id: 1,
-      imgSrc: BodySlider1,
-    },
-    {
-      id: 2,
-      imgSrc: BodySlider2,
-    },
-    {
-      id: 3,
-      imgSrc: BodySlider3,
-    },
-    {
-      id: 4,
-      imgSrc: BodySlider4,
-    },
-    {
-      id: 5,
-      imgSrc: BodySlider5,
-    },
-    {
-      id: 6,
-      imgSrc: BodySlider6,
-    },
-    {
-      id: 7,
-      imgSrc: BodySlider7,
-    },
-    {
-      id: 8,
-      imgSrc: BodySlider8,
-    },
-    {
-      id: 9,
-      imgSrc: BodySlider9,
-    },
-    {
-      id: 10,
-      imgSrc: BodySlider10,
-    },
-  ];
-
   return (
     <div className="slide-container">
       <Slider {...settings} className="customer-logos">
         {slides.map((slide) => (
-          <Slide key={slide.id} imgSrc={slide.imgSrc} />
+          <Slide
+            key={slide.id}
+            imgSrc={slide.imgSrc}
+          />
         ))}
       </Slider>
     </div>
   );
 };
 
-export default Serviceslider;
+export default memo(ServiceSlider);

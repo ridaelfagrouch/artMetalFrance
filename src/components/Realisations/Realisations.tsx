@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, FC, memo } from "react";
 import {
   BodySlider1,
   BodySlider2,
@@ -23,7 +23,23 @@ import {
 } from "../../assets";
 import "./Realisations.css";
 
-const AllImages = [
+interface RealisationItem {
+  readonly id: number;
+  readonly width: string;
+  readonly height: string;
+  readonly alt: string;
+}
+
+interface RealisationsCardProps {
+  imgSrc: string;
+  width: string;
+  height: string;
+  alt: string;
+}
+
+const ROTATION_INTERVAL = 5000;
+
+const ALL_IMAGES: readonly string[] = [
   BodySlider1,
   BodySlider2,
   BodySlider3,
@@ -44,69 +60,88 @@ const AllImages = [
   BodyHeaderImage4,
   BodyHeaderImage5,
   BodyHeaderImage6,
-];
+] as const;
 
-const RealisationsData = [
-  { id: 1, Width: "32%", Height: "300px" },
-  { id: 2, Width: "32%", Height: "350px" },
-  { id: 3, Width: "32%", Height: "300px" },
-  { id: 4, Width: "32%", Height: "310px" },
-  
-  { id: 5, Width: "32%", Height: "250px" },
-  { id: 6, Width: "32%", Height: "350px" },
-  { id: 8, Width: "32%", Height: "320px" },
-  { id: 7, Width: "32%", Height: "340px" },
+const REALISATIONS_DATA: readonly RealisationItem[] = [
+  { id: 1, width: "32%", height: "300px", alt: "Realisation 1" },
+  { id: 2, width: "32%", height: "350px", alt: "Realisation 2" },
+  { id: 3, width: "32%", height: "300px", alt: "Realisation 3" },
+  { id: 4, width: "32%", height: "310px", alt: "Realisation 4" },
+  { id: 5, width: "32%", height: "250px", alt: "Realisation 5" },
+  { id: 6, width: "32%", height: "350px", alt: "Realisation 6" },
+  { id: 7, width: "32%", height: "340px", alt: "Realisation 7" },
+  { id: 8, width: "32%", height: "320px", alt: "Realisation 8" },
+  { id: 9, width: "32%", height: "350px", alt: "Realisation 9" },
+  { id: 10, width: "32%", height: "270px", alt: "Realisation 10" },
+  { id: 11, width: "32%", height: "350px", alt: "Realisation 11" },
+  { id: 12, width: "32%", height: "290px", alt: "Realisation 12" },
+] as const;
 
-  { id: 9, Width: "32%", Height: "350px" },
-  { id: 10, Width: "32%", Height: "270px" },
-  { id: 11, Width: "32%", Height: "350px" },
-  { id: 12, Width: "32%", Height: "290px" },
-];
+const RealisationsCard: FC<RealisationsCardProps> = memo(({ imgSrc, width, height, alt }) => (
+  <div
+    className="RealisationsCard"
+    style={{ width, height }}
+  >
+    <img
+      src={imgSrc}
+      alt={alt}
+      loading="lazy"
+      onError={(e) => {
+        const img = e.target as HTMLImageElement;
+        img.src = 'fallback-image.jpg';
+      }}
+    />
+  </div>
+));
 
-type RealisationsCardProps = {
-  imgSrc: string;
-  Width: string;
-  Height: string;
-};
+RealisationsCard.displayName = "RealisationsCard";
 
-const RealisationsCard = ({ imgSrc, Width, Height }: RealisationsCardProps) => {
-  return (
-    <div className="RealisationsCard" style={{ width: Width, height: Height }}>
-      <img src={imgSrc} alt="Realisation" />
-    </div>
-  );
-};
+const Title: FC = memo(() => (
+  <div className="container-Title">
+    <h2>Realisations</h2>
+    <div className="enderline" />
+  </div>
+));
 
-const Realisations = () => {
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+Title.displayName = "Title";
+
+const useImageRotation = (imagesLength: number) => {
+  const [currentImageIndex, setCurrentImageIndex] = useState<number>(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % AllImages.length);
-    }, 5000);
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % imagesLength);
+    }, ROTATION_INTERVAL);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [imagesLength]);
 
-  const getImageForIndex = (index: number) => {
-    const totalImages = AllImages.length;
-    const adjustedIndex = (currentImageIndex + index) % totalImages;
-    return AllImages[adjustedIndex];
-  };
+  return currentImageIndex;
+};
+
+const getImageForIndex = (currentIndex: number, index: number, totalImages: number): string => {
+  const adjustedIndex = (currentIndex + index) % totalImages;
+  return ALL_IMAGES[adjustedIndex];
+};
+
+const Realisations: FC = () => {
+  const currentImageIndex = useImageRotation(ALL_IMAGES.length);
 
   return (
-    <section className="realisations-section" id="realisations">
-      <div className="container-Title">
-        <h2>Realisations</h2>
-        <div className="enderline" />
-      </div>
+    <section
+      className="realisations-section"
+      id="realisations"
+      aria-label="Our Realisations"
+    >
+      <Title />
       <div className="RealisationsBody">
-        {RealisationsData.map((item, index) => (
+        {REALISATIONS_DATA.map((item, index) => (
           <RealisationsCard
             key={item.id}
-            imgSrc={getImageForIndex(index)}
-            Width={item.Width}
-            Height={item.Height}
+            imgSrc={getImageForIndex(currentImageIndex, index, ALL_IMAGES.length)}
+            width={item.width}
+            height={item.height}
+            alt={item.alt}
           />
         ))}
       </div>
@@ -114,4 +149,24 @@ const Realisations = () => {
   );
 };
 
-export default Realisations;
+
+const withLoading = (WrappedComponent: FC): FC => {
+  return () => {
+    const [isLoading, setIsLoading] = useState(true);
+
+    useEffect(() => {
+      const timer = setTimeout(() => setIsLoading(false), 1000);
+      return () => clearTimeout(timer);
+    }, []);
+
+    if (isLoading) {
+      return <div className="loading">Loading realisations...</div>;
+    }
+
+    return <WrappedComponent />;
+  };
+};
+
+const RealisationsWithLoading = withLoading(() => <Realisations />);
+
+export default memo(RealisationsWithLoading);

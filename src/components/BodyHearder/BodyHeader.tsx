@@ -1,5 +1,4 @@
-// BlogSlider.tsx
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, FC, memo } from "react";
 import "./BodyHeader.css";
 import {
   BodyHeaderImage1,
@@ -11,137 +10,172 @@ import {
 } from "../../assets";
 
 interface BlogSlide {
+  id: string;
   imgSrc: string;
-  code: string;
+  date: string;
   title: string;
   text: string;
 }
 
-const blogSlides: BlogSlide[] = [
+// Constants
+const SLIDE_TRANSITION_DELAY = 500;
+const AUTO_SLIDE_INTERVAL = 5000;
+
+const blogSlides: readonly BlogSlide[] = [
   {
+    id: "slide-1",
     imgSrc: BodyHeaderImage1,
-    code: "26 December 2019 1",
+    date: "26 December 2019",
     title: "Lorem Ipsum Dolor 1",
     text: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae voluptate repellendus magni illo ea animi? 1",
   },
   {
+    id: "slide-2",
     imgSrc: BodyHeaderImage2,
-    code: "26 December 2019 2",
+    date: "26 December 2019",
     title: "Lorem Ipsum Dolor 2",
     text: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae voluptate repellendus magni illo ea animi? 2",
   },
   {
+    id: "slide-3",
     imgSrc: BodyHeaderImage3,
-    code: "26 December 2019 3",
+    date: "26 December 2019",
     title: "Lorem Ipsum Dolor 3",
     text: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae voluptate repellendus magni illo ea animi? 3",
   },
   {
+    id: "slide-4",
     imgSrc: BodyHeaderImage4,
-    code: "26 December 2019 4",
+    date: "26 December 2019",
     title: "Lorem Ipsum Dolor 4",
     text: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae voluptate repellendus magni illo ea animi? 4",
   },
   {
+    id: "slide-5",
     imgSrc: BodyHeaderImage5,
-    code: "26 December 2019 5",
+    date: "26 December 2019",
     title: "Lorem Ipsum Dolor 5",
     text: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae voluptate repellendus magni illo ea animi? 5",
   },
   {
+    id: "slide-6",
     imgSrc: BodyHeaderImage6,
-    code: "26 December 2019 6",
+    date: "26 December 2019",
     title: "Lorem Ipsum Dolor 6",
     text: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae voluptate repellendus magni illo ea animi? 6",
   },
-];
+] as const;
 
-const BodyHeader = () => {
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const [isTransitioning, setIsTransitioning] = useState(false);
+interface SlideProps {
+  slide: BlogSlide;
+  isActive: boolean;
+  isTransitioning: boolean;
+}
+
+const Slide: FC<SlideProps> = memo(({ slide, isActive, isTransitioning }) => (
+  <div
+    className={`blog-slider__item ${isActive ? "active" : ""} ${isTransitioning ? "transitioning" : ""
+      }`}
+  >
+    <div className="blog-slider__img">
+      <img src={slide.imgSrc} alt={slide.title} loading="lazy" />
+    </div>
+    <div className="blog-slider__content">
+      <span className="blog-slider__code">{slide.date}</span>
+      <div className="blog-slider__title">{slide.title}</div>
+      <div className="blog-slider__text">{slide.text}</div>
+    </div>
+  </div>
+));
+
+Slide.displayName = "Slide";
+
+interface PaginationProps {
+  currentSlide: number;
+  totalSlides: number;
+  onSlideChange: (index: number) => void;
+}
+
+const Pagination: FC<PaginationProps> = memo(
+  ({ currentSlide, totalSlides, onSlideChange }) => (
+    <div className="blog-slider__pagination">
+      {Array.from({ length: totalSlides }, (_, index) => (
+        <button
+          key={`pagination-${index}`}
+          className={`blog-slider__pagination-bullet ${index === currentSlide ? "active" : ""
+            }`}
+          onClick={() => onSlideChange(index)}
+          aria-label={`Go to slide ${index + 1}`}
+          aria-pressed={index === currentSlide}
+          onKeyDown={(e) => {
+            if (e.key === "Enter" || e.key === " ") {
+              onSlideChange(index);
+            }
+          }}
+        />
+      ))}
+    </div>
+  )
+);
+
+Pagination.displayName = "Pagination";
+
+const BodyHeader: FC = () => {
+  const [currentSlide, setCurrentSlide] = useState<number>(0);
+  const [isTransitioning, setIsTransitioning] = useState<boolean>(false);
+
+  const handleSlideTransition = useCallback(
+    (nextIndex: number) => {
+      if (nextIndex !== currentSlide && !isTransitioning) {
+        setIsTransitioning(true);
+        const isNext = nextIndex > currentSlide;
+        document.documentElement.style.setProperty(
+          "--slide-direction",
+          isNext ? "1" : "-1"
+        );
+
+        setTimeout(() => {
+          setCurrentSlide(nextIndex);
+          setIsTransitioning(false);
+        }, SLIDE_TRANSITION_DELAY);
+      }
+    },
+    [currentSlide, isTransitioning]
+  );
 
   const nextSlide = useCallback(() => {
     if (!isTransitioning) {
-      setIsTransitioning(true);
-      setTimeout(() => {
-        setCurrentSlide((prevSlide) => (prevSlide + 1) % blogSlides.length);
-        setIsTransitioning(false);
-      }, 500);
+      const nextIndex = (currentSlide + 1) % blogSlides.length;
+      handleSlideTransition(nextIndex);
     }
-  }, [isTransitioning]);
+  }, [currentSlide, isTransitioning, handleSlideTransition]);
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      nextSlide();
-    }, 5000);
-
+    const interval = setInterval(nextSlide, AUTO_SLIDE_INTERVAL);
     return () => clearInterval(interval);
   }, [nextSlide]);
 
-  const goToSlide = (index: number) => {
-    if (index !== currentSlide && !isTransitioning) {
-      setIsTransitioning(true);
-      const isNext = index > currentSlide;
-      document.documentElement.style.setProperty(
-        "--slide-direction",
-        isNext ? "1" : "-1"
-      );
-
-      setTimeout(() => {
-        setCurrentSlide(index);
-        setIsTransitioning(false);
-      }, 500);
-    }
-  };
-
   return (
-    <div className="blog-slider-container">
-      <div className="blog-slider">
+    <section className="blog-slider-container">
+      <section className="blog-slider" aria-label="Image Slider">
         <div className="swiper-wrapper">
           {blogSlides.map((slide) => (
-            <div
-              key={slide.code}
-              className={`blog-slider__item ${
-                blogSlides[currentSlide].code === slide.code ? "active" : ""
-              } ${isTransitioning ? "transitioning" : ""}`}
-            >
-              <div className="blog-slider__img">
-                <img src={slide.imgSrc} alt="" />
-              </div>
-              <div className="blog-slider__content">
-                <span className="blog-slider__code">{slide.code}</span>
-                <div className="blog-slider__title">{slide.title}</div>
-                <div className="blog-slider__text">{slide.text}</div>
-                {/* <button
-                  className="blog-slider__button"
-                  onClick={() => alert("Read more clicked")}
-                >
-                  READ MORE
-                </button> */}
-              </div>
-            </div>
+            <Slide
+              key={slide.id}
+              slide={slide}
+              isActive={blogSlides[currentSlide].id === slide.id}
+              isTransitioning={isTransitioning}
+            />
           ))}
         </div>
-        <div className="blog-slider__pagination">
-          {blogSlides.map((slide, index) => (
-            <button
-              key={slide.code}
-              className={`blog-slider__pagination-bullet ${
-                index === currentSlide ? "active" : ""
-              }`}
-              onClick={() => goToSlide(index)}
-              aria-pressed={index === currentSlide}
-              onKeyDown={(e) => {
-                if (e.key === "Enter" || e.key === " ") {
-                  goToSlide(index);
-                }
-              }}
-            ></button>
-          ))}
-        </div>
-      </div>
-    </div>
+        <Pagination
+          currentSlide={currentSlide}
+          totalSlides={blogSlides.length}
+          onSlideChange={handleSlideTransition}
+        />
+        </section>
+    </section>
   );
 };
 
-export default BodyHeader;
+export default memo(BodyHeader);

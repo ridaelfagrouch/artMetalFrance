@@ -19,8 +19,7 @@ import {
   PhotoIcon,
   XMarkIcon,
 } from "@heroicons/react/24/solid";
-import { socialLinks } from "../../utils/constants"
-import { navProduitsListMenuItems } from "../../utils/constants"
+import { socialLinks, navProduitsListMenuItems } from "../../utils/constants"
 
 interface NavListMenuProps {
   navListData: Array<{ id: number; category: string; description: string }[]>;
@@ -64,18 +63,14 @@ function NavListMenu({ navListData, navListItem, setIsNavOpen }: Readonly<NavLis
     if (setIsNavOpen) {
       setIsNavOpen(false);
     }
-
-    const targetElement = document.querySelector(link);
-    if (targetElement) {
-      targetElement.scrollIntoView({ behavior: 'smooth' });
-    }
+    document.querySelector(link)?.scrollIntoView({ behavior: 'smooth' });
   };
 
   const renderItems = (
     <div className="flex flex-col lg:flex-row gap-2 lg:gap-8 px-0">
-      {navListData.map((category, index) => (
+      {navListData.map((category) => (
         <div
-          key={`category-${index}`}
+          key={`category-${category[0].id}`}
           className="flex flex-col gap-4 justify-between mb-2"
         >
           {category.map(({ id, category, description }) => (
@@ -202,7 +197,7 @@ function NavListMenu({ navListData, navListItem, setIsNavOpen }: Readonly<NavLis
   );
 }
 
-function NavList({ setIsNavOpen }: { setIsNavOpen?: React.Dispatch<React.SetStateAction<boolean>> }) {
+function NavList({ setIsNavOpen }: Readonly<{ setIsNavOpen?: React.Dispatch<React.SetStateAction<boolean>> }>) {
   const handleItemClick = (link: string) => {
     if (setIsNavOpen) {
       setIsNavOpen(false);

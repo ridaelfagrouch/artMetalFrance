@@ -52,9 +52,6 @@ const ExpertisesCard: React.FC<ExpertisesCardProps> = ({
             ))}
           </ul>
         </div>
-        {/* <p className="read-more">
-          <button className="read-more-button">Read More</button>
-        </p> */}
       </div>
     </div>
   );
