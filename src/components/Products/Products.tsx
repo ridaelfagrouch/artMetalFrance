@@ -82,7 +82,7 @@ const Products: React.FC = () => {
             <div className="Products-wrapper">
                 <div className="container-Title">
                     <h2>Produits</h2>
-                    <div className="underline" />
+                    <div className="enderline" />
                 </div>
                 <div className="ProductsBodyWrapper">
                     {showLeftScroll && (
