@@ -7,7 +7,18 @@ import {
   ExpertisesImage4,
 } from "../../assets";
 
-const ExpertisesCardData = [
+interface ExpertiseCard {
+  alt: boolean;
+  photo: string;
+  author: string;
+  features: string[];
+  phone: string;
+  title: string;
+  subtitle: string;
+  description: string;
+}
+
+const ExpertisesCardData: ExpertiseCard[] = [
   {
     alt: false,
     photo: ExpertisesImage1,
@@ -69,7 +80,7 @@ const ExpertisesCardData = [
   },
 ];
 
-const Expertises = () => {
+const Expertises: React.FC = () => {
   return (
     <section className="expertises-section" id="expertises">
       <div className="container-Title">
@@ -77,9 +88,9 @@ const Expertises = () => {
         <div className="enderline" />
       </div>
       <div className="ExpertisesBody">
-        {ExpertisesCardData.map((card) => (
+        {ExpertisesCardData.map((card, index) => (
           <ExpertisesCard
-            key={card.title}
+            key={`${card.title}-${index}`}
             alt={card.alt}
             photo={card.photo}
             author={card.author}

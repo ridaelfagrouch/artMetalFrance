@@ -238,10 +238,6 @@
         height: 200px;
     }
 
-    /* .ProductsCardText {
-        height: 190px;
-    } */
-
     .scrollButton {
         display: block;
     }
@@ -258,17 +254,6 @@
   color: #fd3838;
 }
 
-.ProductsCard {
-  transform: translateY(-5px);
-  box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.2);
-}
-
-.ProductsCard img {
-  transform: scale(1.05);
-}
-.ProductsCard .ProductsCardText {
-  background-color: rgba(254, 138, 57, 0.1);
-}
 }
 
 @media screen and (max-width: 768px) {
@@ -290,7 +275,6 @@
     }
 
     .ProductsCardText {
-        /* height: 160px; */
         padding: 10px;
     }
 

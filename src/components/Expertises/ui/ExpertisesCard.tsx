@@ -1,10 +1,10 @@
-import React from "react";
+import React, { useCallback } from "react";
 import "../Expertises.css";
 import { faPhone } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 interface ExpertisesCardProps {
-  alt?: boolean;
+  alt: boolean;
   photo: string;
   author: string;
   features: string[];
@@ -24,18 +24,19 @@ const ExpertisesCard: React.FC<ExpertisesCardProps> = ({
   subtitle,
   description,
 }) => {
+  const handlePhoneClick = useCallback(() => {
+    window.location.href = `tel:${phone}`;
+  }, [phone]);
+
   return (
     <div className={`expertises-card ${alt ? "alt" : ""}`}>
       <div className="meta">
-        <div
-          className="photo"
-          style={{ backgroundImage: `url(${photo})` }}
-        ></div>
+        <div className="photo" style={{ backgroundImage: `url(${photo})` }}></div>
         <ul className="details">
           <li className="author">{author}</li>
           <button
             className="blog-slider__button"
-            onClick={() => (window.location.href = `tel:${phone}`)}
+            onClick={handlePhoneClick}
           >
             <FontAwesomeIcon icon={faPhone} /> {phone}
           </button>
@@ -47,8 +48,8 @@ const ExpertisesCard: React.FC<ExpertisesCardProps> = ({
         <p>{description}</p>
         <div className="features-container">
           <ul className="features">
-            {features.map((feature) => (
-              <li key={feature}>{feature}</li>
+            {features.map((feature, index) => (
+              <li key={`${feature}-${index}`}>{feature}</li>
             ))}
           </ul>
         </div>
