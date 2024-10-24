@@ -1,5 +1,6 @@
 import "./App.css";
 import { BrowserRouter } from "react-router-dom";
+import { Helmet, HelmetProvider } from "react-helmet-async";
 import {
   ComplexNavbar,
   BodyHeader,
@@ -12,10 +13,24 @@ import {
   Quote,
   Realisations,
   Footer,
-  Products
+  Products,
 } from "./components";
-
 import { ReactNode } from "react";
+
+// SEO metadata configuration
+const seoConfig = {
+  title: "Art metal France - Rénovation et Réhabilitation de Bâtiments.",
+  description:
+    "Nous sommes spécialisés dans l'Entretien, la Rénovation et la Réhabilitation d'immeubles ou d'ouvrages existants. Nos interventions sur Paris et la région Parisienne.",
+  keywords:
+    "la Rénovation , la Réhabilitation d'immeubles, ouvrages existants, Serrurerie Générale, Métallerie & Ferronnerie, Menuiseries extérieures RGE, Motorisation / Contrôle d’accès, Portes métalliques, ⁠Garde-corps, ⁠Mains courantes, Clôtures et portails métalliques, Escaliers métalliques, Accessoires de fixation et quincaillerie, ⁠Menuiserie métallique sur mesure, Chasse-roues et dispositifs de sécurité routière, Structures métalliques pour espaces publics,rénovation bâtiment, réhabilitation immobilière, restauration bâtiment ancien, rénovation complète, travaux de rénovation, entreprise rénovation, rénovation maison, rénovation appartement, transformation bâtiment, modernisation bâtiment, rénovation énergétique, isolation thermique, ravalement façade, réfection toiture, rénovation intérieure, aménagement combles, extension maison, remise aux normes, rénovation électrique, plomberie rénovation, diagnostic bâtiment, étude technique, maîtrise d'œuvre, coordination travaux, suivi chantier, gestion projet construction, bureaux d'études techniques, audit énergétique, expertise bâtiment, conformité normes, restauration patrimoine, rénovation monuments historiques, bâtiments classés, architecture ancienne, rénovation pierre, charpente traditionnelle, rénovation écologique, rénovation durable, bâtiment basse consommation, bâtiment passif, devis rénovation, prix rénovation, coût réhabilitation, artisan rénovation, entreprise locale rénovation, rénovation professionnelle, rénovateur agréé, certification RGE, permis de construire, autorisation travaux, aides rénovation, subventions travaux, crédit rénovation, assurance décennale, garantie travaux, architecte rénovation, économies énergie, performance énergétique, comment rénover une maison ancienne, prix au m2 rénovation complète, entreprise rénovation tout corps d'état, rénovation maison avec architecte, rénovation écologique maison ancienne, réhabilitation bâtiment industriel en logement, transformation local commercial en habitation, rénovation énergétique bâtiment collectif, diagnostic avant rénovation maison, isolation thermique extérieure, VMC double flux, pompe à chaleur rénovation, domotique rénovation, smart building, matériaux écologiques, rénovation BBC, RT 2020, RE 2020, certification environnementale, rénovation tous corps d'état, rénovation clé en main, rénovation haut de gamme, rénovation sur mesure, rénovation éco-responsable, rénovation appartement ancien, rénovation maison traditionnelle, rénovation qualité professionnelle, rénovation grand projet, rénovation petit budget,rénovation bâtiment, réhabilitation immobilière, restauration bâtiment ancien, rénovation complète, travaux de rénovation, entreprise rénovation, rénovation maison, rénovation appartement, transformation bâtiment, modernisation bâtiment, rénovation énergétique, isolation thermique, ravalement façade, réfection toiture, rénovation intérieure, aménagement combles, extension maison, remise aux normes, rénovation électrique, plomberie rénovation, diagnostic bâtiment, étude technique, maîtrise d'œuvre, coordination travaux, suivi chantier, gestion projet construction, bureaux d'études techniques, audit énergétique, expertise bâtiment, conformité normes, restauration patrimoine, rénovation monuments historiques, bâtiments classés, architecture ancienne, rénovation pierre, charpente traditionnelle, rénovation écologique, rénovation durable, bâtiment basse consommation, bâtiment passif, devis rénovation, prix rénovation, coût réhabilitation, artisan rénovation, entreprise locale rénovation, rénovation professionnelle, rénovateur agréé, certification RGE, permis de construire, autorisation travaux, aides rénovation, subventions travaux, crédit rénovation, assurance décennale, garantie travaux, architecte rénovation, économies énergie, performance énergétique, aménagement intérieur, décoration rénovation, rénovation cuisine, rénovation salle de bain, rénovation bureau, rénovation commerce, rénovation industrielle, rénovation logement, rénovation copropriété, rénovation immeubles, rénovation façades, rénovation toitures, rénovation fenêtres, rénovation portes, rénovation sols, rénovation murs, rénovation plafonds, rénovation cave, rénovation grenier, rénovation terrasse, rénovation balcon, rénovation piscine, rénovation garage, rénovation véranda, rénovation isolation, rénovation chauffage, rénovation climatisation, rénovation ventilation, rénovation plomberie, rénovation électricité, rénovation domotique, rénovation sécurité, rénovation accessibilité, rénovation PMR, rénovation ascenseur, rénovation escalier, rénovation menuiserie, rénovation serrurerie, rénovation carrelage, rénovation parquet, rénovation peinture, rénovation papier peint, rénovation enduit, rénovation crépi, rénovation pierre apparente, rénovation bois, rénovation métal, rénovation béton, rénovation zinc, rénovation ardoise, rénovation tuile, rénovation étanchéité, rénovation isolation phonique, rénovation isolation thermique, rénovation acoustique, rénovation thermique, rénovation énergétique RT2012, rénovation passive, rénovation bioclimatique, rénovation écologique, rénovation durable, rénovation responsable, rénovation verte, rénovation développement durable, rénovation bas carbone, rénovation zéro carbone, rénovation circulaire, rénovation recyclage, rénovation récupération, rénovation réemploi, rénovation patrimoine historique, rénovation bâtiment classé, rénovation monument historique, rénovation architecture ancienne, rénovation style haussmannien, rénovation maison bourgeoise, rénovation château, rénovation manoir, rénovation villa, rénovation loft, rénovation studio, rénovation duplex, rénovation triplex, rénovation résidence secondaire, rénovation gîte, rénovation chambre d'hôtes, rénovation local commercial, rénovation boutique, rénovation restaurant, rénovation hôtel, rénovation bureau professionnel, rénovation cabinet médical, rénovation cabinet dentaire, rénovation cabinet avocat, rénovation école, rénovation crèche, rénovation maison de retraite, rénovation établissement de santé, rénovation établissement recevant du public, rénovation ERP, rénovation accessibilité handicapés, rénovation normes sécurité, rénovation normes incendie, rénovation normes électriques, rénovation normes gaz, rénovation normes assainissement, rénovation tout corps d'état, rénovation clés en main, rénovation sur mesure, rénovation haut de gamme, rénovation luxe, rénovation prestige, rénovation qualité, rénovation professionnelle, rénovation artisanale, rénovation traditionnelle, rénovation moderne, rénovation contemporaine, rénovation design, rénovation tendance, rénovation style industriel, rénovation style scandinave, rénovation style moderne, rénovation style contemporain, rénovation style authentique, rénovation petit prix, rénovation low cost, rénovation économique, rénovation rapide, rénovation express, rénovation urgente, rénovation progressive, rénovation par étapes, rénovation partielle, rénovation totale, rénovation globale, diagnostic énergétique DPE, audit énergétique, bilan thermique, étude thermique, simulation thermique dynamique, test d'infiltrométrie, test étanchéité à l'air, caméra thermique, thermographie infrarouge, modélisation 3D bâtiment, BIM rénovation, maquette numérique, scan 3D bâtiment, permis de construire rénovation, déclaration préalable travaux, autorisation travaux ERP, attestation accessibilité, certification Qualibat, certification RGE, certification Qualit'EnR, certification NF habitat, label BBC rénovation, label HPE rénovation, label rénovation responsable, MaPrimeRénov, CEE certificats économie énergie, aide ANAH, crédit d'impôt rénovation, TVA réduite rénovation, éco-prêt à taux zéro, prime énergie, prime rénovation globale, aide isolation, aide chauffage, aide fenêtres, financement rénovation, prêt rénovation, assurance dommage ouvrage, garantie décennale, garantie biennale, garantie parfait achèvement",
+  ogTitle: "Art metal France - Rénovation et Réhabilitation de Bâtiments",
+  ogDescription:
+    "Nous sommes spécialisés dans l'Entretien, la Rénovation et la Réhabilitation d'immeubles ou d'ouvrages existants. Nos interventions sur Paris et la région Parisienne.",
+  ogImage: "",
+  twitterCard: "",
+  canonicalUrl: "https://www.artmetalfrance.works/",
+};
 
 const Section = ({
   children,
@@ -25,7 +40,9 @@ const Section = ({
   className?: string;
 }) => (
   <div className={`w-full flex justify-center items-center ${className}`}>
-    <div className="w-full h-full max-w-[1300px] flex flex-col ">{children}</div>
+    <div className="w-full h-full max-w-[1300px] flex flex-col ">
+      {children}
+    </div>
   </div>
 );
 
@@ -37,7 +54,7 @@ function App() {
     { id: "service-slider", Component: Serviceslider, className: "" },
     { id: "about", Component: About, className: classStyle },
     { id: "expertises", Component: Expertises, className: "" },
-    {id: "products", Component: Products, className: classStyle},
+    { id: "products", Component: Products, className: classStyle },
     { id: "realisations", Component: Realisations, className: "" },
     { id: "partners", Component: Partners, className: classStyle },
     { id: "quote", Component: Quote, className: "" },
@@ -47,18 +64,43 @@ function App() {
   ];
 
   return (
-    <BrowserRouter>
-      <ComplexNavbar />
-      <main className="flex-grow mt-[110px]">
-        <div className="w-full flex flex-col justify-center items-center gap-12 ">
-          {sections.map(({ id, Component, className }) => (
-            <Section key={id} className={className}>
-              <Component />
-            </Section>
-          ))}
-        </div>
-      </main>
-    </BrowserRouter>
+    <HelmetProvider>
+      <BrowserRouter>
+        <Helmet>
+          {/* Basic Meta Tags */}
+          <title>{seoConfig.title}</title>
+          <meta name="description" content={seoConfig.description} />
+          <meta name="keywords" content={seoConfig.keywords} />
+
+          {/* Open Graph Meta Tags */}
+          <meta property="og:title" content={seoConfig.ogTitle} />
+          <meta property="og:description" content={seoConfig.ogDescription} />
+          <meta property="og:image" content={seoConfig.ogImage} />
+          <meta property="og:type" content="website" />
+          <meta property="og:url" content={seoConfig.canonicalUrl} />
+
+          {/* Twitter Card Meta Tags */}
+          <meta name="twitter:card" content={seoConfig.twitterCard} />
+          <meta name="twitter:title" content={seoConfig.ogTitle} />
+          <meta name="twitter:description" content={seoConfig.ogDescription} />
+          <meta name="twitter:image" content={seoConfig.ogImage} />
+
+          {/* Canonical URL */}
+          <link rel="canonical" href={seoConfig.canonicalUrl} />
+        </Helmet>
+
+        <ComplexNavbar />
+        <main className="flex-grow mt-[110px]">
+          <div className="w-full flex flex-col justify-center items-center gap-12 ">
+            {sections.map(({ id, Component, className }) => (
+              <Section key={id} className={className}>
+                <Component />
+              </Section>
+            ))}
+          </div>
+        </main>
+      </BrowserRouter>
+    </HelmetProvider>
   );
 }
 
