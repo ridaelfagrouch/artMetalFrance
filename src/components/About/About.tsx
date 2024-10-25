@@ -55,6 +55,22 @@ const Specialist: FC<SpecialistProps> = memo(({ title, icon }) => (
   </div>
 ));
 
+interface ImageDimensions {
+  width: number;
+  height: number;
+}
+
+const IMAGE_DIMENSIONS: Record<string, ImageDimensions> = {
+  aboutImage1: {
+    width: 570,
+    height: 570,
+  },
+  aboutImage2: {
+    width: 450,
+    height: 350,
+  },
+};
+
 const About: FC = () => {
   const handleContact = (): void => {
     window.location.href = "mailto:contact@example.com";
@@ -118,12 +134,26 @@ const About: FC = () => {
           <div className="inner-column">
             <figure className="image-1">
               <div className="lightbox-image" data-fancybox="images">
-                <img src={AboutImage1} alt="About 1" loading="lazy" />
+                <img
+                  src={AboutImage1}
+                  alt="About 1"
+                  loading="lazy"
+                  srcSet={`${AboutImage1} 1x, ${AboutImage1} 2x`}
+                  sizes="(max-width: 768px) 100vw, 570px"
+                  style={{ aspectRatio: `${IMAGE_DIMENSIONS.aboutImage1.width}/${IMAGE_DIMENSIONS.aboutImage1.height}` }}
+                />
               </div>
             </figure>
             <figure className="image-2">
               <div className="lightbox-image" data-fancybox="images">
-                <img src={AboutImage2} alt="About 2" loading="lazy" />
+                <img
+                  src={AboutImage2}
+                  alt="About 2"
+                  loading="lazy"
+                  srcSet={`${AboutImage2} 1x, ${AboutImage2} 2x`}
+                  sizes="(max-width: 768px) 100vw, 570px"
+                  style={{ aspectRatio: `${IMAGE_DIMENSIONS.aboutImage2.width}/${IMAGE_DIMENSIONS.aboutImage2.height}` }}
+                />
               </div>
             </figure>
           </div>

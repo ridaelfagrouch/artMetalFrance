@@ -209,6 +209,18 @@
   transition: 0.3s;
 }
 
+lightbox-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  max-width: 100%;
+}
+
+.image-1 img,
+.image-2 img {
+  object-fit: cover;
+}
+
 @media screen and (max-width: 1024px) {
   .about-section .image-column .inner-column  {
   min-height: 1150px;

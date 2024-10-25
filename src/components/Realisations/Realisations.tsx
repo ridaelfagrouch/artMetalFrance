@@ -90,6 +90,8 @@ const RealisationsCard: FC<RealisationsCardProps> = memo(({ imgSrc, width, heigh
         const img = e.target as HTMLImageElement;
         img.src = 'fallback-image.jpg';
       }}
+      srcSet={`${imgSrc}?w=300 300w, ${imgSrc}?w=600 600w, ${imgSrc}?w=900 900w`}
+      sizes="(max-width: 600px) 300px, (max-width: 900px) 600px, 900px"
     />
   </div>
 ));
@@ -148,7 +150,6 @@ const Realisations: FC = () => {
     </section>
   );
 };
-
 
 const withLoading = (WrappedComponent: FC): FC => {
   return () => {
