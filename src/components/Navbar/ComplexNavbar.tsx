@@ -148,7 +148,7 @@ function NavListMenu({ navListData, navListItem, setIsNavOpen }: Readonly<NavLis
           </Typography>
         </MenuHandler>
         <MenuList
-          className="hidden w-[64rem] overflow-visible lg:block p-4"
+          className="hidden w-[64rem] overflow-visible lg:block p-4 mt-2"
           placeholder={undefined}
           onPointerEnterCapture={undefined}
           onPointerLeaveCapture={undefined}

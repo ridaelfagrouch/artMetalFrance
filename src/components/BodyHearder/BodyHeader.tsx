@@ -11,7 +11,12 @@ import {
 
 interface BlogSlide {
   id: string;
-  imgSrc: string;
+  imgSrc: {
+    default: string;
+    small: string;
+    medium: string;
+    large: string;
+  };
   date: string;
   title: string;
   text: string;
@@ -24,46 +29,76 @@ const AUTO_SLIDE_INTERVAL = 5000;
 const blogSlides: readonly BlogSlide[] = [
   {
     id: "slide-1",
-    imgSrc: BodyHeaderImage1,
+    imgSrc: {
+      default: BodyHeaderImage1,
+      small: `${BodyHeaderImage1}?w=300`,
+      medium: `${BodyHeaderImage1}?w=600`,
+      large: `${BodyHeaderImage1}?w=900`,
+    },
     date: "26 December 2019",
     title: "Lorem Ipsum Dolor 1",
-    text: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae voluptate repellendus magni illo ea animi? 1",
+    text: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. 1",
   },
   {
     id: "slide-2",
-    imgSrc: BodyHeaderImage2,
+    imgSrc: {
+      default: BodyHeaderImage2,
+      small: `${BodyHeaderImage2}?w=300`,
+      medium: `${BodyHeaderImage2}?w=600`,
+      large: `${BodyHeaderImage2}?w=900`,
+    },
     date: "26 December 2019",
     title: "Lorem Ipsum Dolor 2",
-    text: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae voluptate repellendus magni illo ea animi? 2",
+    text: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. 2",
   },
   {
     id: "slide-3",
-    imgSrc: BodyHeaderImage3,
+    imgSrc: {
+      default: BodyHeaderImage3,
+      small: `${BodyHeaderImage3}?w=300`,
+      medium: `${BodyHeaderImage3}?w=600`,
+      large: `${BodyHeaderImage3}?w=900`,
+    },
     date: "26 December 2019",
     title: "Lorem Ipsum Dolor 3",
-    text: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae voluptate repellendus magni illo ea animi? 3",
+    text: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. 3",
   },
   {
     id: "slide-4",
-    imgSrc: BodyHeaderImage4,
+    imgSrc: {
+      default: BodyHeaderImage4,
+      small: `${BodyHeaderImage4}?w=300`,
+      medium: `${BodyHeaderImage4}?w=600`,
+      large: `${BodyHeaderImage4}?w=900`,
+    },
     date: "26 December 2019",
     title: "Lorem Ipsum Dolor 4",
-    text: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae voluptate repellendus magni illo ea animi? 4",
+    text: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. 4",
   },
   {
     id: "slide-5",
-    imgSrc: BodyHeaderImage5,
+    imgSrc: {
+      default: BodyHeaderImage5,
+      small: `${BodyHeaderImage5}?w=300`,
+      medium: `${BodyHeaderImage5}?w=600`,
+      large: `${BodyHeaderImage5}?w=900`,
+    },
     date: "26 December 2019",
     title: "Lorem Ipsum Dolor 5",
-    text: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae voluptate repellendus magni illo ea animi? 5",
+    text: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. 5",
   },
   {
     id: "slide-6",
-    imgSrc: BodyHeaderImage6,
+    imgSrc: {
+      default: BodyHeaderImage6,
+      small: `${BodyHeaderImage6}?w=300`,
+      medium: `${BodyHeaderImage6}?w=600`,
+      large: `${BodyHeaderImage6}?w=900`,
+    },
     date: "26 December 2019",
     title: "Lorem Ipsum Dolor 6",
-    text: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae voluptate repellendus magni illo ea animi? 6",
-  },
+    text: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. 6",
+  }
 ] as const;
 
 interface SlideProps {
@@ -72,21 +107,39 @@ interface SlideProps {
   isTransitioning: boolean;
 }
 
-const Slide: FC<SlideProps> = memo(({ slide, isActive, isTransitioning }) => (
-  <div
-    className={`blog-slider__item ${isActive ? "active" : ""} ${isTransitioning ? "transitioning" : ""
-      }`}
-  >
-    <div className="blog-slider__img">
-      <img src={slide.imgSrc} alt={slide.title} loading="lazy" />
+const Slide: FC<SlideProps> = memo(({ slide, isActive, isTransitioning }) => {
+  const [isLoading, setIsLoading] = useState(true);
+
+  return (
+    <div
+      className={`blog-slider__item ${isActive ? "active" : ""} ${isTransitioning ? "transitioning" : ""
+        }`}
+    >
+      <div className={`blog-slider__img ${isLoading ? "loading" : ""}`}>
+        <img
+          src={slide.imgSrc.default}
+          srcSet={`
+            ${slide.imgSrc.small} 300w,
+            ${slide.imgSrc.medium} 600w,
+            ${slide.imgSrc.large} 900w
+          `}
+          sizes="(max-width: 600px) 300px,
+                 (max-width: 900px) 600px,
+                 900px"
+          alt={slide.title}
+          loading={isActive ? "eager" : "lazy"}
+          onLoad={() => setIsLoading(false)}
+          onError={() => setIsLoading(false)}
+        />
+      </div>
+      <div className="blog-slider__content">
+        <span className="blog-slider__code">{slide.date}</span>
+        <div className="blog-slider__title">{slide.title}</div>
+        <div className="blog-slider__text">{slide.text}</div>
+      </div>
     </div>
-    <div className="blog-slider__content">
-      <span className="blog-slider__code">{slide.date}</span>
-      <div className="blog-slider__title">{slide.title}</div>
-      <div className="blog-slider__text">{slide.text}</div>
-    </div>
-  </div>
-));
+  );
+});
 
 Slide.displayName = "Slide";
 
@@ -107,11 +160,6 @@ const Pagination: FC<PaginationProps> = memo(
           onClick={() => onSlideChange(index)}
           aria-label={`Go to slide ${index + 1}`}
           aria-pressed={index === currentSlide}
-          onKeyDown={(e) => {
-            if (e.key === "Enter" || e.key === " ") {
-              onSlideChange(index);
-            }
-          }}
         />
       ))}
     </div>
@@ -128,10 +176,9 @@ const BodyHeader: FC = () => {
     (nextIndex: number) => {
       if (nextIndex !== currentSlide && !isTransitioning) {
         setIsTransitioning(true);
-        const isNext = nextIndex > currentSlide;
         document.documentElement.style.setProperty(
           "--slide-direction",
-          isNext ? "1" : "-1"
+          nextIndex > currentSlide ? "1" : "-1"
         );
 
         setTimeout(() => {
@@ -173,7 +220,7 @@ const BodyHeader: FC = () => {
           totalSlides={blogSlides.length}
           onSlideChange={handleSlideTransition}
         />
-        </section>
+      </section>
     </section>
   );
 };

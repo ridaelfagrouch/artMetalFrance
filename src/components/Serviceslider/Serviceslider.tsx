@@ -1,4 +1,4 @@
-import { FC, memo } from "react";
+import { FC, memo, useState } from "react";
 import Slider, { Settings } from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -19,64 +19,89 @@ import {
 interface Slide {
   readonly id: number;
   readonly imgSrc: string;
+  readonly alt: string;
 }
 
 interface SlideProps {
   imgSrc: string;
+  alt: string;
 }
 
 const slides: readonly Slide[] = [
   {
     id: 1,
     imgSrc: BodySlider1,
+    alt: "Partner logo 1",
   },
   {
     id: 2,
     imgSrc: BodySlider2,
+    alt: "Partner logo 2",
   },
   {
     id: 3,
     imgSrc: BodySlider3,
+    alt: "Partner logo 3",
   },
   {
     id: 4,
     imgSrc: BodySlider4,
+    alt: "Partner logo 4",
   },
   {
     id: 5,
     imgSrc: BodySlider5,
+    alt: "Partner logo 5",
   },
   {
     id: 6,
     imgSrc: BodySlider6,
+    alt: "Partner logo 6",
   },
   {
     id: 7,
     imgSrc: BodySlider7,
+    alt: "Partner logo 7",
   },
   {
     id: 8,
     imgSrc: BodySlider8,
+    alt: "Partner logo 8",
   },
   {
     id: 9,
     imgSrc: BodySlider9,
+    alt: "Partner logo 9",
   },
   {
     id: 10,
     imgSrc: BodySlider10,
+    alt: "Partner logo 10",
   },
 ] as const;
 
-const Slide: FC<SlideProps> = memo(({ imgSrc }) => (
-  <div className="slide">
-    <img
-      src={imgSrc}
-      alt="Partner logo"
-      loading="lazy"
-    />
-  </div>
-));
+const Slide: FC<SlideProps> = memo(({ imgSrc, alt }) => {
+  const [isLoaded, setIsLoaded] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+
+  const handleImageLoad = () => {
+    setIsLoaded(true);
+    setIsLoading(false);
+  };
+
+  return (
+    <div className={`slide ${isLoading ? 'loading' : ''}`}>
+      <img
+        src={imgSrc}
+        alt={alt}
+        loading="lazy"
+        className={isLoaded ? 'loaded' : ''}
+        onLoad={handleImageLoad}
+        onError={() => setIsLoading(false)}
+      />
+    </div>
+  );
+});
 
 Slide.displayName = "Slide";
 
@@ -124,6 +149,7 @@ const ServiceSlider: FC = () => {
           <Slide
             key={slide.id}
             imgSrc={slide.imgSrc}
+            alt={slide.alt}
           />
         ))}
       </Slider>
