@@ -11,19 +11,18 @@ const Contact = () => {
         <div className="header-body">
           <h1 className="">
             Experts en <br />
-            <span>Rénovation et Réhabilitation de Bâtiments.</span>
+          <span>Métallerie et Serrurerie de Bâtiment</span>
           </h1>
           <p className="" data-wow-delay="0.3s">
-            Lorem ipsum dolor sit amet velit consectetur adipiscing elit
-            eleifend.
+          Solutions innovantes et savoir-faire artisanal pour tous vos projets métalliques.
             <br />
-            Mauris a eros ultrices nibh posuere velit.
+          Qualité, fiabilité et excellence technique garanties.
           </p>
           <div className=" btn-box">
             <button
               className="btn-style-one"
               onClick={() =>
-                (window.location.href = "mailto:contact@example.com")
+                (window.location.href = "mailto:contact@artmetalfrance.fr")
               }
             >
               Contactez-nous

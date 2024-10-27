@@ -90,7 +90,7 @@ const ProductCard: React.FC<ProductCardProps> = React.memo(({ item }) => {
                 <p>{item.description}</p>
             </div>
             <div className="ProductsCardIndex">
-                <h3>{item.id} - {item.type}</h3>
+                {/* <h3>{item.id} - {item.type}</h3> */}
             </div>
         </div>
     );

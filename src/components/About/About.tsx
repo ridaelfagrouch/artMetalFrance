@@ -22,19 +22,19 @@ const AboutSpecialist: SpecialistItem[] = [
     icon: faDraftingCompass,
   },
   {
-    title: "Institutionnels et Tertiaires",
+    title: "Entreprises générales du bâtiment",
     icon: faBuilding,
   },
   {
-    title: "Particuliers",
+    title: "Institutionnels et Tertiaires",
     icon: faUsers,
   },
   {
-    title: "Administrateurs de Biens",
+    title: "Travaux Public",
     icon: faUserShield,
   },
   {
-    title: "Propriétaires d'Immeubles",
+    title: "Syndicat",
     icon: faHome,
   },
 ];
@@ -73,7 +73,7 @@ const IMAGE_DIMENSIONS: Record<string, ImageDimensions> = {
 
 const About: FC = () => {
   const handleContact = (): void => {
-    window.location.href = "mailto:contact@example.com";
+    window.location.href = "mailto:contact@artmetalfrance.fr";
   };
 
   return (
@@ -83,28 +83,28 @@ const About: FC = () => {
           <div className="inner-column">
             <div className="sec-title">
               <h2>
-                Nous sommes leaders sur <br />
-                le marché industriel depuis 1992.
+                ART METAL FRANCE <br />
               </h2>
             </div>
 
             <div className="text">
-              Nous sommes spécialisés dans l'Entretien, la Rénovation et la
-              Réhabilitation d'immeubles ou d'ouvrages existants. Nos
-              interventions sur Paris et la région Parisienne auprès des.
+              Est une entreprise spécialisée en métallerie et serrurerie de bâtiment.
+              Nous concevons, fabriquons et
+              installons des portes, garde-corps,
+              mains courantes, et chasse-roues
+              en acier de haute qualité.
             </div>
 
             <div className="text">
-              Depuis 4 générations, les administrateurs de biens, les
-              architectes, les institutionnels et une large clientèle de
-              particuliers nous font confiance pour l'entretien de leur parc
-              immobilier.
+              Nous
+              offrons des solutions sur mesure, alliant un savoir-faire artisanal, pour répondre aux besoins de nos clients.
+              Notre engagement est de fournir :
             </div>
 
             <ul className="list-style-one">
-              <li>Lorem Ipsum is simply dummy tex</li>
-              <li>Consectetur adipisicing elit</li>
-              <li>Sed do eiusmod tempor incididunt</li>
+              <li>Produits durables</li>
+              <li>Produits Esthetiques</li>
+              <li>Produits sécurisés</li>
             </ul>
 
             <div className="specialist-box">

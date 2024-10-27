@@ -7,32 +7,34 @@ const Questions = () => {
       title:
         "Quelle est l'expertise de Art Metal France en serrurerie générale ?",
       content:
-        "Art Metal France offre une vaste gamme de services en serrurerie générale, incluant l'installation, la réparation et la maintenance de serrures, portes blindées, et systèmes de sécurité pour résidences et commerces.",
+        "Spécialiste de la métallerie et serrurerie, Art Metal France vous accompagne de la conception à la réalisation de vos projets. Notre expertise technique et notre savoir-faire artisanal nous permettent de créer des ouvrages métalliques sur mesure, alliant esthétique et durabilité.",
     },
     {
       title:
-        "Comment Art Metal France personnalisent-ils les projets de métallerie et ferronnerie ?",
+        "Comment Art Metal France personnalisent-ils les projets de métallerie ?",
       content:
-        "Nous réalisons des créations sur mesure en métallerie et ferronnerie, en adaptant nos designs et matériaux pour répondre aux besoins spécifiques de chaque client, qu'il s'agisse de portails, de balustrades ou de décorations.",
+        "Nous réalisons des créations sur mesure en métallerie, en adaptant nos designs et matériaux pour répondre aux besoins spécifiques de chaque client.",
     },
     {
-      title:
-        "Quels systèmes de motorisation et contrôle d'accès Art Metal France propose-t-il ?",
-      content:
-        "Nous proposons des solutions avancées en motorisation de portails, portes de garage et systèmes de contrôle d'accès, alliant technologie de pointe et facilité d'utilisation pour une sécurité optimale.",
+      title: "Quels types de matériaux utilisez-vous ?",
+      content: "Nous travaillons principalement l'acier, l'aluminium et l'inox, sélectionnés auprès de fournisseurs certifiés pour garantir qualité et durabilité."
     },
     {
-      title:
-        "Quels matériaux sont utilisés pour les menuiseries extérieures RGE de Art Metal France ?",
-      content:
-        "Nous privilégions des matériaux durables et certifiés RGE pour nos menuiseries extérieures, tels que le bois, l'aluminium et le PVC, garantissant une isolation thermique et phonique de qualité.",
+      title: "Vos réalisations sont-elles garanties ?",
+      content: "Tous nos travaux sont garantis, avec une durée variable selon le type d'intervention. Nos installations bénéficient d'une garantie décennale."
     },
     {
-      title:
-        "Quels sont les avantages des menuiseries extérieures RGE proposées par Art Metal France ?",
-      content:
-        "Nos menuiseries extérieures RGE offrent une éco-efficacité optimale, permettant des économies d'énergie significatives, une qualité certifiée et une innovation durable pour un confort et une durabilité accrus.",
+      title: "Intervenez-vous dans quelle zone géographique ?",
+      content: "France métropolitaine"
     },
+    {
+      title: " Peut-on personnaliser les finitions ?",
+      content: "Absolument. Nous proposons un large choix de finitions : différentes teintes RAL, traitements de surface spécifiques, et textures variées pour personnaliser votre projet."
+    },
+    {
+      title: "Réalisez-vous des études techniques préalables ?",
+      content: " Pour chaque projet d'envergure, nous effectuons une étude technique détaillée incluant plans, calculs de charge et contraintes spécifiques."
+    }
   ];
 
   return (

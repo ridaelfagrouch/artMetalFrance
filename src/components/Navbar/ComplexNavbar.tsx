@@ -314,7 +314,7 @@ const ComplexNavbar = () => {
             <div className="social-icons-container mb-10">
               {socialLinks.map((social) => (
                 <a
-                  key={social.link}
+                  key={social.id}
                   href={social.link}
                   className={social.className}
                 >

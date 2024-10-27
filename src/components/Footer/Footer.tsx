@@ -14,9 +14,9 @@ interface FooterMenuItem {
 }
 
 const contactInfo: ContactInfo[] = [
-  { icon: MapPinIcon, title: "Find us", content: "1010 Avenue, sw 54321, Chandigarh" },
-  { icon: PhoneIcon, title: "Call us", content: "9876543210" },
-  { icon: EnvelopeIcon, title: "Mail us", content: "mail@info.com" },
+  { icon: MapPinIcon, title: "Adresse ", content: "33 RUE DES CHARDONNERETS, 93290 TREMBLAY-EN-FRANCE" },
+  { icon: PhoneIcon, title: "Appelez-nous", content: "+33 1 48 63 11 59" },
+  { icon: EnvelopeIcon, title: "Écrivez-nous", content: "contact@artmetalfrance.fr" },
 ];
 
 const footerMenuItems: FooterMenuItem[] = [
@@ -52,15 +52,15 @@ const Footer: React.FC = React.memo(() => {
               <div className="footer-logo">ART METAL FRANCE</div>
               <div className="footer-text">
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed do eiusmod tempor incididunt ut labore.
+                  Votre partenaire de confiance en métallerie et serrurerie. Notre expertise technique et notre savoir-faire artisanal nous permettent de vous garantir des prestations de qualité dans le respect des délais.
                 </p>
               </div>
               <div className="footer-social-icon">
-                <span>Follow us</span>
+                <span>Suivez-nous</span>
                 <div className="social-icons-container">
-                  {socialLinks.map(({ link, className, icon: SocialIcon }) => (
+                  {socialLinks.map(({ link, className, icon: SocialIcon, id }) => (
                     <a
-                      key={link}
+                      key={id}
                       href={link}
                       className={className}
                       aria-label={`Follow us on ${className}`}
@@ -105,7 +105,7 @@ const Footer: React.FC = React.memo(() => {
       </div>
       <div className="copyright-text-container">
         <div className="copyright-text">
-          <p>Copyright &copy; 2024, All Right Reserved</p>
+          <p>Copyright &copy; 2024, Tous droits réservés</p>
         </div>
       </div>
     </footer>

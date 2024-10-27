@@ -24,9 +24,12 @@ const ExpertisesCard: React.FC<ExpertisesCardProps> = ({
   subtitle,
   description,
 }) => {
+
+  const myPhone = phone.replace(/ /g, "");
+
   const handlePhoneClick = useCallback(() => {
-    window.location.href = `tel:${phone}`;
-  }, [phone]);
+    window.location.href = `tel:${myPhone}`;
+  }, [myPhone]);
 
   return (
     <div className={`expertises-card ${alt ? "alt" : ""}`}>

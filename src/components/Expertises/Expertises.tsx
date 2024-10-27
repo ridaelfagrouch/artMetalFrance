@@ -4,7 +4,6 @@ import {
   ExpertisesImage1,
   ExpertisesImage2,
   ExpertisesImage3,
-  ExpertisesImage4,
 } from "../../assets";
 
 interface ExpertiseCard {
@@ -23,12 +22,12 @@ const ExpertisesCardData: ExpertiseCard[] = [
     alt: false,
     photo: ExpertisesImage1,
     author: "ART METAL FRANCE",
-    features: ["Sécurité Expertisée", "Qualité Garantie", "Service Rapide"],
-    phone: "01 34 12 34 56",
+    features: ["Sécurité Expertisée", "Qualité Garantie"],
+    phone: "+33 1 48 63 11 59",
     title: "Serrurerie Générale",
-    subtitle: "Lorem ipsum dolor sit amet,",
+    subtitle: "Votre sécurité, notre priorité",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad eum dolorum architecto obcaecati enim dicta praesentium, quam nobis! Neque ad aliquam facilis numquam. Veritatis, sit.",
+      "Une solution complète pour tous vos besoins en serrurerie. Installation, réparation et dépannage de serrures, portes et systèmes de sécurité.",
   },
   {
     alt: true,
@@ -37,46 +36,29 @@ const ExpertisesCardData: ExpertiseCard[] = [
     features: [
       "Artisanat Durable",
       "Créations Uniques",
-      "Service Rapide",
-      "Élégance et Qualité",
+      "Qualité",
     ],
-    phone: "01 34 12 34 56",
-    title: "Métallerie & Ferronnerie",
-    subtitle: "Lorem ipsum dolor sit amet,",
+    phone: "+33 1 48 63 11 59",
+    title: "Métallerie",
+    subtitle: "L'art du métal sur mesure",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad eum dolorum architecto obcaecati enim dicta praesentium, quam nobis! Neque ad aliquam facilis numquam. Veritatis, sit.",
+      "Création et fabrication sur mesure d'ouvrages métalliques. De l'escalier au portail, nous donnons vie à vos projets avec précision et style.",
   },
   {
     alt: false,
     photo: ExpertisesImage3,
     author: "ART METAL FRANCE",
     features: [
-      "Éco-Efficacité",
-      "Économie d'énergie",
-      "Qualité Certifiée",
-      "Innovation Durable",
+      "Haute durabilité",
+      "Finitions personnalisables",
+      "Profilés sur mesure",
+      "Large choix de couleurs RAL",
     ],
-    phone: "01 34 12 34 56",
-    title: "Menuiseries extérieures RGE",
-    subtitle: "Lorem ipsum dolor sit amet,",
+    phone: "+33 1 48 63 11 59",
+    title: "Menuiseries métalliques",
+    subtitle: "La force du métal, l'élégance du design",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad eum dolorum architecto obcaecati enim dicta praesentium, quam nobis! Neque ad aliquam facilis numquam. Veritatis, sit.",
-  },
-  {
-    alt: true,
-    photo: ExpertisesImage4,
-    author: "ART METAL FRANCE",
-    features: [
-      "Technologie Avancée",
-      "Sécurité Expertisée",
-      "Service Rapide",
-      "Installation Expert",
-    ],
-    phone: "01 34 12 34 56",
-    title: "Motorisation / Contrôle d’accès",
-    subtitle: "Lorem ipsum dolor sit amet,",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad eum dolorum architecto obcaecati enim dicta praesentium, quam nobis! Neque ad aliquam facilis numquam. Veritatis, sit.",
+      "Conception et pose de structures en aluminium et acier. Fenêtres, portes et façades métalliques alliant robustesse et esthétique moderne.",
   },
 ];
 

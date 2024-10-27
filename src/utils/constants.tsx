@@ -1,19 +1,26 @@
 import {
-  ProductImage1,
   ProductImage2,
-  ProductImage3,
-  ProductImage4,
-  ProductImage5,
   ProductImage6,
   ProductImage7,
   ProductImage8,
   ProductImage9,
+  PortesMetalliques2,
+  PortesMetalliques3,
+  GardeCorps1,
+  MainsCourantes1,
+  MainsCourantes2,
+  Clôtures1,
+  Clôtures2,
+  Clôtures3,
+  EscaliersMetalliques1,
+  EscaliersMetalliques2,
   
  }  from "../assets";
 interface SocialLink {
   icon: React.ElementType;
   link: string;
   className: string;
+  id?: string;
 }
 
 const socialLinks: SocialLink[] = [
@@ -30,6 +37,8 @@ const socialLinks: SocialLink[] = [
     ),
     link: "#",
     className: "facebook-bg p-2 h-[40px] w-[40px]",
+    id: "facebook",
+
   },
   {
     icon: () => (
@@ -44,6 +53,7 @@ const socialLinks: SocialLink[] = [
     ),
     link: "#",
     className: "twitter-bg p-2 h-[40px] w-[40px]",
+    id: "twitter",
   },
   {
     icon: () => (
@@ -62,6 +72,7 @@ const socialLinks: SocialLink[] = [
     ),
     link: "#",
     className: "google-bg p-2 h-[40px] w-[40px]",
+    id: "google",
   },
 ];
 
@@ -69,79 +80,78 @@ const navProduitsListMenuItems = [
   [
     {
       id: 1,
-      image: [ProductImage1, ProductImage2, ProductImage3],
+      image: [ PortesMetalliques2, PortesMetalliques3],
       type: "Famille",
       category: "Portes métalliques",
       description:
-        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae voluptate repellendus magni illo ea animi?",
+        "Portes robustes en acier et aluminium, alliant sécurité maximale et design contemporain. Solutions sur mesure pour espaces résidentiels et professionnels.",
     },
     {
       id: 2,
-      image: [ProductImage2, ProductImage3, ProductImage1],
+      image: [ProductImage2, GardeCorps1],
       type: "Famille",
       category: "⁠Garde-corps",
       description:
-        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae voluptate repellendus magni illo ea animi?",
+        "Systèmes de protection élégants et conformes aux normes. Fabrication personnalisée pour balcons, terrasses et escaliers.",
     },
     {
       id: 3,
-      image: [ProductImage3, ProductImage1, ProductImage2],
+      image: [MainsCourantes1, MainsCourantes2],
       type: "Famille",
       category: "⁠Mains courantes",
       description:
-        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae voluptate repellendus magni illo ea animi?",
+        "Supports ergonomiques en métal, conjuguant sécurité et esthétique. Installation précise pour tout type d'espace.",
     },
   ],
   [
     {
       id: 4,
-      image: [ProductImage4, ProductImage5, ProductImage6],
+      image: [Clôtures1, Clôtures2, Clôtures3],
       type: "Famille",
       category: "⁠Clôtures et portails métalliques",
       description:
-        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae voluptate repellendus magni illo ea animi?",
+        "Délimitations et accès sécurisés en métal. Design moderne et durable, adaptable à vos espaces extérieurs.",
     },
     {
       id: 5,
-      image: [ProductImage5, ProductImage6, ProductImage4],
+      image: [EscaliersMetalliques1, EscaliersMetalliques2],
       type: "Famille",
       category: "⁠Escaliers métalliques",
       description:
-        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae voluptate repellendus magni illo ea animi?",
+        "Structures hélicoïdales ou droites en métal. Conception architecturale alliant solidité et élégance.",
     },
     {
       id: 6,
-      image: [ProductImage6, ProductImage4, ProductImage5],
+      image: [ProductImage6],
       type: "Famille",
       category: "Accessoires de fixation et quincaillerie",
       description:
-        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae voluptate repellendus magni illo ea animi?",
+        "Gamme complète d'éléments de fixation et accessoires métalliques. Solutions techniques pour tous types d'assemblages.",
     },
   ],
   [
     {
       id: 7,
-      image: [ProductImage7, ProductImage8, ProductImage9],
+      image: [ProductImage7],
       type: "Famille",
       category: "⁠Menuiserie métallique sur mesure",
       description:
-        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae voluptate repellendus magni illo ea animi?",
+        "Réalisations métalliques personnalisées selon vos spécifications. Expertise technique pour projets uniques.",
     },
     {
       id: 8,
-      image: [ProductImage8, ProductImage9, ProductImage1],
+      image: [ProductImage8],
       type: "Famille",
       category: "⁠Chasse-roues et dispositifs de sécurité routière",
       description:
-        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae voluptate repellendus magni illo ea animi?",
+        "Équipements de protection et de guidage en métal. Solutions durables pour la sécurisation des zones de circulation.",
     },
     {
       id: 9,
-      image: [ProductImage9, ProductImage1, ProductImage2],
+      image: [ProductImage9],
       type: "Famille",
       category: "⁠Structures métalliques pour espaces publics",
-      description:
-        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae voluptate repellendus magni illo ea animi?",
+      description: "Aménagements urbains en métal, adaptés aux contraintes collectives. Mobilier robuste pour espaces publics.",
     },
   ],
 ];

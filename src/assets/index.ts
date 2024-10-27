@@ -1,4 +1,3 @@
-import Logo from "./icons/Logo.png";
 
 import BodyHeaderImage1 from "./images/bodyHeader/bodyHeaderImage1.jpg";
 import BodyHeaderImage2 from "./images/bodyHeader/bodyHeaderImage2.jpg";
@@ -37,9 +36,37 @@ import ProductImage6 from "./images/products/Accessoires-fixation-quincaillerie.
 import ProductImage7 from "./images/products/Menuiserie-métallique-sur-mesure.jpg";
 import ProductImage8 from "./images/products/Chasse-roues.jpeg";
 import ProductImage9 from "./images/products/Structures-métalliques-pour-espaces-publics.jpg";
+import PortesMetalliques1 from "./images/products/PortesMetalliques1.jpeg";
+import PortesMetalliques2 from "./images/products/PortesMetalliques2.jpg";
+import PortesMetalliques3 from "./images/products/PortesMetalliques3.jpeg";
+import GardeCorps1 from "./images/products/⁠GardeCorps1.jpeg";
+import MainsCourantes1 from "./images/products/⁠MainsCourantes1.jpeg";
+import MainsCourantes2 from "./images/products/MainsCourantes2.jpeg";
+import Clôtures1 from "./images/products/Clôtures1.jpeg";
+import Clôtures2 from "./images/products/Clôtures2.jpeg";
+import Clôtures3 from "./images/products/Clôtures3.jpeg";
+import EscaliersMetalliques1 from "./images/products/EscaliersMetalliques1.jpeg";
+import EscaliersMetalliques2 from "./images/products/EscaliersMetalliques2.jpeg";
+
+import RealisationsImage1 from "./images/realisations/RealisationsImage1.jpeg";
+import RealisationsImage2 from "./images/realisations/RealisationsImage2.jpeg";
+import RealisationsImage3 from "./images/realisations/RealisationsImage3.jpeg";
+import RealisationsImage4 from "./images/realisations/RealisationsImage4.jpeg";
+import RealisationsImage5 from "./images/realisations/RealisationsImage5.jpeg";
+import RealisationsImage6 from "./images/realisations/RealisationsImage6.jpeg";
+import RealisationsImage7 from "./images/realisations/RealisationsImage7.jpeg";
+import RealisationsImage8 from "./images/realisations/RealisationsImage8.jpeg";
+import RealisationsImage10 from "./images/realisations/RealisationsImage10.jpeg";
+import RealisationsImage11 from "./images/realisations/RealisationsImage11.jpeg";
+import RealisationsImage12 from "./images/realisations/RealisationsImage12.jpeg";
+import RealisationsImage13 from "./images/realisations/RealisationsImage13.jpeg";
+
+import PartnersImage1 from "./images/partners/colasLogo.png";
+import PartnersImage2 from "./images/partners/gtmLogo.png";
+import PartnersImage3 from "./images/partners/leonGrosseLogo.svg";
+import PartnersImage4 from "./images/partners/lncLogo.png";
 
 export {
-  Logo,
   BodyHeaderImage1,
   BodyHeaderImage2,
   BodyHeaderImage3,
@@ -63,6 +90,7 @@ export {
   ExpertisesImage3,
   ExpertisesImage4,
   ContactImage,
+
   ProductImage1,
   ProductImage2,
   ProductImage3,
@@ -72,4 +100,33 @@ export {
   ProductImage7,
   ProductImage8,
   ProductImage9,
+  PortesMetalliques1,
+  PortesMetalliques2,
+  PortesMetalliques3,
+  GardeCorps1,
+  MainsCourantes1,
+  MainsCourantes2,
+  Clôtures1,
+  Clôtures2,
+  Clôtures3,
+  EscaliersMetalliques1,
+  EscaliersMetalliques2,
+  
+  RealisationsImage1,
+  RealisationsImage2,
+  RealisationsImage3,
+  RealisationsImage4,
+  RealisationsImage5,
+  RealisationsImage6,
+  RealisationsImage7,
+  RealisationsImage8,
+  RealisationsImage10,
+  RealisationsImage11,
+  RealisationsImage12,
+  RealisationsImage13,
+
+  PartnersImage1,
+  PartnersImage2,
+  PartnersImage3,
+  PartnersImage4,
 };

@@ -1,25 +1,27 @@
 import "./Partners.css";
+import {
+  PartnersImage1,
+  PartnersImage2,
+  PartnersImage3,
+  PartnersImage4,
+} from "../../assets";
 
 const PartnersData = [
   {
     id: 1,
-    image:
-      "https://image.freepik.com/free-vector/luxury-letter-e-logo-design_1017-8903.jpg",
+    image: PartnersImage1,
   },
   {
     id: 2,
-    image:
-      "https://image.freepik.com/free-vector/football-logo-background_1195-244.jpg",
+    image: PartnersImage2,
   },
   {
     id: 3,
-    image:
-      "https://image.freepik.com/free-vector/colors-curl-logo-template_23-2147536125.jpg",
+    image: PartnersImage3,
   },
   {
     id: 4,
-    image:
-      "https://image.freepik.com/free-vector/abstract-cross-logo_23-2147536124.jpg",
+    image: PartnersImage4,
   },
 ];
 
@@ -41,10 +43,7 @@ const Partners = () => {
             <div className="title-subBody">
               <h2>Nous travaillons avec les meilleurs partenaires.</h2>
               <p>
-                Bien que nous soyons à la pointe et spécialisés dans le
-                design-build, nous connaissons bien plusieurs méthodes de
-                livraison et sommes convaincus de pouvoir trouver le processus
-                qui vous aidera le mieux à atteindre vos objectifs.
+                En tant qu'experts de la métallerie et serrurerie, nous collaborons avec les plus grandes marques du secteur. Notre réseau de partenaires de confiance nous permet de vous garantir des produits et solutions de haute qualité, aux normes les plus exigeantes du marché.
               </p>
             </div>
           </div>
