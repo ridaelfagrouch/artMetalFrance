@@ -70,7 +70,8 @@ ul {
 
 .footer-text p {
   margin-bottom: 14px;
-  font-size: 14px;
+  font-weight: 600;
+  font-size: 18px;
   color: #7e7e7e;
   line-height: 28px;
   width: 80%;
@@ -267,6 +268,7 @@ ul {
 
   .footer-text p {
     width: 100%;
+    font-size: 14px;
   }
 
   .footer-cta {
