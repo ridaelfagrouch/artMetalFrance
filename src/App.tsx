@@ -67,6 +67,7 @@ function App() {
     <HelmetProvider>
       <BrowserRouter>
         <Helmet>
+          
           {/* Basic Meta Tags */}
           <title>{seoConfig.title}</title>
           <meta name="description" content={seoConfig.description} />
