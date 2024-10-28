@@ -81,7 +81,10 @@ import PartnersImage2 from "./images/partners/gtmLogo.png";
 import PartnersImage3 from "./images/partners/leonGrosseLogo.svg";
 import PartnersImage4 from "./images/partners/lncLogo.png";
 
+import Logo from "./images/logo.jpeg";
+
 export {
+  Logo,
   BodyHeaderImage1,
   BodyHeaderImage2,
   BodyHeaderImage3,

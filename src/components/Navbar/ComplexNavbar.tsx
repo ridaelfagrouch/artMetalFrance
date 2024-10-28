@@ -19,6 +19,7 @@ import {
   XMarkIcon,
 } from "@heroicons/react/24/solid";
 import { socialLinks, navProduitsListMenuItems } from "../../utils/constants";
+import { Logo } from "../../assets";
 
 interface NavListMenuProps {
   navListData: Array<{ id: number; category: string; description: string }[]>;
@@ -288,7 +289,11 @@ const ComplexNavbar = () => {
               onClick={handleLogoClick}
               aria-label="Go to homepage"
             >
-              ART METAL FRANCE
+              <img
+                src={Logo}
+                alt="Art Metal France"
+                className="h-16 w-20"
+              />
             </button>
             <div className="hidden lg:block">
               <NavList />
