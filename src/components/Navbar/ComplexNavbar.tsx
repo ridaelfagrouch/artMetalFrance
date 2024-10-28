@@ -71,7 +71,7 @@ function NavListMenu({ navListData, navListItem, setIsNavOpen }: Readonly<NavLis
       {navListData.map((category) => (
         <div
           key={`category-${category[0].id}`}
-          className="flex flex-col gap-4 justify-between mb-2"
+          className="flex flex-col gap-4 justify-between mb-2 w-[100%]"
           role="none"
         >
           {category.map(({ id, category, description }) => (
