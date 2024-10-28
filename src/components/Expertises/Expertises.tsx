@@ -1,9 +1,9 @@
 import "./Expertises.css";
 import ExpertisesCard from "./ui/ExpertisesCard";
 import {
-  ExpertisesImage1,
-  ExpertisesImage2,
-  ExpertisesImage3,
+  ExpertisesImage5,
+  ExpertisesImage6,
+  ExpertisesImage7,
 } from "../../assets";
 
 interface ExpertiseCard {
@@ -20,7 +20,7 @@ interface ExpertiseCard {
 const ExpertisesCardData: ExpertiseCard[] = [
   {
     alt: false,
-    photo: ExpertisesImage1,
+    photo: ExpertisesImage5,
     author: "ART METAL FRANCE",
     features: ["Sécurité Expertisée", "Qualité Garantie"],
     phone: "+33 1 48 63 11 59",
@@ -31,7 +31,7 @@ const ExpertisesCardData: ExpertiseCard[] = [
   },
   {
     alt: true,
-    photo: ExpertisesImage2,
+    photo: ExpertisesImage6,
     author: "ART METAL FRANCE",
     features: [
       "Artisanat Durable",
@@ -46,7 +46,7 @@ const ExpertisesCardData: ExpertiseCard[] = [
   },
   {
     alt: false,
-    photo: ExpertisesImage3,
+    photo: ExpertisesImage7,
     author: "ART METAL FRANCE",
     features: [
       "Haute durabilité",

@@ -24,6 +24,9 @@ import ExpertisesImage1 from "./images/expertises/expertisesImage1.jpg";
 import ExpertisesImage2 from "./images/expertises/expertisesImage2.jpg";
 import ExpertisesImage3 from "./images/expertises/expertisesImage3.jpg";
 import ExpertisesImage4 from "./images/expertises/expertisesImage4.jpg";
+import ExpertisesImage5 from "./images/expertises/expertisesImage5.jpg";
+import ExpertisesImage6 from "./images/expertises/expertisesImage6.jpg";
+import ExpertisesImage7 from "./images/expertises/expertisesImage7.jpg";
 
 import ContactImage from "./images/contact/contactImage.jpg";
 
@@ -101,6 +104,9 @@ export {
   ExpertisesImage2,
   ExpertisesImage3,
   ExpertisesImage4,
+  ExpertisesImage5,
+  ExpertisesImage6,
+  ExpertisesImage7,
   ContactImage,
 
   ProductImage1,
