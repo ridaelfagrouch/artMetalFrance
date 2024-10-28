@@ -42,11 +42,23 @@ import PortesMetalliques3 from "./images/products/PortesMetalliques3.jpeg";
 import GardeCorps1 from "./images/products/⁠GardeCorps1.jpeg";
 import MainsCourantes1 from "./images/products/⁠MainsCourantes1.jpeg";
 import MainsCourantes2 from "./images/products/MainsCourantes2.jpeg";
+import MainsCourantes3 from "./images/products/MainsCourantes3.jpeg";
+import MainsCourantes4 from "./images/products/MainsCourantes4.jpeg";
+import MainsCourantes5 from "./images/products/MainsCourantes5.jpeg";
 import Clôtures1 from "./images/products/Clôtures1.jpeg";
 import Clôtures2 from "./images/products/Clôtures2.jpeg";
 import Clôtures3 from "./images/products/Clôtures3.jpeg";
+import portailsMetalliques1 from "./images/products/portailsMetalliques.jpeg";
 import EscaliersMetalliques1 from "./images/products/EscaliersMetalliques1.jpeg";
 import EscaliersMetalliques2 from "./images/products/EscaliersMetalliques2.jpeg";
+import EscaliersMetalliques3 from "./images/products/EscaliersMetalliques3.jpg";
+import EscaliersMetalliques4 from "./images/products/EscaliersMetalliques4.jpg";
+import espacesPublics1 from "./images/products/espacesPublics1.jpg";
+import espacesPublics2 from "./images/products/espacesPublics2.jpg";
+import ChasseRoues1 from "./images/products/⁠ChasseRoues1.jpg";
+import ChasseRoues2 from "./images/products/ChasseRoues2.jpg";
+import ChasseRoues3 from "./images/products/ChasseRoues3.jpg";
+import ChasseRoues4 from "./images/products/ChasseRoues4.jpg";
 
 import RealisationsImage1 from "./images/realisations/RealisationsImage1.jpeg";
 import RealisationsImage2 from "./images/realisations/RealisationsImage2.jpeg";
@@ -106,11 +118,23 @@ export {
   GardeCorps1,
   MainsCourantes1,
   MainsCourantes2,
+  MainsCourantes3,
+  MainsCourantes4,
+  MainsCourantes5,
   Clôtures1,
   Clôtures2,
   Clôtures3,
+  portailsMetalliques1,
   EscaliersMetalliques1,
   EscaliersMetalliques2,
+  EscaliersMetalliques3,
+  EscaliersMetalliques4,
+  espacesPublics1,
+  espacesPublics2,
+  ChasseRoues1,
+  ChasseRoues2,
+  ChasseRoues3,
+  ChasseRoues4,
   
   RealisationsImage1,
   RealisationsImage2,

@@ -2,18 +2,25 @@ import {
   ProductImage2,
   ProductImage6,
   ProductImage7,
-  ProductImage8,
   ProductImage9,
   PortesMetalliques2,
   PortesMetalliques3,
   GardeCorps1,
   MainsCourantes1,
-  MainsCourantes2,
+  MainsCourantes3,
+  MainsCourantes4,
+  MainsCourantes5,
   Clôtures1,
   Clôtures2,
   Clôtures3,
-  EscaliersMetalliques1,
+  portailsMetalliques1,
   EscaliersMetalliques2,
+  EscaliersMetalliques4,
+  espacesPublics1,
+  ChasseRoues1,
+  ChasseRoues2,
+  ChasseRoues3,
+  ChasseRoues4,
   
  }  from "../assets";
 interface SocialLink {
@@ -96,7 +103,7 @@ const navProduitsListMenuItems = [
     },
     {
       id: 3,
-      image: [MainsCourantes1, MainsCourantes2],
+      image: [MainsCourantes1, MainsCourantes3, MainsCourantes4, MainsCourantes5],
       type: "Famille",
       category: "⁠Mains courantes",
       description:
@@ -106,7 +113,7 @@ const navProduitsListMenuItems = [
   [
     {
       id: 4,
-      image: [Clôtures1, Clôtures2, Clôtures3],
+      image: [Clôtures1, Clôtures2, Clôtures3, portailsMetalliques1],
       type: "Famille",
       category: "⁠Clôtures et portails métalliques",
       description:
@@ -114,7 +121,7 @@ const navProduitsListMenuItems = [
     },
     {
       id: 5,
-      image: [EscaliersMetalliques1, EscaliersMetalliques2],
+      image: [EscaliersMetalliques2, EscaliersMetalliques4],
       type: "Famille",
       category: "⁠Escaliers métalliques",
       description:
@@ -140,7 +147,7 @@ const navProduitsListMenuItems = [
     },
     {
       id: 8,
-      image: [ProductImage8],
+      image: [ChasseRoues1, ChasseRoues2, ChasseRoues3, ChasseRoues4],
       type: "Famille",
       category: "⁠Chasse-roues et dispositifs de sécurité routière",
       description:
@@ -148,7 +155,7 @@ const navProduitsListMenuItems = [
     },
     {
       id: 9,
-      image: [ProductImage9],
+      image: [espacesPublics1, ProductImage9],
       type: "Famille",
       category: "⁠Structures métalliques pour espaces publics",
       description: "Aménagements urbains en métal, adaptés aux contraintes collectives. Mobilier robuste pour espaces publics.",
