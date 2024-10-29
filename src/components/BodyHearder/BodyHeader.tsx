@@ -37,7 +37,7 @@ const blogSlides: readonly BlogSlide[] = [
     },
     date: "26 December 2019",
     title: "Lorem Ipsum Dolor 1",
-    text: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. 1",
+    text: "Lorem ipsum dolor sit amet consectetur, adipisicing elit Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet consectetur, adipisicing elit consectetur, adipisicing elit Lorem ipsum dolor sit amet consectetur, adipisicing elit 1.",
   },
   {
     id: "slide-2",
@@ -49,7 +49,7 @@ const blogSlides: readonly BlogSlide[] = [
     },
     date: "26 December 2019",
     title: "Lorem Ipsum Dolor 2",
-    text: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. 2",
+    text: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Lorem ipsum dolor sit amet consectetur, adipisicing elit Lorem ipsum dolor sit amet consectetur, Lorem ipsum dolor sit amet consectetur, adipisicing elit adipisicing elit 2",
   },
   {
     id: "slide-3",
@@ -61,7 +61,7 @@ const blogSlides: readonly BlogSlide[] = [
     },
     date: "26 December 2019",
     title: "Lorem Ipsum Dolor 3",
-    text: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. 3",
+    text: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Lorem ipsum dolor sit amet consectetur, adipisicing elit Lorem ipsum dolor sit amet consectetur, adipisicing elit Lorem ipsum dolor sit amet consectetur, Lorem ipsum dolor sit amet consectetur, adipisicing elit adipisicing elit 3",
   },
   {
     id: "slide-4",
@@ -73,7 +73,7 @@ const blogSlides: readonly BlogSlide[] = [
     },
     date: "26 December 2019",
     title: "Lorem Ipsum Dolor 4",
-    text: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. 4",
+    text: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Lorem ipsum dolor sit amet consectetur, adipisicing elit Lorem ipsum dolor sit amet consectetur, adipisicing elit Lorem ipsum dolor sit amet consectetur, adipisicing elit 4",
   },
   {
     id: "slide-5",
@@ -85,7 +85,7 @@ const blogSlides: readonly BlogSlide[] = [
     },
     date: "26 December 2019",
     title: "Lorem Ipsum Dolor 5",
-    text: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. 5",
+    text: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Lorem ipsum dolor sit amet consectetur, adipisicing elit Lorem ipsum dolor sit amet consectetur, adipisicing elit Lorem ipsum dolor sit amet consectetur, adipisicing elit Lorem ipsum dolor sit amet consectetur, adipisicing elit 5",
   },
   {
     id: "slide-6",
@@ -97,7 +97,7 @@ const blogSlides: readonly BlogSlide[] = [
     },
     date: "26 December 2019",
     title: "Lorem Ipsum Dolor 6",
-    text: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. 6",
+    text: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Lorem ipsum dolor sit amet consectetur, adipisicing elit Lorem ipsum dolor sit amet consectetur, adipisicing elit Lorem ipsum dolor sit amet consectetur, adipisicing elit 6",
   }
 ] as const;
 
