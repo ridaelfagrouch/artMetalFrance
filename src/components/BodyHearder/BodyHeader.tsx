@@ -2,7 +2,6 @@ import { useState, useEffect, useCallback, FC, memo } from "react";
 import {
   BodyHeaderImage1,
   BodyHeaderImage2,
-  BodyHeaderImage3,
   BodyHeaderImage4,
   BodyHeaderImage5,
 } from "../../assets";
@@ -40,10 +39,10 @@ const blogSlides = [
   {
     id: "slide-3",
     imgSrc: {
-      default: BodyHeaderImage3,
-      small: `${BodyHeaderImage3}?w=300`,
-      medium: `${BodyHeaderImage3}?w=600`,
-      large: `${BodyHeaderImage3}?w=900`,
+      default: BodyHeaderImage4,
+      small: `${BodyHeaderImage4}?w=300`,
+      medium: `${BodyHeaderImage4}?w=600`,
+      large: `${BodyHeaderImage4}?w=900`,
     },
     date: "26 December 2019",
     title: "Lorem Ipsum Dolor 3",
@@ -52,26 +51,14 @@ const blogSlides = [
   {
     id: "slide-4",
     imgSrc: {
-      default: BodyHeaderImage4,
-      small: `${BodyHeaderImage4}?w=300`,
-      medium: `${BodyHeaderImage4}?w=600`,
-      large: `${BodyHeaderImage4}?w=900`,
-    },
-    date: "26 December 2019",
-    title: "Lorem Ipsum Dolor 4",
-    text: "Lorem ipsum dolor sit amet consectetur, adipisicing elit Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet consectetur, adipisicing elit consectetur, adipisicing elit Lorem ipsum dolor sit amet consectetur, adipisicing elit 4.",
-  },
-  {
-    id: "slide-5",
-    imgSrc: {
       default: BodyHeaderImage5,
       small: `${BodyHeaderImage5}?w=300`,
       medium: `${BodyHeaderImage5}?w=600`,
       large: `${BodyHeaderImage5}?w=900`,
     },
     date: "26 December 2019",
-    title: "Lorem Ipsum Dolor 5",
-    text: "Lorem ipsum dolor sit amet consectetur, adipisicing elit Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet consectetur, adipisicing elit consectetur, adipisicing elit Lorem ipsum dolor sit amet consectetur, adipisicing elit 5.",
+    title: "Lorem Ipsum Dolor 4",
+    text: "Lorem ipsum dolor sit amet consectetur, adipisicing elit Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet consectetur, adipisicing elit consectetur, adipisicing elit Lorem ipsum dolor sit amet consectetur, adipisicing elit 4.",
   }
 ];
 
