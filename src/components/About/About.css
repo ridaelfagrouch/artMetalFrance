@@ -4,6 +4,7 @@
   min-height: 1000px;
   height: 100%;
   background-color: transparent;
+  padding: 0 15px !important;
 }
 
 .about-container {
@@ -249,7 +250,6 @@ lightbox-image img {
 
 .about-section .image-column {
   width: 100%;
-  padding: 0 15px 0 15px !important;
 }
 
 .about-section .content-column {
